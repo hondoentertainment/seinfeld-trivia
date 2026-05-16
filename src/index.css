@@ -65,8 +65,10 @@ button:focus-visible {
 .app-shell {
   max-width: 52rem;
   margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2rem);
-  padding-bottom: 2.5rem;
+  padding-top: calc(clamp(1rem, 3vw, 2rem) + env(safe-area-inset-top, 0px));
+  padding-right: calc(clamp(1rem, 3vw, 2rem) + env(safe-area-inset-right, 0px));
+  padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+  padding-left: calc(clamp(1rem, 3vw, 2rem) + env(safe-area-inset-left, 0px));
 }
 
 .brand-lockup {
@@ -144,6 +146,7 @@ button:focus-visible {
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: var(--radius-sm);
+  min-height: 44px;
   padding: 0.65rem 1.05rem;
   border: none;
   cursor: pointer;
@@ -290,7 +293,32 @@ kbd.key-hint {
   transform: rotate(90deg);
 }
 
+.marathon-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.reveal-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.reveal-hint {
+  margin: 0;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.results-footer-actions {
+  margin-top: 0.85rem;
+}
+
 .ep-link {
+  min-height: 44px;
   padding: 0.5rem 0.85rem;
   margin: 0;
   border: none;
@@ -302,6 +330,8 @@ kbd.key-hint {
   font-family: inherit;
   font-size: 0.92rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 
 .ep-link:hover {

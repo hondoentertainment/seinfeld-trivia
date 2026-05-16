@@ -6,15 +6,54 @@
     "airDate": "7/5/89",
     "primarySource": "http://www.seinfeldscripts.com/TheSeinfeldChronicles.htm",
     "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
-    "generatedAt": "2026-05-13T14:39:16.039Z",
+    "generatedAt": "2026-05-16T02:39:07.487Z",
     "questions": [
       {
         "id": 1,
         "type": "who_said",
-        "question": "Who says: “Oh, come on now, what are you asking her? Now,”?",
+        "question": "Who says: “Oh, I can be very persuasive. Do you know that I was almost...”?",
         "options": [
-          "I shoot you",
+          "George",
+          "KRAMER",
           "WAITRESS",
+          "CLAIRE"
+        ],
+        "correctIndex": 1,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “Really? What would you like to do”?",
+        "options": [
+          "JERRY",
+          "I shoot you",
+          "CLAIRE",
+          "KRAMER"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Let me just wipe the sink.”?",
+        "options": [
+          "JERRY",
+          "WAITRESS",
+          "KRAMER",
+          "George"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “I can't believe you're here.”?",
+        "options": [
+          "WAITRESS",
+          "CLAIRE",
           "Kramer",
           "JERRY"
         ],
@@ -22,89 +61,115 @@
         "answer": "JERRY"
       },
       {
-        "id": 2,
-        "type": "who_said",
-        "question": "Who says: “Do you handle any of that commercial...real estate”?",
-        "options": [
-          "KRAMER",
-          "WAITRESS",
-          "LAURA",
-          "Jerry"
-        ],
-        "correctIndex": 0,
-        "answer": "KRAMER"
-      },
-      {
-        "id": 3,
-        "type": "who_said",
-        "question": "Who says: “closes the lid] GEORGE: Look at that: they're done! It's a miracle! [”?",
-        "options": [
-          "Jerry",
-          "George",
-          "LAURA",
-          "Kramer"
-        ],
-        "correctIndex": 1,
-        "answer": "George"
-      },
-      {
-        "id": 4,
-        "type": "who_said",
-        "question": "Who says: “sits down next to him and starts turning over the pages of a magazine. Suddenly he spots an article he likes…”?",
-        "options": [
-          "JERRY",
-          "Kramer",
-          "LAURA",
-          "GEORGE"
-        ],
-        "correctIndex": 1,
-        "answer": "Kramer"
-      },
-      {
         "id": 5,
         "type": "who_said",
-        "question": "Who says: “, it's signals! Don't you....all right. Did she even ask you, what you were doin' tomorrow night, if you were…”?",
+        "question": "Who says: “Yeah, we could do that...why not, why not.”?",
         "options": [
-          "Jerry",
-          "Kramer",
+          "JERRY",
           "WAITRESS",
-          "Let's face it"
+          "KRAMER",
+          "LAURA"
         ],
         "correctIndex": 0,
-        "answer": "Jerry"
+        "answer": "JERRY"
       },
       {
         "id": 6,
         "type": "who_said",
-        "question": "Who says: “are waiting for Laura] JERRY: Wouldn't it be great if you could ask a woman what she's thinking? GEORGE: What…”?",
+        "question": "Who says: “This is the signal. Thank you, mister Signal,”?",
         "options": [
+          "I shoot you",
+          "George",
           "WAITRESS",
-          "JERRY",
-          "LAURA",
-          "George"
+          "JERRY"
         ],
         "correctIndex": 3,
-        "answer": "George"
+        "answer": "JERRY"
       },
       {
         "id": 7,
         "type": "who_said",
-        "question": "Who says: “I'm aware of you, all right, let's go [opens the bathroom”?",
+        "question": "Who says: “All right, she said she couldn't find a decent hotel- room...”?",
         "options": [
+          "CLAIRE",
+          "Let's face it",
+          "I shoot you",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “You can't be serious. This is New York city: there must”?",
+        "options": [
+          "KRAMER",
+          "JERRY",
+          "I shoot you",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “This is how you operate”?",
+        "options": [
+          "JERRY",
           "LAURA",
+          "KRAMER",
+          "GEORGE"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “A decent hotel-room...”?",
+        "options": [
+          "JERRY",
           "GEORGE",
-          "Kramer",
-          "Let's face it"
+          "Let's face it",
+          "WAITRESS"
         ],
         "correctIndex": 1,
         "answer": "GEORGE"
       },
       {
-        "id": 8,
+        "id": 11,
         "type": "who_said",
-        "question": "Who says: “Jerry? I have to tell ya somethin':...this is the dullest”?",
+        "question": "Who says: “The dating world is not a fun world...it's a pressure world,”?",
         "options": [
+          "JERRY",
           "LAURA",
+          "GEORGE",
+          "WAITRESS"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “sits down next to him and starts turning over the pages of a magazine. Suddenly he spots an article he likes…”?",
+        "options": [
+          "Jerry",
+          "Kramer",
+          "LAURA",
+          "George"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “Look at that: they're done! It's”?",
+        "options": [
+          "Kramer",
           "GEORGE",
           "I shoot you",
           "WAITRESS"
@@ -113,82 +178,17 @@
         "answer": "GEORGE"
       },
       {
-        "id": 9,
-        "type": "who_said",
-        "question": "Who says: “What, are you serious...why, why did she call”?",
-        "options": [
-          "LAURA",
-          "I shoot you",
-          "Kramer",
-          "JERRY"
-        ],
-        "correctIndex": 3,
-        "answer": "JERRY"
-      },
-      {
-        "id": 10,
-        "type": "who_said",
-        "question": "Who says: “looks at him with a \"what-the-h...-are-you-doing-look\" and”?",
-        "options": [
-          "George",
-          "CLAIRE",
-          "Kramer",
-          "Jerry"
-        ],
-        "correctIndex": 3,
-        "answer": "Jerry"
-      },
-      {
-        "id": 11,
-        "type": "who_said",
-        "question": "Who says: “...How's the real estate-business”?",
-        "options": [
-          "Jerry",
-          "KRAMER",
-          "LAURA",
-          "Let's face it"
-        ],
-        "correctIndex": 1,
-        "answer": "KRAMER"
-      },
-      {
-        "id": 12,
-        "type": "who_said",
-        "question": "Who says: “and, and maybe she'll see me when”?",
-        "options": [
-          "Jerry",
-          "WAITRESS",
-          "I shoot you",
-          "GEORGE"
-        ],
-        "correctIndex": 3,
-        "answer": "GEORGE"
-      },
-      {
-        "id": 13,
-        "type": "who_said",
-        "question": "Who says: “Oh, you don't recall”?",
-        "options": [
-          "I shoot you",
-          "JERRY",
-          "KRAMER",
-          "Let's face it"
-        ],
-        "correctIndex": 1,
-        "answer": "JERRY"
-      },
-      {
         "id": 14,
         "type": "who_said",
-        "question": "Who says: “You're a back-up, you're a second-line, a just-in-case,”?",
+        "question": "Who says: “...No, it's, it's just my neighbour...uhm...yeah, I got”?",
         "options": [
-          "I shoot you",
           "JERRY",
-          "GEORGE",
+          "KRAMER",
+          "I shoot you",
           "CLAIRE"
         ],
-        "correctIndex": 2,
-        "answer": "GEORGE"
+        "correctIndex": 0,
+        "answer": "JERRY"
       },
       {
         "id": 15,
@@ -196,25 +196,25 @@
         "question": "Which setting appears as a scripted scene heading in this episode?",
         "options": [
           "Airport. Jerry and George are waiting for Laura",
+          "Laundry. Jerry and George are there; George is staring at one of the dryers",
           "Comedy club.",
-          "Comedy club",
-          "Jerry's apartment. Jerry and George enter, lifting a heavy mattress"
+          "Jerry's apartment. Jerry is watching TV"
         ],
-        "correctIndex": 0,
-        "answer": "Airport. Jerry and George are waiting for Laura"
+        "correctIndex": 3,
+        "answer": "Jerry's apartment. Jerry is watching TV"
       },
       {
         "id": 16,
         "type": "scene_setting",
         "question": "Which setting appears as a scripted scene heading in this episode?",
         "options": [
-          "Comedy club.",
-          "Airport. Jerry and George are waiting for Laura",
-          "Jerry's apartment. Jerry and George enter, lifting a heavy mattress",
-          "Pete's luncheonette. Jerry and George are sitting at a table."
+          "Pete's luncheonette. Jerry and George are sitting at a table.",
+          "Jerry's apartment. Jerry shows Laura the apartment",
+          "Laundry. Jerry and George are there; George is staring at one of the dryers",
+          "Jerry's apartment. Jerry and George enter, lifting a heavy mattress"
         ],
         "correctIndex": 0,
-        "answer": "Comedy club."
+        "answer": "Pete's luncheonette. Jerry and George are sitting at a table."
       },
       {
         "id": 17,
@@ -222,24 +222,24 @@
         "question": "Which setting appears as a scripted scene heading in this episode?",
         "options": [
           "Jerry's apartment. Jerry shows Laura the apartment",
-          "Comedy club.",
-          "Jerry's apartment. Jerry is watching TV",
-          "Jerry's apartment. Jerry and George enter, lifting a heavy mattress"
+          "Laundry. Jerry and George are there; George is staring at one of the dryers",
+          "Airport. Jerry and George are waiting for Laura",
+          "Comedy club"
         ],
-        "correctIndex": 3,
-        "answer": "Jerry's apartment. Jerry and George enter, lifting a heavy mattress"
+        "correctIndex": 0,
+        "answer": "Jerry's apartment. Jerry shows Laura the apartment"
       },
       {
         "id": 18,
         "type": "scene_setting",
         "question": "Which setting appears as a scripted scene heading in this episode?",
         "options": [
-          "Comedy club",
-          "Jerry's apartment. Jerry and George enter, lifting a heavy mattress",
-          "Laundry. Jerry and George are there; George is staring at one of the dryers",
-          "Jerry's apartment. Jerry is watching TV"
+          "Jerry's apartment. Jerry shows Laura the apartment",
+          "Comedy club.",
+          "Airport. Jerry and George are waiting for Laura",
+          "Comedy club"
         ],
-        "correctIndex": 0,
+        "correctIndex": 3,
         "answer": "Comedy club"
       },
       {
@@ -247,75 +247,75 @@
         "type": "scene_setting",
         "question": "Which setting appears as a scripted scene heading in this episode?",
         "options": [
-          "Comedy club",
-          "Jerry's apartment. Jerry is watching TV",
           "Comedy club.",
-          "Pete's luncheonette. Jerry and George are sitting at a table."
+          "Laundry. Jerry and George are there; George is staring at one of the dryers",
+          "Jerry's apartment. Jerry shows Laura the apartment",
+          "Jerry's apartment. Jerry and George enter, lifting a heavy mattress"
         ],
-        "correctIndex": 3,
-        "answer": "Pete's luncheonette. Jerry and George are sitting at a table."
+        "correctIndex": 0,
+        "answer": "Comedy club."
       },
       {
         "id": 20,
         "type": "scene_setting",
         "question": "Which setting appears as a scripted scene heading in this episode?",
         "options": [
-          "Jerry's apartment. Jerry shows Laura the apartment",
-          "Airport. Jerry and George are waiting for Laura",
           "Pete's luncheonette. Jerry and George are sitting at a table.",
-          "Comedy club"
+          "Comedy club",
+          "Airport. Jerry and George are waiting for Laura",
+          "Laundry. Jerry and George are there; George is staring at one of the dryers"
         ],
-        "correctIndex": 0,
-        "answer": "Jerry's apartment. Jerry shows Laura the apartment"
+        "correctIndex": 3,
+        "answer": "Laundry. Jerry and George are there; George is staring at one of the dryers"
       },
       {
         "id": 21,
         "type": "cast",
-        "question": "In the cast list, who plays “fine”?",
+        "question": "In the cast list, who plays “they do is subtle.”?",
         "options": [
-          "no, we're goin' on a boat-ride...don't be silly...I'm not",
+          "this whole thing, we're all out now, no one is home.",
+          "men are not subtle, we are obvious. Women know",
           "the dryer is their only chance to escape and they",
-          "look I, I'll call you tomorrow...OK,",
-          "The car-horn-honk, is"
+          "[suddenly a woman approaches Jerry from behind and puts her"
         ],
-        "correctIndex": 0,
-        "answer": "no, we're goin' on a boat-ride...don't be silly...I'm not"
+        "correctIndex": 1,
+        "answer": "men are not subtle, we are obvious. Women know"
       },
       {
         "id": 22,
         "type": "cast",
-        "question": "In the cast list, who plays “talking about.”?",
+        "question": "In the cast list, who plays “These are the best ideas we've had so far”?",
         "options": [
+          "men are not subtle, we are obvious. Women know",
+          "[suddenly a woman approaches Jerry from behind and puts her",
           "this whole thing, we're all out now, no one is home.",
-          "no, think about it: the washing machine",
-          "no, I, I'm gonna stay here tomorrow...yes, yes it's",
-          "no, we're goin' on a boat-ride...don't be silly...I'm not"
+          "The car-horn-honk, is"
         ],
-        "correctIndex": 0,
-        "answer": "this whole thing, we're all out now, no one is home."
+        "correctIndex": 3,
+        "answer": "The car-horn-honk, is"
       },
       {
         "id": 23,
         "type": "cast",
-        "question": "In the cast list, who plays “our staff is on the scene.”?",
+        "question": "In the cast list, who plays “eyes.”?",
         "options": [
-          "no, we're goin' on a boat-ride...don't be silly...I'm not",
           "The car-horn-honk, is",
-          "That's why, I think, men get frustrated,",
-          "! [Jerry is laughing, Claire walks away"
+          "[suddenly a woman approaches Jerry from behind and puts her",
+          "So they're showing me on television the detergent",
+          "Is this a violent image to anybody?"
         ],
-        "correctIndex": 2,
-        "answer": "That's why, I think, men get frustrated,"
+        "correctIndex": 1,
+        "answer": "[suddenly a woman approaches Jerry from behind and puts her"
       },
       {
         "id": 24,
         "type": "meta_series",
         "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
         "options": [
-          "8",
           "2",
+          "11",
           "1",
-          "11"
+          "8"
         ],
         "correctIndex": 2,
         "answer": "1"
@@ -326,7 +326,9 @@
         "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
         "options": [
           "Season 0",
-          "Season 1"
+          "Season 1",
+          "Season 2",
+          "Season 7"
         ],
         "correctIndex": 0,
         "answer": "Season 0"

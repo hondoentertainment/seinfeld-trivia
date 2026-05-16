@@ -14,6 +14,7 @@ type QuizPhase = {
   answers: Record<number, { choice: number; correct: boolean }>;
   phase: "answer" | "reveal";
   lastPick: number | null;
+  enteredFromBrowse: boolean;
 };
 
 function seasonTitle(s: number) {
@@ -21,9 +22,26 @@ function seasonTitle(s: number) {
   return `Season ${s}`;
 }
 
+function NewTabAnnouncement() {
+  return <span className="visually-hidden">opens in new tab</span>;
+}
+
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(mq.matches);
+    const listener = () => setReduced(mq.matches);
+    mq.addEventListener("change", listener);
+    return () => mq.removeEventListener("change", listener);
+  }, []);
+  return reduced;
+}
+
 export function App() {
   const [screen, setScreen] = useState<GameScreen>({ name: "home" });
   const [quiz, setQuiz] = useState<QuizPhase | null>(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const bySeason = useMemo(() => {
     const map = new Map<number, EpisodeBundle[]>();
@@ -38,58 +56,72 @@ export function App() {
     return [...map.entries()].sort((a, b) => a[0] - b[0]);
   }, []);
 
-  const startQuiz = useCallback((items: QuizItem[], marathon: boolean) => {
-    setQuiz({
-      marathon,
-      items,
-      index: 0,
-      answers: {},
-      phase: "answer",
-      lastPick: null,
-    });
-    setScreen({ name: "quiz", items, marathon });
-  }, []);
-
   const goHome = useCallback(() => {
     setQuiz(null);
     setScreen({ name: "home" });
   }, []);
 
+  const goBrowse = useCallback(() => {
+    setQuiz(null);
+    setScreen({ name: "browse" });
+  }, []);
+
+  const startQuiz = useCallback(
+    (items: QuizItem[], marathon: boolean, enteredFromBrowse: boolean) => {
+      setQuiz({
+        marathon,
+        items,
+        index: 0,
+        answers: {},
+        phase: "answer",
+        lastPick: null,
+        enteredFromBrowse,
+      });
+      setScreen({ name: "quiz", items, marathon, enteredFromBrowse });
+    },
+    [],
+  );
+
   const startRandomEpisode = () => {
     const ep = randomEpisode(EPISODES, Math.random);
-    startQuiz(episodeQuizItems(ep), false);
+    startQuiz(episodeQuizItems(ep), false, false);
   };
 
   const startMarathon = (count: number) => {
     const items = marathonQuizItems(EPISODES, count, Math.random);
-    startQuiz(items, true);
+    startQuiz(items, true, false);
   };
 
   const currentItem = quiz ? (quiz.items[quiz.index] ?? null) : null;
 
-  /** Advance after reveal timer */
+  const advanceReveal = useCallback(() => {
+    setQuiz((q) => {
+      if (!q || q.phase !== "reveal") return q;
+      if (q.index + 1 >= q.items.length) {
+        const items = q.items;
+        const answers = q.answers;
+        const marathon = q.marathon;
+        const enteredFromBrowse = q.enteredFromBrowse;
+        setScreen({ name: "results", items, answers, marathon, enteredFromBrowse });
+        return null;
+      }
+      return {
+        ...q,
+        index: q.index + 1,
+        phase: "answer",
+        lastPick: null,
+      };
+    });
+  }, []);
+
+  /** Auto-advance after reveal unless user prefers reduced motion (manual continue only). */
   useEffect(() => {
     if (!quiz || quiz.phase !== "reveal") return undefined;
-    const t = window.setTimeout(() => {
-      setQuiz((q) => {
-        if (!q) return q;
-        if (q.index + 1 >= q.items.length) {
-          const items = q.items;
-          const answers = q.answers;
-          const marathon = q.marathon;
-          setScreen({ name: "results", items, answers, marathon });
-          return null;
-        }
-        return {
-          ...q,
-          index: q.index + 1,
-          phase: "answer",
-          lastPick: null,
-        };
-      });
-    }, 980);
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) return undefined;
+    const t = window.setTimeout(advanceReveal, 980);
     return () => window.clearTimeout(t);
-  }, [quiz, quiz?.index, quiz?.phase]);
+  }, [quiz, quiz?.index, quiz?.phase, advanceReveal]);
 
   const onPickAnswer = useCallback((choice: number) => {
     setQuiz((q) => {
@@ -112,18 +144,43 @@ export function App() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (!quiz || quiz.phase !== "answer") return;
-      const keys = ["1", "2", "3", "4"];
-      const ix = keys.indexOf(e.key);
-      if (ix === -1) return;
-      e.preventDefault();
-      const opts = quiz.items[quiz.index]?.question.options;
-      if (!opts || ix >= opts.length) return;
-      onPickAnswer(ix);
+      if (!quiz) return;
+      if (quiz.phase === "answer") {
+        const keys = ["1", "2", "3", "4"];
+        const ix = keys.indexOf(e.key);
+        if (ix === -1) return;
+        e.preventDefault();
+        const opts = quiz.items[quiz.index]?.question.options;
+        if (!opts || ix >= opts.length) return;
+        onPickAnswer(ix);
+        return;
+      }
+      if (quiz.phase === "reveal" && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        advanceReveal();
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [quiz, onPickAnswer]);
+  }, [quiz, onPickAnswer, advanceReveal]);
+
+  const quitQuiz = useCallback(() => {
+    if (!quiz) return;
+    const hasProgress =
+      quiz.index > 0 || Object.keys(quiz.answers).length > 0;
+    if (hasProgress) {
+      const ok = window.confirm(
+        "End this quiz? Your progress on this run will be lost.",
+      );
+      if (!ok) return;
+    }
+    goHome();
+  }, [quiz, goHome]);
+
+  const progressValue = quiz
+    ? Math.min(quiz.index + 1, quiz.items.length)
+    : 0;
+  const progressMax = quiz?.items.length ?? 1;
 
   return (
     <div className="app-shell">
@@ -142,8 +199,13 @@ export function App() {
           <div className="card">
             <p className="card-muted" style={{ marginTop: 0 }}>
               Jump into any episode catalogued on{" "}
-              <a href="http://www.seinfeldscripts.com/seinfeld-scripts.html" target="_blank" rel="noreferrer">
+              <a
+                href="http://www.seinfeldscripts.com/seinfeld-scripts.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 SeinfeldScripts.com
+                <NewTabAnnouncement />
               </a>
               , or remix questions across the run.
             </p>
@@ -151,11 +213,7 @@ export function App() {
               <button type="button" className="btn btn-teal btn-block" onClick={startRandomEpisode}>
                 Random episode (25 questions)
               </button>
-              <button
-                type="button"
-                className="btn btn-ghost-light btn-block"
-                onClick={() => setScreen({ name: "browse" })}
-              >
+              <button type="button" className="btn btn-ghost-light btn-block" onClick={goBrowse}>
                 Browse catalog by season
               </button>
             </div>
@@ -165,9 +223,9 @@ export function App() {
             <p className="card-muted" style={{ marginTop: "0.35rem" }}>
               Shuffle the full question pool—a little Frank Costanza chaos.
             </p>
-            <div className="row-between">
+            <div className="marathon-actions">
               {[10, 25, 50].map((n) => (
-                <button key={n} type="button" className="btn btn-red" onClick={() => startMarathon(n)}>
+                <button key={n} type="button" className="btn btn-red btn-block" onClick={() => startMarathon(n)}>
                   {n} questions
                 </button>
               ))}
@@ -182,7 +240,7 @@ export function App() {
             <div className="row-between">
               <strong>Select an episode</strong>
               <button type="button" className="btn btn-ghost-light" onClick={goHome}>
-                Back home
+                Home
               </button>
             </div>
           </div>
@@ -200,7 +258,7 @@ export function App() {
                     key={ep.seriesIndex}
                     type="button"
                     className="ep-link"
-                    onClick={() => startQuiz(episodeQuizItems(ep), false)}
+                    onClick={() => startQuiz(episodeQuizItems(ep), false, true)}
                   >
                     {ep.title}{" "}
                     <span style={{ fontWeight: 500, color: "var(--ink-muted)" }}>(#{ep.seriesIndex})</span>
@@ -216,18 +274,29 @@ export function App() {
         <div className="stack">
           <div className="card">
             <div className="row-between">
-              <button type="button" className="btn btn-ghost-light" onClick={goHome} disabled={quiz.phase === "reveal"}>
-                Exit
+              <button type="button" className="btn btn-ghost-light" onClick={quitQuiz}>
+                Quit quiz
               </button>
               <span className="episode-meta" aria-live="polite">
                 {quiz.marathon ? "Marathon • " : null}
                 {quiz.index + 1} / {quiz.items.length}
               </span>
             </div>
-            <div className="progress-bar-wrap" aria-hidden style={{ marginTop: "1rem" }}>
+            <div
+              className="progress-bar-wrap"
+              style={{ marginTop: "1rem" }}
+              role="progressbar"
+              aria-valuemin={1}
+              aria-valuemax={progressMax}
+              aria-valuenow={progressValue}
+              aria-label="Quiz progress"
+            >
               <div
                 className="progress-fill"
-                style={{ width: `${((quiz.index + (quiz.phase === "reveal" ? 0.92 : 0)) / quiz.items.length) * 100}%` }}
+                aria-hidden
+                style={{
+                  width: `${((quiz.index + (quiz.phase === "reveal" ? 0.92 : 0)) / quiz.items.length) * 100}%`,
+                }}
               />
             </div>
             <div className="episode-meta" style={{ marginTop: "1rem" }}>
@@ -244,7 +313,11 @@ export function App() {
               )}
             </div>
             <p className="question-text">{currentItem.question.question}</p>
-            <div className="answer-grid">
+            <p id="quiz-keyboard-help" className="visually-hidden">
+              Use number keys 1 through 4 to choose an answer. After each reveal, press Enter or Space to continue to the next
+              question.
+            </p>
+            <div className="answer-grid" aria-describedby="quiz-keyboard-help">
               {currentItem.question.options.map((opt: string, i: number) => {
                 let stateAttr: string | undefined;
                 const isCorrect = i === currentItem.question.correctIndex;
@@ -270,6 +343,18 @@ export function App() {
                 );
               })}
             </div>
+            {quiz.phase === "reveal" && (
+              <div className="reveal-actions">
+                <button type="button" className="btn btn-teal btn-block" onClick={advanceReveal}>
+                  {quiz.index + 1 >= quiz.items.length ? "See results" : "Next question"}
+                </button>
+                <p className="card-muted reveal-hint" aria-hidden>
+                  {prefersReducedMotion
+                    ? "Press Enter or Space to continue."
+                    : "Continuing automatically in a moment—or tap the button below."}
+                </p>
+              </div>
+            )}
           </div>
           <span className="visually-hidden" aria-live="assertive">
             {quiz.phase === "reveal" && quiz.lastPick !== null ? (
@@ -286,10 +371,16 @@ export function App() {
           items={screen.items}
           answers={screen.answers}
           marathon={screen.marathon}
+          enteredFromBrowse={screen.enteredFromBrowse}
           onHome={goHome}
+          onBrowse={goBrowse}
           onReplay={() => {
             if (!screen.marathon && screen.items[0]) {
-              startQuiz(episodeQuizItems(screen.items[0].episode), false);
+              startQuiz(
+                episodeQuizItems(screen.items[0].episode),
+                false,
+                screen.enteredFromBrowse,
+              );
             } else if (screen.items.length > 0) {
               startMarathon(screen.items.length);
             }
@@ -309,13 +400,17 @@ function ResultsPane({
   items,
   answers,
   marathon,
+  enteredFromBrowse,
   onHome,
+  onBrowse,
   onReplay,
 }: {
   items: QuizItem[];
   answers: Record<number, { choice: number; correct: boolean }>;
   marathon: boolean;
+  enteredFromBrowse: boolean;
   onHome: () => void;
+  onBrowse: () => void;
   onReplay: () => void;
 }) {
   let correctCt = 0;
@@ -332,6 +427,8 @@ function ResultsPane({
 
   skipped = items.length - correctCt - wrongCt;
 
+  const hasMisses = items.some((_, i) => answers[i] && !answers[i]?.correct);
+
   return (
     <div className="stack">
       <div className="card">
@@ -346,22 +443,30 @@ function ResultsPane({
         {!marathon && items[0] && (
           <p style={{ marginBottom: "0.65rem", fontWeight: 600 }}>
             Episode:{" "}
-            <a href={items[0].episode.primarySource} target="_blank" rel="noreferrer">
+            <a href={items[0].episode.primarySource} target="_blank" rel="noopener noreferrer">
               {items[0].episode.title}
+              <NewTabAnnouncement />
             </a>
           </p>
         )}
 
-        <div className="row-between">
-          <button type="button" className="btn btn-ghost-light" onClick={onHome}>
-            Home
-          </button>
-          <button type="button" className="btn btn-teal" onClick={onReplay}>
-            {marathon ? "New marathon shuffle" : "Replay this episode"}
-          </button>
+        <div className="stack results-footer-actions">
+          <div className="row-between">
+            <button type="button" className="btn btn-ghost-light" onClick={onHome}>
+              Home
+            </button>
+            <button type="button" className="btn btn-teal" onClick={onReplay}>
+              {marathon ? "New marathon shuffle" : "Replay this episode"}
+            </button>
+          </div>
+          {enteredFromBrowse && (
+            <button type="button" className="btn btn-ghost-light btn-block" onClick={onBrowse}>
+              Back to catalog
+            </button>
+          )}
         </div>
 
-        {(marathon ? items.slice(0, 12) : items).some((_, i) => answers[i] && !answers[i]?.correct) && (
+        {hasMisses && (
           <div style={{ marginTop: "1.25rem" }}>
             <p className="episode-meta">Review misses</p>
             <ul className="card-muted" style={{ paddingLeft: "1rem", margin: "0.5rem 0 0", fontWeight: 500 }}>

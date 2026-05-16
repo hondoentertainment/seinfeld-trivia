@@ -304,6 +304,13 @@ function clipQuote(s, max = 96) {
   return clipped.replace(/\?+$/u, "").trim();
 }
 
+/** Stage-direction bleed or merged speaker lines — skip for “who said” quotes */
+function isLikelyGarbledDialogueLine(line) {
+  if (/[\[\]]/.test(line)) return true;
+  if (/\s[A-Z]{2,}:\s/.test(line)) return true;
+  return false;
+}
+
 /** @param {string[]} pool */
 function pickDistractorSpeakers(correct, pool, need, rng) {
   const c = correct.toLowerCase();
@@ -348,7 +355,7 @@ function buildQuestions(ep, scriptText, rng) {
   const usedLineIdx = new Set();
   const whoPool = [];
   for (let i = 0; i < dialogue.length; i++) {
-    if (dialogue[i].line.length >= 20) whoPool.push(i);
+    if (dialogue[i].line.length >= 20 && !isLikelyGarbledDialogueLine(dialogue[i].line)) whoPool.push(i);
   }
 
   const whoOrder = whoPool.slice().sort(() => rng() - 0.5);
@@ -486,14 +493,12 @@ function buildQuestions(ep, scriptText, rng) {
 
   {
     const correct = `Season ${ep.season}`;
-    const pool = [
-      correct,
-      `Season ${Math.min(9, ep.season + 1)}`,
-      `Season ${Math.max(0, ep.season - 1)}`,
-      ep.season === 0 ? `Season 1` : `Season 9`,
-    ];
-    const opts = [...new Set(pool)].slice(0, 4);
-    const shuffled = opts.sort(() => rng() - 0.5);
+    const allSeasonLabels = Array.from({ length: 10 }, (_, i) => `Season ${i}`);
+    const wrong = allSeasonLabels
+      .filter((s) => s !== correct)
+      .sort(() => rng() - 0.5)
+      .slice(0, 3);
+    const shuffled = [correct, ...wrong].sort(() => rng() - 0.5);
     questions.push({
       id: qid++,
       type: "meta_season",
@@ -506,9 +511,35 @@ function buildQuestions(ep, scriptText, rng) {
 
   {
     const correct = ep.airDate;
-    const pool = [correct, "5/14/98", "7/5/89", "11/18/92", "10/2/97"];
-    const opts = [...new Set(pool)].slice(0, 4);
-    const shuffled = opts.sort(() => rng() - 0.5);
+    const pool = [
+      correct,
+      "5/14/98",
+      "7/5/89",
+      "11/18/92",
+      "10/2/97",
+      "3/19/98",
+      "9/25/97",
+      "12/11/97",
+    ];
+    const uniq = [];
+    const seen = new Set();
+    for (const d of pool) {
+      if (!seen.has(d)) {
+        seen.add(d);
+        uniq.push(d);
+      }
+      if (uniq.length >= 4) break;
+    }
+    let n = 1;
+    while (uniq.length < 4) {
+      const stub = `${n}/15/95`;
+      n++;
+      if (!seen.has(stub)) {
+        seen.add(stub);
+        uniq.push(stub);
+      }
+    }
+    const shuffled = uniq.slice(0, 4).sort(() => rng() - 0.5);
     questions.push({
       id: qid++,
       type: "meta_airdate",
@@ -548,7 +579,9 @@ function buildQuestions(ep, scriptText, rng) {
       "The Contest",
       "The Soup Nazi",
       "The Strike",
-    ].filter((t) => t !== ep.title);
+    ]
+      .filter((t) => t !== ep.title)
+      .slice(0, 3);
     const opts = [ep.title, ...decoys].sort(() => rng() - 0.5);
     const correctIndex = opts.findIndex((o) => o === ep.title);
     questions.push({

@@ -31,10 +31,12 @@ export type GameScreen =
       name: "quiz";
       items: QuizItem[];
       marathon: boolean;
+      enteredFromBrowse: boolean;
     }
   | {
       name: "results";
       items: QuizItem[];
       answers: Record<number, { choice: number; correct: boolean }>;
       marathon: boolean;
+      enteredFromBrowse: boolean;
     };

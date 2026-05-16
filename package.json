@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "build-episodes": "node scripts/build-episode-index.mjs",
     "generate-trivia": "node scripts/generate-trivia-from-scripts.mjs"
   },
@@ -19,6 +21,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.7.0",
     "typescript": "~5.9.3",
-    "vite": "^6.4.1"
+    "vite": "^6.4.1",
+    "vitest": "^3.2.4"
   }
 }
