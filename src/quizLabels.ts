@@ -40,6 +40,14 @@ export function quizUiStrings(run: QuizRunConfig): {
         resultsTitle: `${run.categoryLabel} · results`,
         replayHint: "Same category bucket · new shuffle",
       };
+    case "miss_retry":
+      return {
+        subtitle: run.sourceSummary
+          ? `Retry misses · ${run.count} (${run.sourceSummary})`
+          : `Retry misses · ${run.count} prompts`,
+        resultsTitle: "Miss retry · results",
+        replayHint: "Same stack again",
+      };
     case "full_corpus":
       return run.order === "broadcast"
         ? {

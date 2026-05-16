@@ -40,7 +40,7 @@
         "question": "Who says: “and Jerry. Guests: Hi Jerry: I didn't bring anything. Pamela: Ahh, I put you two right here. Jerry: Oh, Okay…”?",
         "options": [
           "Roger",
-          "Originally Aired",
+          "Jerry",
           "Helen",
           "Elaine"
         ],
@@ -93,7 +93,7 @@
         "options": [
           "Jerry",
           "Helen",
-          "Originally Aired",
+          "George",
           "David"
         ],
         "correctIndex": 0,
@@ -131,7 +131,7 @@
         "question": "Who says: “Really? Which company”?",
         "options": [
           "Vanessa",
-          "Originally Aired",
+          "Jerry",
           "Roger",
           "Helen"
         ],
@@ -185,7 +185,7 @@
           "George",
           "Morty",
           "Kramer",
-          "Originally Aired"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "George"
@@ -686,7 +686,7 @@
         "question": "Who says: “Okay. yeah, okay. Great! That would be, that'd”?",
         "options": [
           "JOEL",
-          "Written by",
+          "Jerry",
           "GEORGE",
           "Kramer"
         ],
@@ -737,7 +737,7 @@
         "type": "who_said",
         "question": "Who says: “Well, let's just take a look here. (looks at”?",
         "options": [
-          "Written by",
+          "Jerry",
           "Kramer",
           "George",
           "JOEL"
@@ -789,7 +789,7 @@
         "type": "who_said",
         "question": "Who says: “I don't know why you even bother with this”?",
         "options": [
-          "Written by",
+          "Jerry",
           "GEORGE",
           "GOERGE",
           "Stars"
@@ -856,7 +856,7 @@
         "options": [
           "JERRY",
           "TELLER",
-          "Written by",
+          "George",
           "Elaine"
         ],
         "correctIndex": 0,
@@ -870,10 +870,10 @@
           "Andy Ackerman",
           "Tom Cherones",
           "Larry Charles",
-          ": Larry David and Jerry Seinfeld"
+          "Larry David and Jerry Seinfeld"
         ],
         "correctIndex": 3,
-        "answer": ": Larry David and Jerry Seinfeld"
+        "answer": "Larry David and Jerry Seinfeld"
       },
       {
         "id": 16,
@@ -882,11 +882,11 @@
         "options": [
           "Jason Alexander",
           "Andy Ackerman",
-          "Tom Cherones",
-          ": Tom Cherones"
+          "David Steinberg",
+          "Tom Cherones"
         ],
         "correctIndex": 3,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -973,7 +973,7 @@
         "options": [
           "CUSTOMER",
           "JERRY",
-          "Directed by",
+          "Elaine",
           "George"
         ],
         "correctIndex": 1,
@@ -999,7 +999,7 @@
         "options": [
           "JERRY",
           "ELAINE",
-          "Directed by",
+          "George",
           "GOERGE"
         ],
         "correctIndex": 0,
@@ -1023,7 +1023,7 @@
         "options": [
           "Jerry",
           "ELAINE",
-          "Directed by",
+          "George",
           "DRY CLEANER"
         ],
         "correctIndex": 1,
@@ -1037,7 +1037,7 @@
           "JERRY",
           "Stars",
           "George",
-          "Directed by"
+          "Elaine"
         ],
         "correctIndex": 0,
         "answer": "JERRY"
@@ -1048,7 +1048,7 @@
         "question": "Who says: “stops her) No, no, no. That' ought to coever it. (He hands her some money, she turns to leave,”?",
         "options": [
           "DRY CLEANER",
-          "Written by",
+          "Jerry",
           "ELAINE",
           "George"
         ],
@@ -1062,7 +1062,7 @@
         "options": [
           "WAITRESS",
           "George",
-          "Written by",
+          "Elaine",
           "JERRY"
         ],
         "correctIndex": 3,
@@ -1088,7 +1088,7 @@
         "options": [
           "George",
           "JERRY",
-          "Written by",
+          "Elaine",
           "Kramer"
         ],
         "correctIndex": 1,
@@ -1126,7 +1126,7 @@
         "question": "Who says: “I have to say. Those people talking behind us really ruined”?",
         "options": [
           "Broadcasted",
-          "Directed by",
+          "Elaine",
           "George",
           "JERRY"
         ],
@@ -1164,9 +1164,9 @@
         "type": "who_said",
         "question": "Who says: “I'm not an investor. People always tell me, you should have”?",
         "options": [
-          "Directed by",
+          "George",
           "ELAINE",
-          "Written by",
+          "Kramer",
           "JERRY"
         ],
         "correctIndex": 3,
@@ -1177,7 +1177,7 @@
         "type": "who_said",
         "question": "Who says: “Some sort of electronic thingy.”?",
         "options": [
-          "Directed by",
+          "Jerry",
           "KRAMER",
           "GOERGE",
           "GEORGE"
@@ -1191,7 +1191,7 @@
         "question": "Who says: “Yes, but how do I know we did the shirt”?",
         "options": [
           "Kramer",
-          "Directed by",
+          "Jerry",
           "STOCK BOY",
           "DRY CLEANER"
         ],
@@ -1203,13 +1203,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Larry David and Jerry Seinfeld",
+          "Larry David and Jerry Seinfeld",
           "Larry Charles",
           "Andy Ackerman",
           "Tom Cherones"
         ],
         "correctIndex": 0,
-        "answer": ": Larry David and Jerry Seinfeld"
+        "answer": "Larry David and Jerry Seinfeld"
       },
       {
         "id": 16,
@@ -1217,12 +1217,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Jason Alexander",
+          "David Steinberg",
           "Tom Cherones",
-          ": Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 2,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -1323,7 +1323,7 @@
           "ELAINE",
           "Jerry",
           "Stars",
-          "Directed by"
+          "George"
         ],
         "correctIndex": 0,
         "answer": "ELAINE"

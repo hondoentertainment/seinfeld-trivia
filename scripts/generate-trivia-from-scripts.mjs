@@ -139,6 +139,25 @@ function extractDialogueCombined(text) {
   return a;
 }
 
+function isGarbageSpeakerLabel(speaker) {
+  const s = normalizeSpeaker(speaker);
+  if (/originally aired/i.test(s)) return true;
+  if (/^(written by|directed by)$/iu.test(s)) return true;
+  return false;
+}
+
+/** Strip colon bleed leftover from screenplay lines + double-space segmentation */
+function cleanCreditExtract(raw) {
+  if (!raw) return null;
+  let s = raw.replace(/\.+$/, "").trim();
+  const firstSegment = s.split(/\s{2,}/)[0]?.trim() ?? s;
+  let cleaned = firstSegment.trimStart();
+  while (cleaned.startsWith(":")) {
+    cleaned = cleaned.slice(1).trimStart();
+  }
+  return cleaned.length ? cleaned : null;
+}
+
 /** @param {string} text */
 function extractDialogue(text) {
   /** @type {{speaker:string, line:string}[]} */
@@ -151,6 +170,7 @@ function extractDialogue(text) {
     if (/^(INT|EXT|SCENE|CUT TO|FADE)/i.test(speaker)) continue;
     if (speaker.length < 2 || speaker.length > 36) continue;
     if (BAD_SPEAKERS.has(speaker.toUpperCase())) continue;
+    if (isGarbageSpeakerLabel(speaker)) continue;
     if (/\b(and|&)\b/i.test(speaker)) continue;
     let line = m[2].trim();
     line = line.replace(/\[[^\]]*\]/g, "").replace(/\([^)]{80,}\)/g, "").trim();
@@ -177,9 +197,9 @@ function extractCredits(text) {
   let writtenBy = null;
   let directedBy = null;
   const w = text.match(/Written\s+By\b[.\s]*([^\n]+)/i);
-  if (w) writtenBy = w[1].replace(/\.+$/, "").trim().split(/\s{2,}/)[0]?.trim() ?? null;
+  if (w) writtenBy = cleanCreditExtract(w[1]);
   const d = text.match(/Directed\s+By\b[.\s]*([^\n]+)/i);
-  if (d) directedBy = d[1].replace(/\.+$/, "").trim().split(/\s{2,}/)[0]?.trim() ?? null;
+  if (d) directedBy = cleanCreditExtract(d[1]);
   return { writtenBy, directedBy };
 }
 
@@ -346,7 +366,9 @@ function buildQuestions(ep, scriptText, rng) {
   const scenes = extractScenes(scriptText);
   const credits = extractCredits(scriptText);
   const cast = extractCastPairs(scriptText);
-  const speakers = [...new Set(dialogue.map((d) => d.speaker))];
+  const speakerPool = [...new Set(dialogue.map((d) => d.speaker))].filter(
+    (s) => !isGarbageSpeakerLabel(s),
+  );
 
   /** @type {any[]} */
   const questions = [];
@@ -366,7 +388,7 @@ function buildQuestions(ep, scriptText, rng) {
     usedLineIdx.add(i);
     const row = dialogue[i];
     const quote = clipQuote(row.line, 110);
-    const wrong = pickDistractorSpeakers(row.speaker, speakers, 3, rng);
+    const wrong = pickDistractorSpeakers(row.speaker, speakerPool, 3, rng);
     const opts = [row.speaker, ...wrong].sort(() => rng() - 0.5);
     const correctIndex = opts.findIndex(
       (o) => o.toLowerCase() === row.speaker.toLowerCase()
@@ -557,7 +579,7 @@ function buildQuestions(ep, scriptText, rng) {
     usedLineIdx.add(i);
     const row = dialogue[i];
     const quote = clipQuote(row.line, 110);
-    const wrong = pickDistractorSpeakers(row.speaker, speakers, 3, rng);
+    const wrong = pickDistractorSpeakers(row.speaker, speakerPool, 3, rng);
     const opts = [row.speaker, ...wrong].sort(() => rng() - 0.5);
     const correctIndex = opts.findIndex(
       (o) => o.toLowerCase() === row.speaker.toLowerCase()
@@ -599,7 +621,7 @@ function buildQuestions(ep, scriptText, rng) {
     const idx = Math.floor(rng() * dialogue.length);
     const row = dialogue[idx];
     const quote = clipQuote(row.line, 80);
-    const wrong = pickDistractorSpeakers(row.speaker, speakers, 3, rng);
+    const wrong = pickDistractorSpeakers(row.speaker, speakerPool, 3, rng);
     const opts = [row.speaker, ...wrong].sort(() => rng() - 0.5);
     const correctIndex = opts.findIndex(
       (o) => o.toLowerCase() === row.speaker.toLowerCase()

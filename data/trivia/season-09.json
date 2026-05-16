@@ -119,7 +119,7 @@
         "options": [
           "Bania",
           "Jay",
-          "Written by",
+          "Jerry",
           "David"
         ],
         "correctIndex": 0,
@@ -132,7 +132,7 @@
         "options": [
           "Man",
           "Man in audience",
-          "Written by",
+          "George",
           "Jerry"
         ],
         "correctIndex": 3,
@@ -197,11 +197,11 @@
         "options": [
           "Tom Cherones",
           "Andy Ackerman",
-          ": Alec Berg, Jeff Schaffer & David Mandel",
+          "Alec Berg, Jeff Schaffer & David Mandel",
           "Larry Charles"
         ],
         "correctIndex": 2,
-        "answer": ": Alec Berg, Jeff Schaffer & David Mandel"
+        "answer": "Alec Berg, Jeff Schaffer & David Mandel"
       },
       {
         "id": 16,
@@ -1126,7 +1126,7 @@
         "question": "Who says: “What if I can't keep up”?",
         "options": [
           "Transcribed by",
-          "Originally Aired",
+          "George",
           "Jimmy",
           "Jerry"
         ],
@@ -1205,24 +1205,24 @@
         "options": [
           "Tom Cherones",
           "Andy Ackerman",
-          ": Dan O'Keefe",
+          "Dan O'Keefe",
           "Larry Charles"
         ],
         "correctIndex": 2,
-        "answer": ": Dan O'Keefe"
+        "answer": "Dan O'Keefe"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Andy Ackerman",
-          "Tom Cherones",
           "Andy Ackerman",
+          "Tom Cherones",
+          "David Steinberg",
           "Jason Alexander"
         ],
         "correctIndex": 0,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -1309,7 +1309,7 @@
         "options": [
           "Vivian",
           "Tara",
-          "Directed by",
+          "Jerry",
           "Bank employee"
         ],
         "correctIndex": 0,
@@ -1747,7 +1747,7 @@
         "options": [
           "GEORGE",
           "Kramer",
-          "Written by",
+          "Jerry",
           "Newman"
         ],
         "correctIndex": 0,
@@ -1878,23 +1878,23 @@
           "Tom Cherones",
           "Andy Ackerman",
           "Larry Charles",
-          ": Bruce Eric Kaplan Directed by: Andy Ackerman"
+          "Bruce Eric Kaplan Directed by: Andy Ackerman"
         ],
         "correctIndex": 3,
-        "answer": ": Bruce Eric Kaplan Directed by: Andy Ackerman"
+        "answer": "Bruce Eric Kaplan Directed by: Andy Ackerman"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Andy Ackerman",
+          "Andy Ackerman",
           "Tom Cherones",
           "Jason Alexander",
-          "Andy Ackerman"
+          "David Steinberg"
         ],
         "correctIndex": 0,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -2032,7 +2032,7 @@
           "Elaine thinking",
           "Kramer",
           "Jerry",
-          "Directed by"
+          "George"
         ],
         "correctIndex": 2,
         "answer": "Jerry"
@@ -2044,7 +2044,7 @@
         "options": [
           "Elaine",
           "Guest starring",
-          "Originally Aired",
+          "Jerry",
           "Transcribed by"
         ],
         "correctIndex": 0,
@@ -2107,7 +2107,7 @@
         "type": "who_said",
         "question": "Who says: “Well, I guess I just assumed.”?",
         "options": [
-          "Directed by",
+          "Jerry",
           "Clerk",
           "Kramer",
           "Cast"
@@ -2122,7 +2122,7 @@
         "options": [
           "George",
           "Parry",
-          "Originally Aired",
+          "Jerry",
           "Neighbor"
         ],
         "correctIndex": 0,
@@ -2149,7 +2149,7 @@
           "Elaine thinking",
           "Kruger",
           "George",
-          "Originally Aired"
+          "Jerry"
         ],
         "correctIndex": 2,
         "answer": "George"
@@ -2186,7 +2186,7 @@
         "question": "Who says: “What, you're gonna pass up a wonderful opportunity to put that”?",
         "options": [
           "George",
-          "Directed by",
+          "Jerry",
           "Sara",
           "Story by"
         ],
@@ -2211,13 +2211,13 @@
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          "Andy Ackerman",
+          "David Steinberg",
           "Jason Alexander",
           "Tom Cherones",
-          ": Andy Ackerman"
+          "Andy Ackerman"
         ],
         "correctIndex": 3,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 16,
@@ -2391,7 +2391,7 @@
         "type": "who_said",
         "question": "Who says: “So, how come nothing ever happened between you and Nina”?",
         "options": [
-          "Directed by",
+          "Jerry",
           "KRAMER",
           "GEORGE",
           "NEWMAN"
@@ -2404,7 +2404,7 @@
         "type": "who_said",
         "question": "Who says: “Alright, come on, Newman. Now you gotta help me! What am”?",
         "options": [
-          "Written by",
+          "Jerry",
           "SUSAN",
           "USHA",
           "KRAMER"
@@ -2431,7 +2431,7 @@
         "question": "Who says: “(Recognizing him) Peter”?",
         "options": [
           "ELAINE",
-          "Written by",
+          "Jerry",
           "Nina",
           "USHA"
         ],
@@ -2547,13 +2547,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": David Mandel, Peter Mehlman",
+          "David Mandel, Peter Mehlman",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": David Mandel, Peter Mehlman"
+        "answer": "David Mandel, Peter Mehlman"
       },
       {
         "id": 16,
@@ -2561,12 +2561,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Jason Alexander",
-          ": Andy Akerman",
+          "Andy Akerman",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 1,
-        "answer": ": Andy Akerman"
+        "answer": "Andy Akerman"
       },
       {
         "id": 17,
@@ -2677,7 +2677,7 @@
         "type": "who_said",
         "question": "Who says: “Of course I'm all right. I'm here with my girl. Nina. And”?",
         "options": [
-          "Directed by",
+          "Jerry",
           "ELAINE",
           "GEORGE",
           "Nina"
@@ -3063,7 +3063,7 @@
         "type": "who_said",
         "question": "Who says: “George, I don't get it. If there's no Human Fund, those”?",
         "options": [
-          "Directed by",
+          "Jerry",
           "KRAMER",
           "BOOKIE",
           "KRUGER"
@@ -3129,7 +3129,7 @@
         "question": "Who says: “Thank - you! (Gets his coat, and leaves)”?",
         "options": [
           "KRAMER",
-          "Written by",
+          "Jerry",
           "TIM",
           "Frank"
         ],
@@ -3144,7 +3144,7 @@
           "FRANK",
           "MANAGER",
           "WOMAN",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "FRANK"
@@ -3170,7 +3170,7 @@
           "KRAMER",
           "Frank",
           "ELAINE",
-          "Directed by"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "KRAMER"
@@ -3209,7 +3209,7 @@
           "FRANK",
           "ESTELLE",
           "ELAINE",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 2,
         "answer": "ELAINE"
@@ -3219,13 +3219,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Alec Burg, Jeff Schaffer, and Dan O' Keefe",
+          "Alec Burg, Jeff Schaffer, and Dan O' Keefe",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Alec Burg, Jeff Schaffer, and Dan O' Keefe"
+        "answer": "Alec Burg, Jeff Schaffer, and Dan O' Keefe"
       },
       {
         "id": 16,
@@ -3233,12 +3233,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Jason Alexander",
-          "Andy Ackerman",
+          "David Steinberg",
           "Tom Cherones",
-          ": Andy Ackerman"
+          "Andy Ackerman"
         ],
         "correctIndex": 3,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -3388,7 +3388,7 @@
         "options": [
           "RICK",
           "GEORGE",
-          "Directed by",
+          "Elaine",
           "JERRY"
         ],
         "correctIndex": 3,
@@ -3441,7 +3441,7 @@
           "GEORGE",
           "Kramer",
           "MECHANIC",
-          "Directed by"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "GEORGE"
@@ -3504,7 +3504,7 @@
         "question": "Who says: “Well, how do you know that one&#146;s yours”?",
         "options": [
           "SALESMAN",
-          "Directed by",
+          "George",
           "JERRY",
           "Kramer"
         ],
@@ -3556,12 +3556,12 @@
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
           "Larry Charles",
-          ": Steve Koren",
+          "Steve Koren",
           "Andy Ackerman",
           "Tom Cherones"
         ],
         "correctIndex": 1,
-        "answer": ": Steve Koren"
+        "answer": "Steve Koren"
       },
       {
         "id": 16,
@@ -3569,12 +3569,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Tom Cherones",
-          ": Andy Ackerman",
           "Andy Ackerman",
+          "David Steinberg",
           "Jason Alexander"
         ],
         "correctIndex": 1,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -3660,7 +3660,7 @@
         "question": "Who says: “(Raising her finger at him, in an authoritative tone) David..”?",
         "options": [
           "Jerry",
-          "Directed by",
+          "George",
           "WILLIE",
           "ELAINE"
         ],
@@ -4228,12 +4228,12 @@
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
           "Larry Charles",
-          ": Bruce Eric Kaplan",
+          "Bruce Eric Kaplan",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 1,
-        "answer": ": Bruce Eric Kaplan"
+        "answer": "Bruce Eric Kaplan"
       },
       {
         "id": 16,
@@ -4241,12 +4241,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Tom Cherones",
-          ": Andy Ackerman",
+          "Andy Ackerman",
           "Jason Alexander",
-          "Andy Ackerman"
+          "David Steinberg"
         ],
         "correctIndex": 1,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -5235,13 +5235,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Jennifer Crittenden",
+          "Jennifer Crittenden",
           "Tom Cherones",
           "Andy Ackerman",
           "Larry Charles"
         ],
         "correctIndex": 0,
-        "answer": ": Jennifer Crittenden"
+        "answer": "Jennifer Crittenden"
       },
       {
         "id": 16,
@@ -5328,7 +5328,7 @@
         "options": [
           "George",
           "Dr. Wexler",
-          "Written by",
+          "Jerry",
           "Sophie"
         ],
         "correctIndex": 0,
@@ -5405,7 +5405,7 @@
           "KRAMER",
           "WAITER",
           "WAITRESS",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "KRAMER"
@@ -5456,7 +5456,7 @@
         "options": [
           "GEORGE",
           "Newman",
-          "Directed by",
+          "Jerry",
           "Kramer"
         ],
         "correctIndex": 0,
@@ -5482,7 +5482,7 @@
         "options": [
           "REBECCA",
           "HOMELESS MAN 2",
-          "Directed by",
+          "Jerry",
           "WAITRESS"
         ],
         "correctIndex": 0,
@@ -5494,7 +5494,7 @@
         "question": "Who says: “So it could be anyone”?",
         "options": [
           "JERRY",
-          "Written by",
+          "George",
           "Broadcasted",
           "HELEN"
         ],
@@ -5559,7 +5559,7 @@
         "question": "Who says: “Seems like you're better at fake relationships than real”?",
         "options": [
           "PETERMAN",
-          "Directed by",
+          "George",
           "KRAMER",
           "JERRY"
         ],
@@ -5574,23 +5574,23 @@
           "Tom Cherones",
           "Larry Charles",
           "Andy Ackerman",
-          ": Spike Feresten, Darin Henry, and Mark Jaffe"
+          "Spike Feresten, Darin Henry, and Mark Jaffe"
         ],
         "correctIndex": 3,
-        "answer": ": Spike Feresten, Darin Henry, and Mark Jaffe"
+        "answer": "Spike Feresten, Darin Henry, and Mark Jaffe"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Andy Ackerman",
+          "Andy Ackerman",
           "Tom Cherones",
           "Jason Alexander",
-          "Andy Ackerman"
+          "David Steinberg"
         ],
         "correctIndex": 0,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -6736,10 +6736,10 @@
           "Tom Cherones",
           "Larry Charles",
           "Andy Ackerman",
-          ": Darin Henry"
+          "Darin Henry"
         ],
         "correctIndex": 3,
-        "answer": ": Darin Henry"
+        "answer": "Darin Henry"
       },
       {
         "id": 2,
@@ -6748,11 +6748,11 @@
         "options": [
           "Tom Cherones",
           "Jason Alexander",
-          "Andy Ackerman",
-          ": Andy Ackerman"
+          "David Steinberg",
+          "Andy Ackerman"
         ],
         "correctIndex": 3,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 3,
@@ -7069,26 +7069,26 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Darin Henry",
+          "Darin Henry",
           "Andy Ackerman",
           "Larry Charles",
           "Tom Cherones"
         ],
         "correctIndex": 0,
-        "answer": ": Darin Henry"
+        "answer": "Darin Henry"
       },
       {
         "id": 2,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Andy Ackerman",
+          "Andy Ackerman",
           "Jason Alexander",
           "Tom Cherones",
-          "Andy Ackerman"
+          "David Steinberg"
         ],
         "correctIndex": 0,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 3,

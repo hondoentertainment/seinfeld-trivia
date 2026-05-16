@@ -9,19 +9,28 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "icons": "node scripts/generate-pwa-icons.mjs",
     "build-episodes": "node scripts/build-episode-index.mjs",
-    "generate-trivia": "node scripts/generate-trivia-from-scripts.mjs"
+    "generate-trivia": "node scripts/generate-trivia-from-scripts.mjs",
+    "normalize-data": "tsx scripts/normalize-data.ts"
   },
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.60.0",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.7.0",
+    "pngjs": "^7.0.0",
+    "tsx": "^4.22.0",
     "typescript": "~5.9.3",
     "vite": "^6.4.1",
-    "vitest": "^3.2.4"
+    "vite-plugin-pwa": "^1.3.0",
+    "vitest": "^3.2.4",
+    "workbox-window": "^7.4.1"
   }
 }

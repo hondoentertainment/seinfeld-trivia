@@ -349,7 +349,7 @@
         "type": "who_said",
         "question": "Who says: “Yeah, she's very lovely.”?",
         "options": [
-          "Written by",
+          "Jerry",
           "George",
           "Transcribed by",
           "Kramer"
@@ -378,7 +378,7 @@
           "Margaret",
           "Police",
           "Elaine",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 2,
         "answer": "Elaine"
@@ -442,7 +442,7 @@
         "options": [
           "Larry",
           "Jerry",
-          "Written by",
+          "George",
           "Transcribed by"
         ],
         "correctIndex": 1,
@@ -495,7 +495,7 @@
           "Elaine",
           "George",
           "Police",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 1,
         "answer": "George"
@@ -506,7 +506,7 @@
         "question": "Who says: “Well, what did you do that for? You ordered it.”?",
         "options": [
           "Police",
-          "Written by",
+          "George",
           "Wx",
           "Jerry"
         ],
@@ -531,13 +531,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Larry David, Bill Masters & Bob Shaw",
+          "Larry David, Bill Masters & Bob Shaw",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Larry David, Bill Masters & Bob Shaw"
+        "answer": "Larry David, Bill Masters & Bob Shaw"
       },
       {
         "id": 16,
@@ -545,12 +545,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Tom Cherones",
-          ": Andy",
+          "Andy",
           "Jason Alexander",
           "Andy Ackerman"
         ],
         "correctIndex": 1,
-        "answer": ": Andy"
+        "answer": "Andy"
       },
       {
         "id": 17,
@@ -625,7 +625,7 @@
           "Hx",
           "George",
           "Jerry",
-          "Written by"
+          "Elaine"
         ],
         "correctIndex": 1,
         "answer": "George"
@@ -651,7 +651,7 @@
           "Julie",
           "Jerry",
           "Kramer",
-          "Written by"
+          "George"
         ],
         "correctIndex": 0,
         "answer": "Julie"
@@ -750,7 +750,7 @@
         "type": "who_said",
         "question": "Who says: “And as we speak, she's generously writing PBS a check for fifteen”?",
         "options": [
-          "Written by",
+          "Jerry",
           "Kramer",
           "Noreen",
           "Danny Tartabull"
@@ -765,7 +765,7 @@
         "options": [
           "Nana",
           "Jerry",
-          "Written by",
+          "George",
           "Man"
         ],
         "correctIndex": 0,
@@ -818,7 +818,7 @@
           "Kristin",
           "Kramer",
           "George",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 2,
         "answer": "George"
@@ -868,12 +868,12 @@
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
           "Andy Ackerman",
-          ": Tom Gammill & Max Pross",
+          "Tom Gammill & Max Pross",
           "Larry Charles",
           "Tom Cherones"
         ],
         "correctIndex": 1,
-        "answer": ": Tom Gammill & Max Pross"
+        "answer": "Tom Gammill & Max Pross"
       },
       {
         "id": 16,
@@ -1732,7 +1732,7 @@
         "type": "who_said",
         "question": "Who says: “Unbuttoned, or all the way off”?",
         "options": [
-          "Directed by",
+          "George",
           "ELAINE",
           "BECK",
           "JERRY"
@@ -1849,7 +1849,7 @@
         "type": "who_said",
         "question": "Who says: “Well, I got this new poster. 3-D art? Computers generate 'em.”?",
         "options": [
-          "Directed by",
+          "Elaine",
           "GEORGE",
           "KRAMER",
           "JERRY"
@@ -1875,26 +1875,26 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Alec Berg & Jeff Schaffer",
+          "Alec Berg & Jeff Schaffer",
           "Andy Ackerman",
           "Tom Cherones",
           "Larry Charles"
         ],
         "correctIndex": 0,
-        "answer": ": Alec Berg & Jeff Schaffer"
+        "answer": "Alec Berg & Jeff Schaffer"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Andy Ackerman",
-          "Tom Cherones",
           "Andy Ackerman",
+          "Tom Cherones",
+          "David Steinberg",
           "Jason Alexander"
         ],
         "correctIndex": 0,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -2044,7 +2044,7 @@
         "options": [
           "Elaine",
           "Regulars",
-          "Written by",
+          "Jerry",
           "Guest Stars"
         ],
         "correctIndex": 0,
@@ -2069,7 +2069,7 @@
         "question": "Who says: “You know, my boyfriend has the same one.”?",
         "options": [
           "Elaine",
-          "Written by",
+          "Jerry",
           "Kelly",
           "Simon"
         ],
@@ -2186,7 +2186,7 @@
         "question": "Who says: “Oh boy, that looks great. I can't believe you're giving him this.”?",
         "options": [
           "Monk's Manager",
-          "Written by",
+          "Jerry",
           "Bania",
           "Kramer"
         ],
@@ -2211,13 +2211,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Fred Stoller",
+          "Fred Stoller",
           "Andy Ackerman",
           "Tom Cherones",
           "Larry Charles"
         ],
         "correctIndex": 0,
-        "answer": ": Fred Stoller"
+        "answer": "Fred Stoller"
       },
       {
         "id": 16,
@@ -2766,7 +2766,7 @@
         "type": "who_said",
         "question": "Who says: “Can we go back to Mendy&#146;s”?",
         "options": [
-          "Written by",
+          "Jerry",
           "Man",
           "Bania",
           "Elaine"
@@ -2819,7 +2819,7 @@
         "question": "Who says: “walks away into the dressing from area. Kenny”?",
         "options": [
           "Elaine",
-          "Written by",
+          "Jerry",
           "Kramer",
           "New scene"
         ],
@@ -2884,12 +2884,12 @@
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
           "Larry Charles",
-          ": Carol Leifer and Marjorie Gross",
+          "Carol Leifer and Marjorie Gross",
           "Andy Ackerman",
           "Tom Cherones"
         ],
         "correctIndex": 1,
-        "answer": ": Carol Leifer and Marjorie Gross"
+        "answer": "Carol Leifer and Marjorie Gross"
       },
       {
         "id": 16,
@@ -3516,7 +3516,7 @@
         "type": "who_said",
         "question": "Who says: “The point is I intend to undertake this. And I'll do it”?",
         "options": [
-          "Directed by",
+          "Elaine",
           "GEORGE",
           "LAURA",
           "JERRY"
@@ -3532,7 +3532,7 @@
           "George",
           "BABS",
           "JERRY",
-          "Directed by"
+          "Elaine"
         ],
         "correctIndex": 2,
         "answer": "JERRY"
@@ -3544,7 +3544,7 @@
         "options": [
           "Elaine",
           "George",
-          "Directed by",
+          "Jerry",
           "KRAMER"
         ],
         "correctIndex": 3,
@@ -3555,26 +3555,26 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Bruce Kirschbaum and Sam Kass",
+          "Bruce Kirschbaum and Sam Kass",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Bruce Kirschbaum and Sam Kass"
+        "answer": "Bruce Kirschbaum and Sam Kass"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Andy Ackerman",
-          "Tom Cherones",
           "Andy Ackerman",
+          "Tom Cherones",
+          "David Steinberg",
           "Jason Alexander"
         ],
         "correctIndex": 0,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -3634,7 +3634,7 @@
         "question": "Who says: “You disappoint me, my friend. Sandy wants nothing to do”?",
         "options": [
           "GEORGE",
-          "Written by",
+          "Jerry",
           "LANDIS",
           "SANDY"
         ],
@@ -3661,7 +3661,7 @@
         "options": [
           "JERRY",
           "SANDY",
-          "Written by",
+          "George",
           "Nina"
         ],
         "correctIndex": 0,
@@ -3736,7 +3736,7 @@
         "question": "Who says: “walks into Bonnie's apartment, *everything* is boxed up and Bonnie is taping up the last of the boxes. He kno…”?",
         "options": [
           "Regulars",
-          "Written by",
+          "Jerry",
           "Tim",
           "George"
         ],
@@ -3764,7 +3764,7 @@
           "Ukrainian",
           "Kramer",
           "Guest Stars",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 1,
         "answer": "Kramer"
@@ -3854,7 +3854,7 @@
         "options": [
           "Tim",
           "Scott",
-          "Written by",
+          "Jerry",
           "Elaine"
         ],
         "correctIndex": 0,
@@ -3868,7 +3868,7 @@
           "Jerry",
           "Broadcast date",
           "Scott",
-          "Written by"
+          "George"
         ],
         "correctIndex": 0,
         "answer": "Jerry"
@@ -3891,13 +3891,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Alec Berg and Jeff Schaffer",
+          "Alec Berg and Jeff Schaffer",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Alec Berg and Jeff Schaffer"
+        "answer": "Alec Berg and Jeff Schaffer"
       },
       {
         "id": 16,
@@ -3998,7 +3998,7 @@
           "Kramer",
           "Elaine",
           "George",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 1,
         "answer": "Elaine"
@@ -4176,7 +4176,7 @@
         "question": "Who says: “Uh, no. I told him to send you my regards. I didn't say hi.”?",
         "options": [
           "JERRY",
-          "Written by",
+          "George",
           "DEBBY",
           "JUDGE"
         ],
@@ -4227,26 +4227,26 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Peter Mehlman",
+          "Peter Mehlman",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Peter Mehlman"
+        "answer": "Peter Mehlman"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Andy Ackerman",
+          "Andy Ackerman",
           "Jason Alexander",
           "Tom Cherones",
-          "Andy Ackerman"
+          "David Steinberg"
         ],
         "correctIndex": 0,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -4333,7 +4333,7 @@
         "options": [
           "COP",
           "JERRY",
-          "Written by",
+          "George",
           "LIPPMAN"
         ],
         "correctIndex": 0,
@@ -5532,7 +5532,7 @@
         "type": "who_said",
         "question": "Who says: “No, c'mon Kramer. (crossing to Kramer) Gimme that picture.”?",
         "options": [
-          "Written by",
+          "George",
           "PETE",
           "Helen",
           "JERRY"
@@ -5571,13 +5571,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Larry David & Jerry Seinfeld",
+          "Larry David & Jerry Seinfeld",
           "Tom Cherones",
           "Larry Charles",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Larry David & Jerry Seinfeld"
+        "answer": "Larry David & Jerry Seinfeld"
       },
       {
         "id": 16,
@@ -5585,12 +5585,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Tom Cherones",
+          "David Steinberg",
           "Andy Ackerman",
-          ": Andy Ackerman",
           "Jason Alexander"
         ],
         "correctIndex": 2,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -5691,7 +5691,7 @@
           "Recurring Cast",
           "NURSE",
           "GEORGE",
-          "Directed by"
+          "Jerry"
         ],
         "correctIndex": 2,
         "answer": "GEORGE"
@@ -5790,7 +5790,7 @@
         "type": "who_said",
         "question": "Who says: “You remember a few years ago in New York, we had the doorman strike”?",
         "options": [
-          "Directed by",
+          "George",
           "DOORMAN 2",
           "JERRY",
           "Larry"
@@ -5910,23 +5910,23 @@
           "Andy Ackerman",
           "Tom Cherones",
           "Larry Charles",
-          ": Tom Gammill & Max Pross"
+          "Tom Gammill & Max Pross"
         ],
         "correctIndex": 3,
-        "answer": ": Tom Gammill & Max Pross"
+        "answer": "Tom Gammill & Max Pross"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Andy Ackerman",
-          "Tom Cherones",
           "Andy Ackerman",
+          "Tom Cherones",
+          "David Steinberg",
           "Jason Alexander"
         ],
         "correctIndex": 0,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -6024,7 +6024,7 @@
         "type": "who_said",
         "question": "Who says: “The doorman. I don't wanna play anymore of his mindgames. What”?",
         "options": [
-          "Directed by",
+          "Elaine",
           "JERRY",
           "George",
           "TENANT 1"
@@ -6101,7 +6101,7 @@
         "question": "Who says: “\"You know that just admitting a man is handsome doesn't”?",
         "options": [
           "Elaine",
-          "Directed by",
+          "George",
           "Tim",
           "Jerry"
         ],
@@ -6114,7 +6114,7 @@
         "question": "Who says: “is sitting in the chair.\" Whatley: \"Sheryl, would you ready the Nitro(???) please?\" Whatley inhales the gas m…”?",
         "options": [
           "Jerry",
-          "Written by",
+          "George",
           "Stein",
           "Wilhem"
         ],
@@ -6128,7 +6128,7 @@
         "options": [
           "Wilhelm",
           "Deansfrei",
-          "Directed by",
+          "Jerry",
           "Elaine"
         ],
         "correctIndex": 3,
@@ -6167,7 +6167,7 @@
         "options": [
           "Jerry",
           "Wilhelm",
-          "Written by",
+          "George",
           "Jimmy"
         ],
         "correctIndex": 0,
@@ -6178,7 +6178,7 @@
         "type": "who_said",
         "question": "Who says: “\"Hey! Hey! listen ... Do one of you guys know that”?",
         "options": [
-          "Directed by",
+          "George",
           "Receptionist",
           "Jerry",
           "Elaine"
@@ -6246,10 +6246,10 @@
           "Andy Ackerman",
           "Tom Cherones",
           "Larry Charles",
-          ": Gregg Kavet & Andy Robin"
+          "Gregg Kavet & Andy Robin"
         ],
         "correctIndex": 3,
-        "answer": ": Gregg Kavet & Andy Robin"
+        "answer": "Gregg Kavet & Andy Robin"
       },
       {
         "id": 16,
@@ -6257,12 +6257,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Jason Alexander",
-          "Andy Ackerman",
+          "David Steinberg",
           "Tom Cherones",
-          ": Andy Ackerman"
+          "Andy Ackerman"
         ],
         "correctIndex": 3,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -6348,7 +6348,7 @@
         "question": "Who says: “\"There's a lot of money in this.. He's got a proven”?",
         "options": [
           "Jimmy",
-          "Written by",
+          "Jerry",
           "Tim",
           "George"
         ],
@@ -6579,13 +6579,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Alec Berg & Jeff Schaffer",
+          "Alec Berg & Jeff Schaffer",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Alec Berg & Jeff Schaffer"
+        "answer": "Alec Berg & Jeff Schaffer"
       },
       {
         "id": 16,
@@ -7587,13 +7587,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Larry David",
+          "Larry David",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Larry David"
+        "answer": "Larry David"
       },
       {
         "id": 16,
@@ -7780,7 +7780,7 @@
         "type": "who_said",
         "question": "Who says: “Bette is recuperating right now and I'm not going to allow anything”?",
         "options": [
-          "Written by",
+          "Jerry",
           "Frank",
           "Lotus",
           "Kramer"
@@ -7822,7 +7822,7 @@
           "Gennice",
           "Peterman",
           "Lotus",
-          "Directed by"
+          "Jerry"
         ],
         "correctIndex": 1,
         "answer": "Peterman"
@@ -7923,13 +7923,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ":: Marjorie Gross & Carol Leifer",
+          "Marjorie Gross & Carol Leifer",
           "Andy Ackerman",
           "Tom Cherones",
           "Larry Charles"
         ],
         "correctIndex": 0,
-        "answer": ":: Marjorie Gross & Carol Leifer"
+        "answer": "Marjorie Gross & Carol Leifer"
       },
       {
         "id": 16,
@@ -7938,11 +7938,11 @@
         "options": [
           "Tom Cherones",
           "Jason Alexander",
-          "Andy Ackerman",
-          ": Andy Ackerman"
+          "David Steinberg",
+          "Andy Ackerman"
         ],
         "correctIndex": 3,
-        "answer": ": Andy Ackerman"
+        "answer": "Andy Ackerman"
       },
       {
         "id": 17,
@@ -7990,7 +7990,7 @@
         "options": [
           "Announcer",
           "Transcribed by",
-          "Directed by",
+          "Jerry",
           "TV"
         ],
         "correctIndex": 0,
@@ -8016,7 +8016,7 @@
         "options": [
           "Kramer",
           "Voice",
-          "Written by",
+          "Jerry",
           "Bette"
         ],
         "correctIndex": 0,
@@ -8041,7 +8041,7 @@
         "question": "Who says: “Move it in. Move in everybody. Get your shrimp here. Shrimp on”?",
         "options": [
           "Bette",
-          "Directed by",
+          "Jerry",
           "Lotus",
           "Kim"
         ],
@@ -8056,7 +8056,7 @@
           "Cabbie",
           "Elaine",
           "Transcribed by",
-          "Directed by"
+          "Jerry"
         ],
         "correctIndex": 1,
         "answer": "Elaine"

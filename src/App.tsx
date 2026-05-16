@@ -1,9 +1,19 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { PwaUpdateBar } from "./components/PwaUpdateBar";
 import type { EpisodeBundle, GameScreen, QuizItem, QuizRunConfig } from "./types";
-import { EPISODES } from "./triviaData";
 import { CATEGORY_GROUPS, readableTypeName } from "./lib/categories";
 import { buildCorpusBreakdown, countQuestionsForTypes } from "./lib/corpusStats";
+import { CORPUS_SUMMARY } from "./lib/corpusSummary";
+import {
+  getDailyPersonalBest,
+  recordDailyPersonalBest,
+  type DailyPersonalRow,
+} from "./lib/localDailyBest";
+import { buildQuestionReportBody, githubNewIssueUrl } from "./lib/questionFeedback";
+import { computeAnsweredTypeBreakdown } from "./lib/resultsBreakdown";
+import { loadEpisodes } from "./loadTriviaCorpus";
 import { marathonStyleUi, quizUiStrings } from "./quizLabels";
+import { readQuestionsReviewed, writeQuestionsReviewed } from "./lib/questionsReviewedStorage";
 import {
   dailyChallengeQuizItems,
   episodeQuizItems,
@@ -14,6 +24,7 @@ import {
   randomEpisode,
   shuffledFullCorpusRun,
 } from "./shuffle";
+import { SITE_CANONICAL } from "./siteConfig";
 
 type QuizPhase = {
   run: QuizRunConfig;
@@ -32,6 +43,94 @@ function seasonTitle(s: number) {
 
 function NewTabAnnouncement() {
   return <span className="visually-hidden">opens in new tab</span>;
+}
+
+type ConfirmConfig = {
+  title: string;
+  message: string;
+  confirmLabel: string;
+  cancelLabel: string;
+  destructive?: boolean;
+  onConfirm: () => void;
+};
+
+function ConfirmDialog({
+  title,
+  message,
+  confirmLabel,
+  cancelLabel,
+  destructive,
+  onConfirm,
+  onCancel,
+}: ConfirmConfig & { onCancel: () => void }) {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const onCancelRef = useRef(onCancel);
+  onCancelRef.current = onCancel;
+  const titleId = useId();
+  const descId = useId();
+
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    const focusables = [
+      ...el.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      ),
+    ];
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    window.queueMicrotask(() => first?.focus());
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onCancelRef.current();
+        return;
+      }
+      if (e.key !== "Tab" || focusables.length === 0) return;
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last?.focus();
+        }
+      } else if (document.activeElement === last) {
+        e.preventDefault();
+        first?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
+  return (
+    <div className="dialog-backdrop" role="presentation" onClick={onCancel}>
+      <div
+        ref={rootRef}
+        className="dialog-panel"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+        aria-describedby={descId}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h2 id={titleId}>{title}</h2>
+        <p id={descId}>{message}</p>
+        <div className="dialog-actions">
+          <button type="button" className="btn btn-ghost-light" onClick={onCancel}>
+            {cancelLabel}
+          </button>
+          <button
+            type="button"
+            className={destructive ? "btn btn-red" : "btn btn-teal"}
+            onClick={() => onConfirm()}
+          >
+            {confirmLabel}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function usePrefersReducedMotion() {
@@ -56,11 +155,61 @@ export function App() {
   const [screen, setScreen] = useState<GameScreen>({ name: "home" });
   const [quiz, setQuiz] = useState<QuizPhase | null>(null);
   const [browseSearch, setBrowseSearch] = useState("");
+  const [questionsReviewed, setQuestionsReviewed] = useState(() => readQuestionsReviewed());
+  const [notice, setNotice] = useState<string | null>(null);
+  const [confirm, setConfirm] = useState<ConfirmConfig | null>(null);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const closeConfirm = useCallback(() => setConfirm(null), []);
+
+  /** Bumps whenever a quiz is started so reveal-bump keys stay unique per run. */
+  const quizRunNonceRef = useRef(0);
+  /** Prevents double-counting when React invokes state updaters more than once. */
+  const lastRevealBumpKeyRef = useRef<string | null>(null);
+
+  const [episodes, setEpisodes] = useState<EpisodeBundle[] | null>(null);
+  const [isCorpusLoading, setIsCorpusLoading] = useState(false);
+  const [corpusLoadError, setCorpusLoadError] = useState<string | null>(null);
+
+  const ensureEpisodes = useCallback(async () => {
+    if (episodes) return episodes;
+    setCorpusLoadError(null);
+    setIsCorpusLoading(true);
+    try {
+      const data = await loadEpisodes();
+      setEpisodes(data);
+      return data;
+    } catch {
+      setCorpusLoadError(
+        "We couldn’t load the trivia archive. Check your connection and refresh the page.",
+      );
+      return null;
+    } finally {
+      setIsCorpusLoading(false);
+    }
+  }, [episodes]);
+
+  useEffect(() => {
+    if (screen.name === "browse" || screen.name === "stats") {
+      void ensureEpisodes();
+    }
+  }, [screen.name, ensureEpisodes]);
+
+  useEffect(() => {
+    setNotice(null);
+  }, [screen.name]);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      window.scrollTo({ top: 0 });
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [screen.name, prefersReducedMotion]);
 
   const bySeason = useMemo(() => {
+    if (!episodes) return [] as [number, EpisodeBundle[]][];
     const map = new Map<number, EpisodeBundle[]>();
-    for (const ep of EPISODES) {
+    for (const ep of episodes) {
       const s = ep.season;
       if (!map.has(s)) map.set(s, []);
       map.get(s)!.push(ep);
@@ -69,7 +218,7 @@ export function App() {
       list.sort((a, b) => a.seriesIndex - b.seriesIndex);
     }
     return [...map.entries()].sort((a, b) => a[0] - b[0]);
-  }, []);
+  }, [episodes]);
 
   const filteredBySeasonBrowse = useMemo(() => {
     const q = browseSearch.trim().toLowerCase();
@@ -105,9 +254,10 @@ export function App() {
     setScreen({ name: "stats" });
   }, []);
 
-  const corpus = useMemo(() => buildCorpusBreakdown(EPISODES), []);
+  const corpus = useMemo(() => (episodes ? buildCorpusBreakdown(episodes) : CORPUS_SUMMARY), [episodes]);
 
   const coverageGaps = useMemo(() => {
+    if (!corpus) return [];
     const covered = new Set(CATEGORY_GROUPS.flatMap((g) => [...g.types]));
     return corpus.byType.filter((row) => !covered.has(row.type));
   }, [corpus]);
@@ -115,9 +265,10 @@ export function App() {
   const startQuiz = useCallback(
     (items: QuizItem[], run: QuizRunConfig, enteredFromBrowse: boolean) => {
       if (items.length === 0) {
-        window.alert("No questions matched that setup—pick another arc.");
+        setNotice("No questions matched that setup—pick another arc.");
         return;
       }
+      quizRunNonceRef.current += 1;
       setQuiz({
         run,
         items,
@@ -133,7 +284,9 @@ export function App() {
   );
 
   const replayFromConfig = useCallback(
-    (run: QuizRunConfig, itemsRef: QuizItem[], enteredFromBrowse: boolean) => {
+    async (run: QuizRunConfig, itemsRef: QuizItem[], enteredFromBrowse: boolean) => {
+      const archive = await ensureEpisodes();
+      if (!archive) return;
       switch (run.mode) {
         case "episode": {
           const ep = itemsRef[0]?.episode;
@@ -141,25 +294,25 @@ export function App() {
           break;
         }
         case "marathon_random":
-          startQuiz(marathonQuizItems(EPISODES, run.count, Math.random), run, false);
+          startQuiz(marathonQuizItems(archive, run.count, Math.random), run, false);
           break;
         case "daily":
           startQuiz(
-            dailyChallengeQuizItems(EPISODES, run.dateKeyUtc, run.count),
+            dailyChallengeQuizItems(archive, run.dateKeyUtc, run.count),
             run,
             false,
           );
           break;
         case "season":
           startQuiz(
-            marathonForSeason(EPISODES, run.season, run.count, Math.random),
+            marathonForSeason(archive, run.season, run.count, Math.random),
             run,
             false,
           );
           break;
         case "categories":
           startQuiz(
-            marathonForTypes(EPISODES, run.questionTypes, run.count, Math.random),
+            marathonForTypes(archive, run.questionTypes, run.count, Math.random),
             run,
             false,
           );
@@ -167,43 +320,56 @@ export function App() {
         case "full_corpus": {
           const items =
             run.order === "broadcast"
-              ? orderedFullCorpusRun(EPISODES)
-              : shuffledFullCorpusRun(EPISODES, Math.random);
+              ? orderedFullCorpusRun(archive)
+              : shuffledFullCorpusRun(archive, Math.random);
           startQuiz(items, run, false);
           break;
         }
+        case "miss_retry":
+          startQuiz(itemsRef.slice(), run, enteredFromBrowse);
+          break;
       }
     },
-    [startQuiz],
+    [ensureEpisodes, startQuiz],
   );
 
-  const startRandomEpisode = () => {
-    const ep = randomEpisode(EPISODES, Math.random);
+  const startRandomEpisode = async () => {
+    const archive = await ensureEpisodes();
+    if (!archive) return;
+    const ep = randomEpisode(archive, Math.random);
     startQuiz(episodeQuizItems(ep), { mode: "episode" }, false);
   };
 
-  const startMarathonSized = (count: number) => {
-    startQuiz(marathonQuizItems(EPISODES, count, Math.random), { mode: "marathon_random", count }, false);
+  const startMarathonSized = async (count: number) => {
+    const archive = await ensureEpisodes();
+    if (!archive) return;
+    startQuiz(marathonQuizItems(archive, count, Math.random), { mode: "marathon_random", count }, false);
   };
 
-  const startDaily = () => {
+  const startDaily = async () => {
+    const archive = await ensureEpisodes();
+    if (!archive) return;
     const key = utcCalendarKey();
-    startQuiz(dailyChallengeQuizItems(EPISODES, key, DAILY_COUNT), { mode: "daily", dateKeyUtc: key, count: DAILY_COUNT }, false);
+    startQuiz(dailyChallengeQuizItems(archive, key, DAILY_COUNT), { mode: "daily", dateKeyUtc: key, count: DAILY_COUNT }, false);
   };
 
-  const startSeasonMix = (season: number, request: number) => {
+  const startSeasonMix = async (season: number, request: number) => {
+    const archive = await ensureEpisodes();
+    if (!archive) return;
     const cap = corpus.bySeason.find((x) => x.seasonIndex === season)?.questions ?? 0;
     const count = Math.max(1, Math.min(request, cap));
-    startQuiz(marathonForSeason(EPISODES, season, count, Math.random), { mode: "season", season, count }, false);
+    startQuiz(marathonForSeason(archive, season, count, Math.random), { mode: "season", season, count }, false);
   };
 
-  const startCategoryMix = (
+  const startCategoryMix = async (
     cat: (typeof CATEGORY_GROUPS)[number],
     request: number,
   ) => {
+    const archive = await ensureEpisodes();
+    if (!archive) return;
     const cap = countQuestionsForTypes(corpus, cat.types);
     const count = Math.max(1, Math.min(request, cap));
-    startQuiz(marathonForTypes(EPISODES, [...cat.types], count, Math.random), {
+    startQuiz(marathonForTypes(archive, [...cat.types], count, Math.random), {
       mode: "categories",
       categoryLabel: cat.label,
       categoryId: cat.id,
@@ -212,10 +378,12 @@ export function App() {
     }, false);
   };
 
-  const startSingleTypeLens = (typeKey: string, request: number) => {
+  const startSingleTypeLens = async (typeKey: string, request: number) => {
+    const archive = await ensureEpisodes();
+    if (!archive) return;
     const cap = corpus.byType.find((r) => r.type === typeKey)?.count ?? 0;
     const count = Math.max(1, Math.min(request, cap));
-    startQuiz(marathonForTypes(EPISODES, [typeKey], count, Math.random), {
+    startQuiz(marathonForTypes(archive, [typeKey], count, Math.random), {
       mode: "categories",
       categoryLabel: readableTypeName(typeKey),
       categoryId: typeKey,
@@ -224,20 +392,31 @@ export function App() {
     }, false);
   };
 
-  const startFullCorpus = (order: "broadcast" | "shuffled") => {
+  const startFullCorpus = async (order: "broadcast" | "shuffled") => {
+    const archive = await ensureEpisodes();
+    if (!archive) return;
     const pool =
-      order === "broadcast" ? orderedFullCorpusRun(EPISODES) : shuffledFullCorpusRun(EPISODES, Math.random);
+      order === "broadcast" ? orderedFullCorpusRun(archive) : shuffledFullCorpusRun(archive, Math.random);
     const cfg: QuizRunConfig = {
       mode: "full_corpus",
       poolSize: pool.length,
       order,
     };
-    const ok =
-      pool.length <= 250 ||
-      window.confirm(
-        `This run includes all ${pool.length} script-derived prompts and can take multiple hours split across breaks. Kick it off anyway?`,
-      );
-    if (ok) startQuiz(pool, cfg, false);
+    if (pool.length <= 250) {
+      startQuiz(pool, cfg, false);
+      return;
+    }
+    setConfirm({
+      title: "Start the full archive run?",
+      message: `This run includes all ${pool.length.toLocaleString()} script-derived prompts and can take multiple hours split across breaks.`,
+      cancelLabel: "Not now",
+      confirmLabel: "Start marathon",
+      destructive: false,
+      onConfirm: () => {
+        setConfirm(null);
+        startQuiz(pool, cfg, false);
+      },
+    });
   };
 
   const currentItem = quiz ? (quiz.items[quiz.index] ?? null) : null;
@@ -245,6 +424,13 @@ export function App() {
   const advanceReveal = useCallback(() => {
     setQuiz((q) => {
       if (!q || q.phase !== "reveal") return q;
+      const bumpKey = `${quizRunNonceRef.current}:${q.index}`;
+      if (lastRevealBumpKeyRef.current !== bumpKey) {
+        lastRevealBumpKeyRef.current = bumpKey;
+        const nextLifetime = readQuestionsReviewed() + 1;
+        writeQuestionsReviewed(nextLifetime);
+        queueMicrotask(() => setQuestionsReviewed(nextLifetime));
+      }
       if (q.index + 1 >= q.items.length) {
         const items = q.items;
         const answers = q.answers;
@@ -292,6 +478,7 @@ export function App() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (confirm) return;
       if (!quiz) return;
       if (quiz.phase === "answer") {
         const keys = ["1", "2", "3", "4"];
@@ -310,17 +497,24 @@ export function App() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [quiz, onPickAnswer, advanceReveal]);
+  }, [quiz, confirm, onPickAnswer, advanceReveal]);
 
   const quitQuiz = useCallback(() => {
     if (!quiz) return;
-    const hasProgress =
-      quiz.index > 0 || Object.keys(quiz.answers).length > 0;
+    const hasProgress = quiz.index > 0 || Object.keys(quiz.answers).length > 0;
     if (hasProgress) {
-      const ok = window.confirm(
-        "End this quiz? Your progress on this run will be lost.",
-      );
-      if (!ok) return;
+      setConfirm({
+        title: "End this quiz?",
+        message: "Your progress on this run will be lost. This cannot be undone.",
+        confirmLabel: "End quiz",
+        cancelLabel: "Keep playing",
+        destructive: true,
+        onConfirm: () => {
+          setConfirm(null);
+          goHome();
+        },
+      });
+      return;
     }
     goHome();
   }, [quiz, goHome]);
@@ -332,9 +526,30 @@ export function App() {
 
   const quizUi = quiz ? quizUiStrings(quiz.run) : null;
 
+  if (corpusLoadError) {
+    return (
+      <div className="app-shell">
+        <PwaUpdateBar />
+        <main className="stack" style={{ padding: "1.5rem" }}>
+          <div className="card" role="alert">
+            <h2 className="card-heading">Could not load archive</h2>
+            <p className="card-muted">{corpusLoadError}</p>
+            <button type="button" className="btn btn-teal" onClick={() => window.location.reload()}>
+              Try again
+            </button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="app-shell">
-      <header className="brand-lockup">
+      <PwaUpdateBar />
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <header className="brand-lockup" role="banner">
         <h1>Yada yada trivia</h1>
         <p className="tagline">
           Among the deepest open homages wired straight from transcript sources—
@@ -350,6 +565,21 @@ export function App() {
           </span>
         </div>
       </header>
+
+      <main id="main-content" tabIndex={-1}>
+        {notice ? (
+          <div role="alert" className="app-notice">
+            <p>{notice}</p>
+            <button
+              type="button"
+              className="app-notice-dismiss"
+              onClick={() => setNotice(null)}
+              aria-label="Dismiss notice"
+            >
+              Dismiss
+            </button>
+          </div>
+        ) : null}
 
       {screen.name === "home" && (
         <div className="stack">
@@ -368,7 +598,7 @@ export function App() {
               text playground for superfans chasing <em>everything</em> about the canon.
             </p>
             <div className="row-between atlas-row">
-              <strong>Corpus intelligence</strong>
+              <h2 className="card-heading">Corpus intelligence</h2>
               <button type="button" className="btn btn-ghost-light" onClick={goStats}>
                 Open atlas
               </button>
@@ -380,20 +610,20 @@ export function App() {
           </div>
 
           <div className="card">
-            <strong>Daily hive-mind puzzle</strong>
+            <h2 className="card-heading">Daily hive-mind puzzle</h2>
             <p className="card-muted" style={{ marginTop: "0.35rem" }}>
               UTC date <code className="inline-code">{utcCalendarKey()}</code> locks everyone into the exact same {DAILY_COUNT}-prompt slate.
               Bragging rights unlocked.
             </p>
-            <button type="button" className="btn btn-teal btn-block" onClick={startDaily}>
-              Play today&apos;s seeded challenge ({DAILY_COUNT} questions)
+            <button type="button" className="btn btn-teal btn-block" onClick={() => void startDaily()} disabled={isCorpusLoading}>
+              {isCorpusLoading ? "Loading archive…" : `Play today's seeded challenge (${DAILY_COUNT} questions)`}
             </button>
           </div>
 
           <div className="card">
-            <strong>Classic episode arcs</strong>
+            <h2 className="card-heading">Classic episode arcs</h2>
             <div className="stack" style={{ marginTop: "0.65rem" }}>
-              <button type="button" className="btn btn-teal btn-block" onClick={startRandomEpisode}>
+              <button type="button" className="btn btn-teal btn-block" onClick={() => void startRandomEpisode()} disabled={isCorpusLoading}>
                 Random installment · full 25-question screenplay pass
               </button>
               <button type="button" className="btn btn-ghost-light btn-block" onClick={goBrowse}>
@@ -403,7 +633,7 @@ export function App() {
           </div>
 
           <div className="card">
-            <strong>Season silos · hyper-focused grinds</strong>
+            <h2 className="card-heading">Season silos · hyper-focused grinds</h2>
             <p className="card-muted" style={{ marginTop: "0.35rem" }}>
               Mash up only prompts tied to pilot/special arcs or any CBS/Fox-era season buckets—ideal for rewatches syncing with your
               current binge tracker.
@@ -418,7 +648,7 @@ export function App() {
                     type="button"
                     className="btn btn-ghost-light season-chip"
                     disabled={disabled}
-                    onClick={() => startSeasonMix(seasonIndex, 25)}
+                    onClick={() => void startSeasonMix(seasonIndex, 25)}
                     title={`${pq.toLocaleString()} prompts in bucket`}
                   >
                     <span>{seasonTitle(seasonIndex)}</span>
@@ -433,7 +663,7 @@ export function App() {
           </div>
 
           <div className="card">
-            <strong>Archetype laboratories</strong>
+            <h2 className="card-heading">Archetype laboratories</h2>
             <p className="card-muted" style={{ marginTop: "0.35rem" }}>
               Dialogue sleuths versus writers-room receipts versus meta chronology—all powered by granular type tags surfaced in the
               generator.
@@ -456,7 +686,7 @@ export function App() {
                         type="button"
                         className="btn btn-ghost-light"
                         disabled={disabled || cap < 15}
-                        onClick={() => startCategoryMix(cat, Math.min(15, cap))}
+                        onClick={() => void startCategoryMix(cat, Math.min(15, cap))}
                       >
                         15 sprint
                       </button>
@@ -464,7 +694,7 @@ export function App() {
                         type="button"
                         className="btn btn-ghost-light"
                         disabled={disabled}
-                        onClick={() => startCategoryMix(cat, focus25)}
+                        onClick={() => void startCategoryMix(cat, focus25)}
                       >
                         {focus25}-deep
                       </button>
@@ -473,7 +703,7 @@ export function App() {
                           type="button"
                           className="btn btn-ghost-light"
                           disabled={disabled}
-                          onClick={() => startCategoryMix(cat, deep)}
+                          onClick={() => void startCategoryMix(cat, deep)}
                         >
                           {deep}-obsessed
                         </button>
@@ -487,7 +717,7 @@ export function App() {
 
           {coverageGaps.length > 0 ? (
             <div className="card">
-              <strong>Residual classifier tags</strong>
+              <h2 className="card-heading">Residual classifier tags</h2>
               <p className="card-muted" style={{ marginTop: "0.35rem" }}>
                 Every prompt type is enumerated here—even the long tail that didn&apos;t fit a themed bucket yet—so obsessive
                 completists can still drill the entire taxonomy.
@@ -503,7 +733,7 @@ export function App() {
                       type="button"
                       className="btn btn-ghost-light residual-chip"
                       disabled={disabled}
-                      onClick={() => startSingleTypeLens(row.type, playable)}
+                      onClick={() => void startSingleTypeLens(row.type, playable)}
                       title={`${cap.toLocaleString()} prompts`}
                     >
                       <span>{readableTypeName(row.type)}</span>
@@ -516,22 +746,22 @@ export function App() {
           ) : null}
 
           <div className="card">
-            <strong>Total chaos mega-mixes</strong>
+            <h2 className="card-heading">Total chaos mega-mixes</h2>
             <p className="card-muted" style={{ marginTop: "0.35rem" }}>
               Completely randomized pulls from the continental question pool—or flex with the entire corpus twice (ordered vs reshuffled).
             </p>
             <div className="marathon-actions">
               {[10, 25, 50, 100].map((n) => (
-                <button key={n} type="button" className="btn btn-red btn-block" onClick={() => startMarathonSized(n)}>
+                <button key={n} type="button" className="btn btn-red btn-block" onClick={() => void startMarathonSized(n)}>
                   {n} random prompts
                 </button>
               ))}
             </div>
             <div className="stack full-corpus-row">
-              <button type="button" className="btn btn-teal btn-block" onClick={() => startFullCorpus("broadcast")}>
+              <button type="button" className="btn btn-teal btn-block" onClick={() => void startFullCorpus("broadcast")}>
                 Canon order · entire matrix ({corpus.questionCount.toLocaleString()} prompts)
               </button>
-              <button type="button" className="btn btn-ghost-light btn-block" onClick={() => startFullCorpus("shuffled")}>
+              <button type="button" className="btn btn-ghost-light btn-block" onClick={() => void startFullCorpus("shuffled")}>
                 Shuffle literally everything fresh
               </button>
             </div>
@@ -543,15 +773,15 @@ export function App() {
         <div className="stack">
           <div className="card">
             <div className="row-between">
-              <strong>Select an episode</strong>
-              <div className="row-between" style={{ gap: "0.5rem", flexWrap: "wrap", justifyContent: "flex-end" }}>
+              <h2 className="card-heading">Select an episode</h2>
+              <nav aria-label="Catalog" className="row-between" style={{ gap: "0.5rem", flexWrap: "wrap", justifyContent: "flex-end" }}>
                 <button type="button" className="btn btn-ghost-light" onClick={goStats}>
                   Atlas
                 </button>
                 <button type="button" className="btn btn-ghost-light" onClick={goHome}>
                   Home
                 </button>
-              </div>
+              </nav>
             </div>
             <label className="browse-search-label">
               <span className="visually-hidden">Filter episodes</span>
@@ -565,19 +795,27 @@ export function App() {
               />
             </label>
           </div>
+          {isCorpusLoading && !episodes ? (
+            <output className="card corpus-loading-status" aria-live="polite">
+              <span className="loading-wordmark">Loading episode catalogue</span>
+              <p className="card-muted">Fetching the full trivia archive…</p>
+            </output>
+          ) : null}
           <div className="card stack">
-            {filteredBySeasonBrowse.length === 0 ? (
+            {!episodes ? (
+              <p className="card-muted">The episode catalogue will appear as soon as the archive is ready.</p>
+            ) : filteredBySeasonBrowse.length === 0 ? (
               <p className="card-muted">No episodes match “{browseSearch.trim()}”—try loosening your filter.</p>
             ) : (
-              filteredBySeasonBrowse.map(([season, episodes]) => (
+              filteredBySeasonBrowse.map(([season, seasonEps]) => (
               <details key={season} className="season-acc">
                 <summary>
                   <span>{seasonTitle(season)}</span>
                   <span style={{ fontWeight: 600, opacity: 0.55 }}>
-                    ({episodes.length}&nbsp;{episodes.length === 1 ? "episode" : "episodes"})
+                    ({seasonEps.length}&nbsp;{seasonEps.length === 1 ? "episode" : "episodes"})
                   </span>
                 </summary>
-                {episodes.map((ep) => (
+                {seasonEps.map((ep) => (
                   <button
                     key={ep.seriesIndex}
                     type="button"
@@ -598,13 +836,20 @@ export function App() {
       {screen.name === "quiz" && currentItem && quiz && (
         <div className="stack">
           <div className="card">
+            <h2 className="visually-hidden">Quiz in progress</h2>
             <div className="row-between">
               <button type="button" className="btn btn-ghost-light" onClick={quitQuiz}>
                 Quit quiz
               </button>
-              <span className="episode-meta" aria-live="polite">
-                {quizUi ? `${quizUi.subtitle} · ` : null}
-                {quiz.index + 1} / {quiz.items.length}
+              <span className="episode-meta quiz-progress-line">
+                <span aria-live="polite" className="quiz-progress-live">
+                  {quizUi ? `${quizUi.subtitle} · ` : null}
+                  Question {quiz.index + 1} of {quiz.items.length}
+                </span>
+                <span className="reviewed-meta" aria-hidden title="Stored in this browser—each reveal you finish advances this count">
+                  {" "}
+                  · {questionsReviewed.toLocaleString()} reviewed
+                </span>
               </span>
             </div>
             <div
@@ -637,6 +882,48 @@ export function App() {
                 </>
               )}
             </div>
+            <div className="quiz-meta-tools">
+              <a
+                className="source-chip btn btn-ghost-light"
+                href={currentItem.episode.primarySource}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Episode transcript
+                <NewTabAnnouncement />
+              </a>
+              <button
+                type="button"
+                className="btn btn-ghost-light"
+                onClick={async () => {
+                  const body = buildQuestionReportBody(currentItem);
+                  const url = githubNewIssueUrl("Trivia question QA", body);
+                  if (url) {
+                    window.open(url, "_blank", "noopener,noreferrer");
+                    return;
+                  }
+                  try {
+                    await navigator.clipboard.writeText(body);
+                    setNotice("Issue details copied—paste them into email or your issue tracker.");
+                  } catch {
+                    setNotice("Could not copy automatically—open an issue and describe this prompt.");
+                  }
+                }}
+              >
+                Report / copy details
+              </button>
+            </div>
+            <details className="keyboard-cheatsheet card-muted">
+              <summary>Keyboard shortcuts</summary>
+              <ul className="keyboard-cheatsheet-list">
+                <li>
+                  <kbd className="key-hint">1</kbd>–<kbd className="key-hint">4</kbd> Select an answer (on the reveal step they are inactive).
+                </li>
+                <li>
+                  <kbd className="key-hint">Enter</kbd> or <kbd className="key-hint">Space</kbd> Advance after the reveal.
+                </li>
+              </ul>
+            </details>
             <p className="question-type-chip" aria-label="Prompt archetype">
               {readableTypeName(currentItem.question.type)}
             </p>
@@ -698,10 +985,12 @@ export function App() {
         <div className="stack">
           <div className="card">
             <div className="row-between">
-              <strong>Corpus atlas · raw coverage</strong>
-              <button type="button" className="btn btn-ghost-light" onClick={goHome}>
-                Home
-              </button>
+              <h2 className="card-heading">Corpus atlas · raw coverage</h2>
+              <nav aria-label="Atlas">
+                <button type="button" className="btn btn-ghost-light" onClick={goHome}>
+                  Home
+                </button>
+              </nav>
             </div>
             <p className="card-muted" style={{ marginTop: "0.65rem", marginBottom: "1rem" }}>
               Transparent counts pulled straight from bundled JSON—no inflated marketing math. Tap any mode on the homepage to grind a
@@ -720,12 +1009,17 @@ export function App() {
                 <dt>Classifier archetypes</dt>
                 <dd>{corpus.distinctTypes.length}</dd>
               </div>
+              <div>
+                <dt>Lifetime prompts you&apos;ve reviewed</dt>
+                <dd>{questionsReviewed.toLocaleString()}</dd>
+              </div>
             </dl>
           </div>
           <div className="card">
-            <strong>Per-season density</strong>
+            <h2 className="card-heading">Per-season density</h2>
             <div className="table-wrap" style={{ marginTop: "0.75rem" }}>
               <table className="data-sheet">
+                <caption className="visually-hidden">Episodes and question counts for each season</caption>
                 <thead>
                   <tr>
                     <th scope="col">Season</th>
@@ -746,13 +1040,14 @@ export function App() {
             </div>
           </div>
           <div className="card">
-            <strong>Classifier inventory</strong>
+            <h2 className="card-heading">Classifier inventory</h2>
             <p className="card-muted" style={{ marginTop: "0.35rem" }}>
               Every label is emitted by the trivia generator so you can steer practice toward exactly the kind of screenplay signal you
               care about.
             </p>
             <div className="table-wrap" style={{ marginTop: "0.75rem" }}>
               <table className="data-sheet">
+                <caption className="visually-hidden">Question counts for each trivia classifier type</caption>
                 <thead>
                   <tr>
                     <th scope="col">Type</th>
@@ -786,13 +1081,33 @@ export function App() {
           onReplay={() =>
             replayFromConfig(screen.run, screen.items, screen.enteredFromBrowse)
           }
+          onRetryMisses={() => {
+            const missItems = screen.items.filter((_, i) => {
+              const a = screen.answers[i];
+              return !!(a && !a.correct);
+            });
+            if (missItems.length === 0) return;
+            startQuiz(
+              missItems,
+              {
+                mode: "miss_retry",
+                count: missItems.length,
+                sourceSummary: quizUiStrings(screen.run).resultsTitle,
+              },
+              screen.enteredFromBrowse,
+            );
+          }}
+          onToast={setNotice}
         />
       )}
 
-      <footer style={{ marginTop: "3rem", textAlign: "center", opacity: 0.55, fontSize: "0.78rem", lineHeight: 1.5 }}>
+      </main>
+
+      <footer style={{ marginTop: "3rem", textAlign: "center", opacity: 0.68, fontSize: "0.78rem", lineHeight: 1.5 }}>
         Scripts & episode index credited to SeinfeldScripts.com fan transcripts. Questions are algorithmically derived and
         may include imperfect parsing—consult the script link on each bundle if something feels off.
       </footer>
+      {confirm ? <ConfirmDialog {...confirm} onCancel={closeConfirm} /> : null}
     </div>
   );
 }
@@ -807,6 +1122,8 @@ function ResultsPane({
   onHome,
   onBrowse,
   onReplay,
+  onRetryMisses,
+  onToast,
 }: {
   items: QuizItem[];
   answers: Record<number, { choice: number; correct: boolean }>;
@@ -817,6 +1134,8 @@ function ResultsPane({
   onHome: () => void;
   onBrowse: () => void;
   onReplay: () => void;
+  onRetryMisses: () => void;
+  onToast: (message: string) => void;
 }) {
   let correctCt = 0;
   let wrongCt = 0;
@@ -833,20 +1152,112 @@ function ResultsPane({
   skipped = items.length - correctCt - wrongCt;
 
   const hasMisses = items.some((_, i) => answers[i] && !answers[i]?.correct);
+  const accuracyPct = items.length > 0 ? Math.round((correctCt / items.length) * 1000) / 10 : 0;
+
+  const typeRows = useMemo(() => computeAnsweredTypeBreakdown(items, answers), [items, answers]);
+
+  const [dailySnapshot, setDailySnapshot] = useState<DailyPersonalRow | null>(null);
+  useEffect(() => {
+    if (run.mode !== "daily") return;
+    recordDailyPersonalBest(run.dateKeyUtc, correctCt, items.length);
+    setDailySnapshot(getDailyPersonalBest(run.dateKeyUtc));
+  }, [run, correctCt, items.length]);
+
+  const shareLine = `${SITE_CANONICAL} · ${quizUiStrings(run).resultsTitle}: ${correctCt}/${items.length} (${accuracyPct}% answered correctly)`;
+
+  const onShareScore = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Yada yada trivia",
+          text: shareLine,
+          url: SITE_CANONICAL,
+        });
+      } catch (e) {
+        if ((e as Error)?.name !== "AbortError") {
+          onToast("Sharing was interrupted—score not sent.");
+        }
+      }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(shareLine);
+      onToast("Score copied to clipboard.");
+    } catch {
+      onToast(`Copy manually: ${shareLine}`);
+    }
+  };
 
   return (
     <div className="stack">
       <div className="card">
-        <p className="episode-meta">{resultsTitle}</p>
+        <h2 className="episode-meta" style={{ margin: 0 }}>
+          {resultsTitle}
+        </h2>
         <p className="results-score">{correctCt}&nbsp;<span style={{ opacity: 0.45 }}>/</span> {items.length}</p>
+        <p className="card-muted session-accuracy-meta">
+          Accuracy {accuracyPct}% on answered cards
+          {skipped ? ` (${skipped} not reached).` : "."}
+        </p>
         <p className="card-muted">
           {wrongCt ? `${wrongCt} missed. ` : null}
           {skipped ? `${skipped} unanswered. ` : null}
           {correctCt === items.length ? "Master of your domain." : "Serenity now—try again sometime."}
         </p>
 
+        {run.mode === "daily" && dailySnapshot ? (
+          <p className="card-muted" role="status">
+            Personal best on this device for {run.dateKeyUtc} UTC: {dailySnapshot.correct}/{dailySnapshot.total}
+          </p>
+        ) : null}
+
+        <div className="row-between results-share-row">
+          <button type="button" className="btn btn-ghost-light" onClick={() => void onShareScore()}>
+            Share score
+          </button>
+          {hasMisses ? (
+            <button type="button" className="btn btn-teal" onClick={onRetryMisses}>
+              Drill misses only ({wrongCt})
+            </button>
+          ) : (
+            <span className="card-muted" style={{ fontSize: "0.85rem" }}>
+              Clean sweep—no misses to drill.
+            </span>
+          )}
+        </div>
+
+        {typeRows.length > 0 ? (
+          <div className="session-breakdown" style={{ marginTop: "1.15rem" }}>
+            <h3 className="episode-meta" id="session-type-heading">
+              This run by archetype
+            </h3>
+            <div className="table-wrap" style={{ marginTop: "0.5rem" }}>
+              <table className="data-sheet" aria-labelledby="session-type-heading">
+                <thead>
+                  <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Asked</th>
+                    <th scope="col">Right</th>
+                    <th scope="col">%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {typeRows.slice(0, 12).map((row) => (
+                    <tr key={row.type}>
+                      <td>{row.label}</td>
+                      <td>{row.asked}</td>
+                      <td>{row.correct}</td>
+                      <td>{row.asked ? Math.round((row.correct / row.asked) * 100) : 0}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ) : null}
+
         {run.mode === "episode" && items[0] && (
-          <p style={{ marginBottom: "0.65rem", fontWeight: 600 }}>
+          <p style={{ marginBottom: "0.65rem", marginTop: "1rem", fontWeight: 600 }}>
             Episode:{" "}
             <a href={items[0].episode.primarySource} target="_blank" rel="noopener noreferrer">
               {items[0].episode.title}
@@ -873,15 +1284,30 @@ function ResultsPane({
 
         {hasMisses && (
           <div style={{ marginTop: "1.25rem" }}>
-            <p className="episode-meta">Review misses</p>
-            <ul className="card-muted" style={{ paddingLeft: "1rem", margin: "0.5rem 0 0", fontWeight: 500 }}>
+            <p className="episode-meta" id="review-misses-heading">
+              Review misses
+            </p>
+            <ul
+              className="card-muted"
+              style={{ paddingLeft: "1rem", margin: "0.5rem 0 0", fontWeight: 500 }}
+              aria-labelledby="review-misses-heading"
+            >
               {items.map((item, i) => {
                 const rec = answers[i];
                 if (!rec || rec.correct) return null;
                 return (
                   <li key={`${item.episode.seriesIndex}-${i}-${item.question.id}`}>
                     → {item.question.question.slice(0, 120)}
-                    … <strong>Answer:</strong> {item.question.options[item.question.correctIndex]}
+                    … <strong>Answer:</strong> {item.question.options[item.question.correctIndex]}{" "}
+                    <a
+                      href={item.episode.primarySource}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="miss-source-link"
+                    >
+                      transcript
+                      <NewTabAnnouncement />
+                    </a>
                   </li>
                 );
               })}

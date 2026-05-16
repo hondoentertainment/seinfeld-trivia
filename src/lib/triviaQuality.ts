@@ -40,12 +40,31 @@ export type HeuristicFlag =
   | "speaker_option_too_long"
   | "duplicate_answer_options"
   | "transcript_word_bogus_filler"
-  | "weird_double_question_mark";
+  | "weird_double_question_mark"
+  | "credit_line_leading_colon"
+  | "metadata_boilerplate_speaker_option";
 
 /** Non-blocking quality signals for review / trend tracking */
 export function assessQuestionHeuristics(q: TriviaQuestion): HeuristicFlag[] {
   const flags: HeuristicFlag[] = [];
   const text = q.question;
+  if (q.type === "written_by" || q.type === "directed_by") {
+    const cells = [...q.options, q.answer];
+    if (cells.some((c) => String(c).trimStart().startsWith(":"))) {
+      flags.push("credit_line_leading_colon");
+    }
+  }
+
+  const junkSpeakerOption = /^(originally aired|written by|directed by)$/iu;
+  if (q.type === "who_said") {
+    for (const opt of q.options) {
+      if (junkSpeakerOption.test(String(opt).trim())) {
+        flags.push("metadata_boilerplate_speaker_option");
+        break;
+      }
+    }
+  }
+
   if (text.includes("??")) flags.push("weird_double_question_mark");
 
   if (q.type === "who_said") {

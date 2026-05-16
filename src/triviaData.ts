@@ -1,4 +1,5 @@
-import raw from "../data/trivia/all-episodes.json";
-import type { EpisodeBundle } from "./types";
-
-export const EPISODES = raw as EpisodeBundle[];
+/**
+ * @deprecated Import `loadEpisodes` from `./loadTriviaCorpus` — the corpus is loaded asynchronously.
+ * Re-exported for scripts/tests that still expect a static path to the JSON on disk.
+ */
+export { loadEpisodes } from "./loadTriviaCorpus";

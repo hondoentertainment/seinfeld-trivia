@@ -1,0 +1,42 @@
+import type { CorpusBreakdown } from "./corpusStats";
+
+export const CORPUS_SUMMARY = {
+  episodeCount: 180,
+  questionCount: 4500,
+  bySeason: [
+    { seasonIndex: 0, episodes: 1, questions: 25 },
+    { seasonIndex: 1, episodes: 4, questions: 100 },
+    { seasonIndex: 2, episodes: 12, questions: 300 },
+    { seasonIndex: 3, episodes: 23, questions: 575 },
+    { seasonIndex: 4, episodes: 24, questions: 600 },
+    { seasonIndex: 5, episodes: 22, questions: 550 },
+    { seasonIndex: 6, episodes: 24, questions: 600 },
+    { seasonIndex: 7, episodes: 24, questions: 600 },
+    { seasonIndex: 8, episodes: 22, questions: 550 },
+    { seasonIndex: 9, episodes: 24, questions: 600 },
+  ],
+  byType: [
+    { type: "who_said", count: 3274 },
+    { type: "cast", count: 354 },
+    { type: "meta_series", count: 180 },
+    { type: "meta_season", count: 180 },
+    { type: "meta_airdate", count: 178 },
+    { type: "written_by", count: 129 },
+    { type: "directed_by", count: 109 },
+    { type: "transcript_word", count: 80 },
+    { type: "scene_setting", count: 12 },
+    { type: "title", count: 4 },
+  ],
+  distinctTypes: [
+    "who_said",
+    "cast",
+    "meta_series",
+    "meta_season",
+    "meta_airdate",
+    "written_by",
+    "directed_by",
+    "transcript_word",
+    "scene_setting",
+    "title",
+  ],
+} satisfies CorpusBreakdown;

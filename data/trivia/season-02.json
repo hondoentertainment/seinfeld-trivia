@@ -14,7 +14,7 @@
         "question": "Who says: “(Smiles) Oh. Oh, Marlene.”?",
         "options": [
           "KRAMER",
-          "Written by",
+          "Elaine",
           "JERRY",
           "GEORGE"
         ],
@@ -28,7 +28,7 @@
         "options": [
           "Stars",
           "MARLENE",
-          "Written by",
+          "Jerry",
           "GEORGE"
         ],
         "correctIndex": 3,
@@ -40,8 +40,8 @@
         "question": "Who says: “Well, I have a general idea what it was. I could take a”?",
         "options": [
           "JERRY",
-          "Written by",
-          "Directed by",
+          "George",
+          "Elaine",
           "Stars"
         ],
         "correctIndex": 0,
@@ -144,7 +144,7 @@
         "question": "Who says: “I did. I most certainly did. And he said, he goes, \"Oh,”?",
         "options": [
           "MARLENE",
-          "Written by",
+          "George",
           "JERRY",
           "ELAINE"
         ],
@@ -157,7 +157,7 @@
         "question": "Who says: “So, I walked up behind him and I tapped him on the shoulder.”?",
         "options": [
           "ELAINE",
-          "Written by",
+          "Kramer",
           "George",
           "Jerry"
         ],
@@ -170,7 +170,7 @@
         "question": "Who says: “Seinfeld Directed by: Tom Cherones Broadcasted: January 23, 1991 for the first time. Stars:”?",
         "options": [
           "George",
-          "Directed by",
+          "Elaine",
           "KRAMER",
           "Jerry"
         ],
@@ -183,7 +183,7 @@
         "question": "Who says: “So forget about the books. Did you read them”?",
         "options": [
           "Broadcasted",
-          "Directed by",
+          "George",
           "Kramer",
           "JERRY"
         ],
@@ -196,25 +196,25 @@
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
           "Tom Cherones",
-          ": Larry David and Jerry Seinfeld",
+          "Larry David and Jerry Seinfeld",
           "Larry Charles",
           "Andy Ackerman"
         ],
         "correctIndex": 1,
-        "answer": ": Larry David and Jerry Seinfeld"
+        "answer": "Larry David and Jerry Seinfeld"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Tom Cherones",
-          "Jason Alexander",
           "Tom Cherones",
+          "Jason Alexander",
+          "David Steinberg",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -302,7 +302,7 @@
           "JERRY",
           "Kramer",
           "GEORGE",
-          "Written by"
+          "Elaine"
         ],
         "correctIndex": 0,
         "answer": "JERRY"
@@ -313,7 +313,7 @@
         "question": "Who says: “Nothing really happened.”?",
         "options": [
           "MARLENE",
-          "Directed by",
+          "George",
           "JERRY",
           "Elaine"
         ],
@@ -389,7 +389,7 @@
         "question": "Who says: “I didn't even know the woman.”?",
         "options": [
           "JERRY",
-          "Written by",
+          "George",
           "LEO",
           "Mickey"
         ],
@@ -456,7 +456,7 @@
           "HELEN",
           "JERRY",
           "LEO",
-          "Written by"
+          "George"
         ],
         "correctIndex": 0,
         "answer": "HELEN"
@@ -482,7 +482,7 @@
           "KRAMER",
           "Stars",
           "ISAAC",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "KRAMER"
@@ -493,9 +493,9 @@
         "question": "Who says: “I'll give you a year.”?",
         "options": [
           "JERRY",
-          "Written by",
+          "George",
           "Mickey",
-          "Directed by"
+          "Elaine"
         ],
         "correctIndex": 0,
         "answer": "JERRY"
@@ -505,7 +505,7 @@
         "type": "who_said",
         "question": "Who says: “You're doing this yourself”?",
         "options": [
-          "Written by",
+          "George",
           "Elaine",
           "JERRY",
           "Broadcasted"
@@ -531,26 +531,26 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Larry David and Jerry Seinfeld",
+          "Larry David and Jerry Seinfeld",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Larry David and Jerry Seinfeld"
+        "answer": "Larry David and Jerry Seinfeld"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Tom Cherones",
           "Tom Cherones",
+          "David Steinberg",
           "Jason Alexander",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -688,7 +688,7 @@
           "GEORGE",
           "Jerry",
           "SALESMAN",
-          "Written by"
+          "Elaine"
         ],
         "correctIndex": 0,
         "answer": "GEORGE"
@@ -725,7 +725,7 @@
         "question": "Who says: “Let me just get my jacket. (Moves to the bedroom)”?",
         "options": [
           "Stars",
-          "Directed by",
+          "Elaine",
           "GEORGE",
           "JERRY"
         ],
@@ -740,7 +740,7 @@
           "JERRY",
           "CUSTOMER",
           "Elaine",
-          "Directed by"
+          "George"
         ],
         "correctIndex": 0,
         "answer": "JERRY"
@@ -763,7 +763,7 @@
         "type": "who_said",
         "question": "Who says: “(Holds out his hand for a handshake) It's a great thrill”?",
         "options": [
-          "Directed by",
+          "Jerry",
           "Broadcasted",
           "GEORGE",
           "CUSTOMER"
@@ -778,7 +778,7 @@
         "options": [
           "BENES",
           "Broadcasted",
-          "Written by",
+          "George",
           "JERRY"
         ],
         "correctIndex": 3,
@@ -791,7 +791,7 @@
         "options": [
           "MANAGER",
           "George",
-          "Written by",
+          "Elaine",
           "Jerry"
         ],
         "correctIndex": 3,
@@ -855,7 +855,7 @@
         "question": "Who says: “Yeah. A friend of mine, he's a magician. He's going away”?",
         "options": [
           "KRAMER",
-          "Written by",
+          "George",
           "ALTON",
           "JERRY"
         ],
@@ -870,23 +870,23 @@
           "Andy Ackerman",
           "Tom Cherones",
           "Larry Charles",
-          ": Larry David and Jerry Seinfeld"
+          "Larry David and Jerry Seinfeld"
         ],
         "correctIndex": 3,
-        "answer": ": Larry David and Jerry Seinfeld"
+        "answer": "Larry David and Jerry Seinfeld"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Tom Cherones",
           "Tom Cherones",
+          "David Steinberg",
           "Andy Ackerman",
           "Jason Alexander"
         ],
         "correctIndex": 0,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -987,7 +987,7 @@
           "ELAINE",
           "GEORGE",
           "BENES",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 2,
         "answer": "BENES"
@@ -997,7 +997,7 @@
         "type": "who_said",
         "question": "Who says: “(Takes one last look at the leather jacket) ..Okay, take”?",
         "options": [
-          "Written by",
+          "George",
           "SALESMAN",
           "CUSTOMER",
           "JERRY"
@@ -1358,7 +1358,7 @@
         "question": "Who says: “Who said there's a problem”?",
         "options": [
           "HAROLD",
-          "Directed by",
+          "George",
           "JANICE",
           "JERRY"
         ],
@@ -1384,7 +1384,7 @@
         "question": "Who says: “Well, better load up on some carbos before the race. (Starts”?",
         "options": [
           "JERRY",
-          "Written by",
+          "George",
           "Elaine",
           "Stars"
         ],
@@ -1476,7 +1476,7 @@
         "options": [
           "GEORGE",
           "Stars",
-          "Directed by",
+          "Jerry",
           "ELAINE"
         ],
         "correctIndex": 0,
@@ -1540,25 +1540,25 @@
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
           "Andy Ackerman",
-          ": Peter Mehlman",
+          "Peter Mehlman",
           "Larry Charles",
           "Tom Cherones"
         ],
         "correctIndex": 1,
-        "answer": ": Peter Mehlman"
+        "answer": "Peter Mehlman"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Tom Cherones",
           "Tom Cherones",
+          "David Steinberg",
           "Andy Ackerman",
           "Jason Alexander"
         ],
         "correctIndex": 0,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -1720,7 +1720,7 @@
         "question": "Who says: “Police? (Opens the door a crack - Kramer barges in like a cop. He's”?",
         "options": [
           "RAY",
-          "Written by",
+          "George",
           "JERRY",
           "GEORGGE"
         ],
@@ -1773,7 +1773,7 @@
         "options": [
           "JERRY",
           "GEORGGE",
-          "Written by",
+          "George",
           "RAY"
         ],
         "correctIndex": 3,
@@ -1787,7 +1787,7 @@
           "RAVA",
           "GEORGGE",
           "Kramer",
-          "Directed by"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "RAVA"
@@ -1863,7 +1863,7 @@
         "question": "Who says: “We can't just let him get away with this.”?",
         "options": [
           "GEORGE",
-          "Written by",
+          "Elaine",
           "Stars",
           "Jerry"
         ],
@@ -1876,12 +1876,12 @@
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
           "Andy Ackerman",
+          "David Steinberg",
           "Larry Charles",
-          ": Larry Charles",
           "Tom Cherones"
         ],
         "correctIndex": 2,
-        "answer": ": Larry Charles"
+        "answer": "Larry Charles"
       },
       {
         "id": 16,
@@ -1890,11 +1890,11 @@
         "options": [
           "Andy Ackerman",
           "Jason Alexander",
-          ": Tom Cherones",
-          "Tom Cherones"
+          "Tom Cherones",
+          "David Steinberg"
         ],
         "correctIndex": 2,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -2417,7 +2417,7 @@
         "type": "who_said",
         "question": "Who says: “for a long time, then walks over to”?",
         "options": [
-          "Directed by",
+          "Jerry",
           "DRIVER",
           "NURSE 1",
           "Kramer"
@@ -2549,11 +2549,11 @@
         "options": [
           "Tom Cherones",
           "Andy Ackerman",
-          "Larry Charles",
-          ": Larry Charles"
+          "David Steinberg",
+          "Larry Charles"
         ],
         "correctIndex": 3,
-        "answer": ": Larry Charles"
+        "answer": "Larry Charles"
       },
       {
         "id": 16,
@@ -2562,11 +2562,11 @@
         "options": [
           "Jason Alexander",
           "Andy Ackerman",
-          "Tom Cherones",
-          ": Tom Cherones"
+          "David Steinberg",
+          "Tom Cherones"
         ],
         "correctIndex": 3,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -2652,7 +2652,7 @@
         "question": "Who says: “You can't leave! This”?",
         "options": [
           "TOR",
-          "Directed by",
+          "Jerry",
           "Larry",
           "GEORGE"
         ],
@@ -3050,7 +3050,7 @@
         "type": "who_said",
         "question": "Who says: “Men flip around the television more than women, I think.”?",
         "options": [
-          "Directed by",
+          "Elaine",
           "JERRY",
           "GEORGE",
           "KRAMER"
@@ -3222,23 +3222,23 @@
           "Andy Ackerman",
           "Tom Cherones",
           "Larry Charles",
-          ": Larry David"
+          "Larry David"
         ],
         "correctIndex": 3,
-        "answer": ": Larry David"
+        "answer": "Larry David"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
-          ": Tom Cherones",
           "Tom Cherones",
+          "David Steinberg",
           "Andy Ackerman",
           "Jason Alexander"
         ],
         "correctIndex": 0,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -3373,7 +3373,7 @@
         "type": "who_said",
         "question": "Who says: “Well, actually, we did date for a while, but... it's really”?",
         "options": [
-          "Written by",
+          "George",
           "Bruce",
           "Jerry",
           "Kramer"
@@ -3490,7 +3490,7 @@
         "type": "who_said",
         "question": "Who says: “We'll eat it in the movie.”?",
         "options": [
-          "Written by",
+          "Elaine",
           "Guest Stars",
           "George",
           "Jerry"
@@ -3503,7 +3503,7 @@
         "type": "who_said",
         "question": "Who says: “No, no, they were here before. Keckitch(sp?), 2!”?",
         "options": [
-          "Written by",
+          "Jerry",
           "Bruce",
           "Woman at phone",
           "Man"
@@ -3556,12 +3556,12 @@
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
           "Larry Charles",
-          ": Larry David & Jerry Seinfeld",
+          "Larry David & Jerry Seinfeld",
           "Andy Ackerman",
           "Tom Cherones"
         ],
         "correctIndex": 1,
-        "answer": ": Larry David & Jerry Seinfeld"
+        "answer": "Larry David & Jerry Seinfeld"
       },
       {
         "id": 16,
@@ -3647,7 +3647,7 @@
         "question": "Who says: “Excuse me... we've been waiting here. Now, I KNOW we were”?",
         "options": [
           "Guest Stars",
-          "Written by",
+          "George",
           "Guy",
           "Jerry"
         ],
@@ -3662,7 +3662,7 @@
           "People at table",
           "Lorraine",
           "Elaine",
-          "Written by"
+          "Jerry"
         ],
         "correctIndex": 2,
         "answer": "Elaine"
@@ -3687,7 +3687,7 @@
         "options": [
           "Elaine",
           "George",
-          "Written by",
+          "Jerry",
           "Bruce"
         ],
         "correctIndex": 0,
@@ -3711,7 +3711,7 @@
         "options": [
           "JERRY",
           "Stars",
-          "Directed by",
+          "George",
           "ELAINE"
         ],
         "correctIndex": 0,
@@ -3787,7 +3787,7 @@
         "type": "who_said",
         "question": "Who says: “Anywhere in the city”?",
         "options": [
-          "Written by",
+          "George",
           "JERRY",
           "ED",
           "ELAIEN"
@@ -3800,7 +3800,7 @@
         "type": "who_said",
         "question": "Who says: “(Gestures for Kramer to shut up) Once again, Antonio, I”?",
         "options": [
-          "Directed by",
+          "Jerry",
           "KRAMER",
           "GEORGE",
           "David"
@@ -3828,7 +3828,7 @@
         "options": [
           "Kramer",
           "GEORGE",
-          "Directed by",
+          "Jerry",
           "ED"
         ],
         "correctIndex": 1,
@@ -3841,7 +3841,7 @@
         "options": [
           "GEORGE",
           "ELAIEN",
-          "Directed by",
+          "Jerry",
           "Elaine"
         ],
         "correctIndex": 0,
@@ -3893,11 +3893,11 @@
         "options": [
           "Larry Charles",
           "Andy Ackerman",
-          ": Larry David and Jerry Seinfeld",
+          "Larry David and Jerry Seinfeld",
           "Tom Cherones"
         ],
         "correctIndex": 2,
-        "answer": ": Larry David and Jerry Seinfeld"
+        "answer": "Larry David and Jerry Seinfeld"
       },
       {
         "id": 16,
@@ -3906,11 +3906,11 @@
         "options": [
           "Jason Alexander",
           "Andy Ackerman",
-          "Tom Cherones",
-          ": Tom Cherones"
+          "David Steinberg",
+          "Tom Cherones"
         ],
         "correctIndex": 3,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -3997,7 +3997,7 @@
         "options": [
           "Jerry",
           "ELAINE",
-          "Directed by",
+          "George",
           "Stars"
         ],
         "correctIndex": 1,
@@ -4009,7 +4009,7 @@
         "question": "Who says: “I gotta shower. I'll feel dirty all day.”?",
         "options": [
           "ED",
-          "Written by",
+          "Jerry",
           "Elaine",
           "KRAMER"
         ],

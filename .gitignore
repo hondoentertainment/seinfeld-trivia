@@ -5,4 +5,7 @@ node_modules/
 .env
 .env.*
 
-.vercel
+.vercel/
+.lighthouseci/
+playwright-report/
+test-results/

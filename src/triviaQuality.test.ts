@@ -8,6 +8,7 @@ import {
   validateEpisodeShape,
   validateQuestionStructure,
 } from "./lib/triviaQuality";
+import { sanitizeEpisodeBundle } from "./lib/triviaSanitize";
 
 const episodes = allEpisodes as EpisodeBundle[];
 
@@ -60,6 +61,21 @@ describe("trivia dataset (generated JSON)", () => {
     const report = evaluateDataset(episodes);
     expect(report.structuralFailures).toBe(0);
     expect(report.samples).toEqual([]);
+  });
+
+  it("persisted trivia JSON has zero obvious screenplay parsing artifacts", () => {
+    const report = evaluateDataset(episodes);
+    expect(report.byHeuristicFlag.credit_line_leading_colon ?? 0).toBe(0);
+    expect(report.byHeuristicFlag.metadata_boilerplate_speaker_option ?? 0).toBe(0);
+    expect(report.byHeuristicFlag.duplicate_answer_options ?? 0).toBe(0);
+  });
+
+  it("sanitizeEpisodeBundle does not perturb already-canonical payloads", () => {
+    const sample = episodes.slice(0, 20);
+    for (const ep of sample) {
+      const { bundle } = sanitizeEpisodeBundle(ep);
+      expect(JSON.stringify(sanitizeEpisodeBundle(bundle).bundle)).toEqual(JSON.stringify(bundle));
+    }
   });
 
   it("records heuristic quality metrics (non-blocking baseline)", () => {

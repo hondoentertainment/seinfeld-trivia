@@ -38,7 +38,9 @@ export type QuizRunConfig =
       count: number;
     }
   /** Every prompt in corpus — broadcast order or mega-mix endurance. */
-  | { mode: "full_corpus"; poolSize: number; order: "broadcast" | "shuffled" };
+  | { mode: "full_corpus"; poolSize: number; order: "broadcast" | "shuffled" }
+  /** Subset of a prior run: only incorrectly answered prompts, same order. */
+  | { mode: "miss_retry"; count: number; sourceSummary?: string };
 
 export type GameScreen =
   | { name: "home" }

@@ -415,7 +415,7 @@
         "question": "Who says: “(Meek) But Georgie.. what about the Jell-O”?",
         "options": [
           "ESTELLE",
-          "Directed by",
+          "Jerry",
           "George",
           "KRAMER"
         ],
@@ -430,7 +430,7 @@
           "WOMAN",
           "ELAINE",
           "KRAMER",
-          "Directed by"
+          "Jerry"
         ],
         "correctIndex": 2,
         "answer": "KRAMER"
@@ -531,13 +531,13 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Larry David",
+          "Larry David",
           "Larry Charles",
           "Tom Cherones",
           "Andy Ackerman"
         ],
         "correctIndex": 0,
-        "answer": ": Larry David"
+        "answer": "Larry David"
       },
       {
         "id": 16,
@@ -545,12 +545,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Jason Alexander",
-          ": Tom Cherones",
           "Tom Cherones",
+          "David Steinberg",
           "Andy Ackerman"
         ],
         "correctIndex": 1,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -1112,7 +1112,7 @@
         "type": "who_said",
         "question": "Who says: “gave it to me. Jerry: Mohair, I think. Ralph: Mohair, that figures, I'm allergic to mohair. Jerry: You mean y…”?",
         "options": [
-          "Originally Aired",
+          "Elaine",
           "Woman",
           "George",
           "Jerry"
@@ -3103,7 +3103,7 @@
         "question": "Who says: “You mind if I use it in my book”?",
         "options": [
           "KRAMER",
-          "Written by",
+          "Jerry",
           "LIPPMAN",
           "THE GIRLS"
         ],
@@ -3208,7 +3208,7 @@
         "options": [
           "Estelle",
           "GEORGE",
-          "Written by",
+          "Jerry",
           "Guest Cast"
         ],
         "correctIndex": 1,
@@ -3219,26 +3219,26 @@
         "type": "written_by",
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
-          ": Tom Gammill & Max Pross",
+          "Tom Gammill & Max Pross",
           "Larry Charles",
           "Andy Ackerman",
           "Tom Cherones"
         ],
         "correctIndex": 0,
-        "answer": ": Tom Gammill & Max Pross"
+        "answer": "Tom Gammill & Max Pross"
       },
       {
         "id": 16,
         "type": "directed_by",
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
+          "David Steinberg",
           "Tom Cherones",
-          ": Tom Cherones",
           "Jason Alexander",
           "Andy Ackerman"
         ],
         "correctIndex": 1,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -3312,7 +3312,7 @@
         "options": [
           "WINONA",
           "GEORGE",
-          "Written by",
+          "Jerry",
           "GEPETTO"
         ],
         "correctIndex": 0,
@@ -4047,7 +4047,7 @@
         "options": [
           "David",
           "JERRY",
-          "Directed by",
+          "George",
           "KRAMER"
         ],
         "correctIndex": 1,
@@ -4111,7 +4111,7 @@
         "question": "Who says: “Yeah, Jerry, come with me.”?",
         "options": [
           "CLERK",
-          "Directed by",
+          "Jerry",
           "Frank",
           "ELAINE"
         ],
@@ -4126,7 +4126,7 @@
           "ELAINE",
           "Kramer",
           "BARBARA",
-          "Directed by"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "ELAINE"
@@ -4215,7 +4215,7 @@
         "question": "Who says: “Don't walk around without a coat in this weather; you'll catch”?",
         "options": [
           "David",
-          "Directed by",
+          "Jerry",
           "YYY",
           "MAN4"
         ],
@@ -4228,12 +4228,12 @@
         "question": "According to the script transcription, who is credited as “Written By”?",
         "options": [
           "Andy Ackerman",
-          ": Larry David",
+          "Larry David",
           "Tom Cherones",
           "Larry Charles"
         ],
         "correctIndex": 1,
-        "answer": ": Larry David"
+        "answer": "Larry David"
       },
       {
         "id": 16,
@@ -4241,12 +4241,12 @@
         "question": "According to the script transcription, who is credited as “Directed By”?",
         "options": [
           "Andy Ackerman",
-          "Tom Cherones",
+          "David Steinberg",
           "Jason Alexander",
-          ": Tom Cherones"
+          "Tom Cherones"
         ],
         "correctIndex": 3,
-        "answer": ": Tom Cherones"
+        "answer": "Tom Cherones"
       },
       {
         "id": 17,
@@ -4293,7 +4293,7 @@
         "question": "Who says: “Can I get you anything else”?",
         "options": [
           "Cleck",
-          "Directed by",
+          "Jerry",
           "ELAINE",
           "CLERK"
         ],
@@ -4332,7 +4332,7 @@
         "question": "Who says: “Yeah, on one hand he's smart with rockets and on the other part”?",
         "options": [
           "KRAMER",
-          "Directed by",
+          "George",
           "MAN2",
           "JERRY"
         ],
@@ -4345,7 +4345,7 @@
         "question": "Who says: “You know we were here ahead of you.”?",
         "options": [
           "KRAMER",
-          "Directed by",
+          "Jerry",
           "Cleck",
           "ELAINE"
         ],
@@ -4539,7 +4539,7 @@
         "options": [
           "Elaine",
           "With",
-          "Originally Aired",
+          "Jerry",
           "Lippman"
         ],
         "correctIndex": 0,
@@ -4553,7 +4553,7 @@
           "Kramer",
           "Diane",
           "With",
-          "Originally Aired"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "Kramer"
@@ -4670,7 +4670,7 @@
           "George",
           "Newman",
           "Kramer",
-          "Originally Aired"
+          "Jerry"
         ],
         "correctIndex": 0,
         "answer": "George"
