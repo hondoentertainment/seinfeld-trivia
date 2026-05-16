@@ -24,19 +24,36 @@ export type QuizItem = {
   qIndexInEp: number;
 };
 
+/** How this run should be summarized, replayed, and audited in results */
+export type QuizRunConfig =
+  | { mode: "episode" }
+  | { mode: "marathon_random"; count: number }
+  | { mode: "daily"; dateKeyUtc: string; count: number }
+  | { mode: "season"; season: number; count: number }
+  | {
+      mode: "categories";
+      categoryLabel: string;
+      categoryId: string;
+      questionTypes: string[];
+      count: number;
+    }
+  /** Every prompt in corpus — broadcast order or mega-mix endurance. */
+  | { mode: "full_corpus"; poolSize: number; order: "broadcast" | "shuffled" };
+
 export type GameScreen =
   | { name: "home" }
   | { name: "browse" }
+  | { name: "stats" }
   | {
       name: "quiz";
       items: QuizItem[];
-      marathon: boolean;
+      run: QuizRunConfig;
       enteredFromBrowse: boolean;
     }
   | {
       name: "results";
       items: QuizItem[];
       answers: Record<number, { choice: number; correct: boolean }>;
-      marathon: boolean;
+      run: QuizRunConfig;
       enteredFromBrowse: boolean;
     };

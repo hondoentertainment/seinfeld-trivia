@@ -1,14 +1,22 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import type { EpisodeBundle, GameScreen, QuizItem } from "./types";
+import type { EpisodeBundle, GameScreen, QuizItem, QuizRunConfig } from "./types";
 import { EPISODES } from "./triviaData";
+import { CATEGORY_GROUPS, readableTypeName } from "./lib/categories";
+import { buildCorpusBreakdown, countQuestionsForTypes } from "./lib/corpusStats";
+import { marathonStyleUi, quizUiStrings } from "./quizLabels";
 import {
+  dailyChallengeQuizItems,
   episodeQuizItems,
+  marathonForSeason,
+  marathonForTypes,
   marathonQuizItems,
+  orderedFullCorpusRun,
   randomEpisode,
+  shuffledFullCorpusRun,
 } from "./shuffle";
 
 type QuizPhase = {
-  marathon: boolean;
+  run: QuizRunConfig;
   items: QuizItem[];
   index: number;
   answers: Record<number, { choice: number; correct: boolean }>;
@@ -38,9 +46,16 @@ function usePrefersReducedMotion() {
   return reduced;
 }
 
+function utcCalendarKey(d = new Date()) {
+  return d.toISOString().slice(0, 10);
+}
+
+const DAILY_COUNT = 15;
+
 export function App() {
   const [screen, setScreen] = useState<GameScreen>({ name: "home" });
   const [quiz, setQuiz] = useState<QuizPhase | null>(null);
+  const [browseSearch, setBrowseSearch] = useState("");
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const bySeason = useMemo(() => {
@@ -56,7 +71,26 @@ export function App() {
     return [...map.entries()].sort((a, b) => a[0] - b[0]);
   }, []);
 
+  const filteredBySeasonBrowse = useMemo(() => {
+    const q = browseSearch.trim().toLowerCase();
+    if (!q) return bySeason;
+    return bySeason
+      .map(
+        ([season, eps]) =>
+          [
+            season,
+            eps.filter(
+              (e) =>
+                e.title.toLowerCase().includes(q) ||
+                String(e.seriesIndex).includes(q.replace(/^#/, "")),
+            ),
+          ] as [number, EpisodeBundle[]],
+      )
+      .filter(([, eps]) => eps.length > 0);
+  }, [bySeason, browseSearch]);
+
   const goHome = useCallback(() => {
+    setBrowseSearch("");
     setQuiz(null);
     setScreen({ name: "home" });
   }, []);
@@ -66,10 +100,26 @@ export function App() {
     setScreen({ name: "browse" });
   }, []);
 
+  const goStats = useCallback(() => {
+    setQuiz(null);
+    setScreen({ name: "stats" });
+  }, []);
+
+  const corpus = useMemo(() => buildCorpusBreakdown(EPISODES), []);
+
+  const coverageGaps = useMemo(() => {
+    const covered = new Set(CATEGORY_GROUPS.flatMap((g) => [...g.types]));
+    return corpus.byType.filter((row) => !covered.has(row.type));
+  }, [corpus]);
+
   const startQuiz = useCallback(
-    (items: QuizItem[], marathon: boolean, enteredFromBrowse: boolean) => {
+    (items: QuizItem[], run: QuizRunConfig, enteredFromBrowse: boolean) => {
+      if (items.length === 0) {
+        window.alert("No questions matched that setup—pick another arc.");
+        return;
+      }
       setQuiz({
-        marathon,
+        run,
         items,
         index: 0,
         answers: {},
@@ -77,19 +127,117 @@ export function App() {
         lastPick: null,
         enteredFromBrowse,
       });
-      setScreen({ name: "quiz", items, marathon, enteredFromBrowse });
+      setScreen({ name: "quiz", items, run, enteredFromBrowse });
     },
     [],
   );
 
+  const replayFromConfig = useCallback(
+    (run: QuizRunConfig, itemsRef: QuizItem[], enteredFromBrowse: boolean) => {
+      switch (run.mode) {
+        case "episode": {
+          const ep = itemsRef[0]?.episode;
+          if (ep) startQuiz(episodeQuizItems(ep), { mode: "episode" }, enteredFromBrowse);
+          break;
+        }
+        case "marathon_random":
+          startQuiz(marathonQuizItems(EPISODES, run.count, Math.random), run, false);
+          break;
+        case "daily":
+          startQuiz(
+            dailyChallengeQuizItems(EPISODES, run.dateKeyUtc, run.count),
+            run,
+            false,
+          );
+          break;
+        case "season":
+          startQuiz(
+            marathonForSeason(EPISODES, run.season, run.count, Math.random),
+            run,
+            false,
+          );
+          break;
+        case "categories":
+          startQuiz(
+            marathonForTypes(EPISODES, run.questionTypes, run.count, Math.random),
+            run,
+            false,
+          );
+          break;
+        case "full_corpus": {
+          const items =
+            run.order === "broadcast"
+              ? orderedFullCorpusRun(EPISODES)
+              : shuffledFullCorpusRun(EPISODES, Math.random);
+          startQuiz(items, run, false);
+          break;
+        }
+      }
+    },
+    [startQuiz],
+  );
+
   const startRandomEpisode = () => {
     const ep = randomEpisode(EPISODES, Math.random);
-    startQuiz(episodeQuizItems(ep), false, false);
+    startQuiz(episodeQuizItems(ep), { mode: "episode" }, false);
   };
 
-  const startMarathon = (count: number) => {
-    const items = marathonQuizItems(EPISODES, count, Math.random);
-    startQuiz(items, true, false);
+  const startMarathonSized = (count: number) => {
+    startQuiz(marathonQuizItems(EPISODES, count, Math.random), { mode: "marathon_random", count }, false);
+  };
+
+  const startDaily = () => {
+    const key = utcCalendarKey();
+    startQuiz(dailyChallengeQuizItems(EPISODES, key, DAILY_COUNT), { mode: "daily", dateKeyUtc: key, count: DAILY_COUNT }, false);
+  };
+
+  const startSeasonMix = (season: number, request: number) => {
+    const cap = corpus.bySeason.find((x) => x.seasonIndex === season)?.questions ?? 0;
+    const count = Math.max(1, Math.min(request, cap));
+    startQuiz(marathonForSeason(EPISODES, season, count, Math.random), { mode: "season", season, count }, false);
+  };
+
+  const startCategoryMix = (
+    cat: (typeof CATEGORY_GROUPS)[number],
+    request: number,
+  ) => {
+    const cap = countQuestionsForTypes(corpus, cat.types);
+    const count = Math.max(1, Math.min(request, cap));
+    startQuiz(marathonForTypes(EPISODES, [...cat.types], count, Math.random), {
+      mode: "categories",
+      categoryLabel: cat.label,
+      categoryId: cat.id,
+      questionTypes: [...cat.types],
+      count,
+    }, false);
+  };
+
+  const startSingleTypeLens = (typeKey: string, request: number) => {
+    const cap = corpus.byType.find((r) => r.type === typeKey)?.count ?? 0;
+    const count = Math.max(1, Math.min(request, cap));
+    startQuiz(marathonForTypes(EPISODES, [typeKey], count, Math.random), {
+      mode: "categories",
+      categoryLabel: readableTypeName(typeKey),
+      categoryId: typeKey,
+      questionTypes: [typeKey],
+      count,
+    }, false);
+  };
+
+  const startFullCorpus = (order: "broadcast" | "shuffled") => {
+    const pool =
+      order === "broadcast" ? orderedFullCorpusRun(EPISODES) : shuffledFullCorpusRun(EPISODES, Math.random);
+    const cfg: QuizRunConfig = {
+      mode: "full_corpus",
+      poolSize: pool.length,
+      order,
+    };
+    const ok =
+      pool.length <= 250 ||
+      window.confirm(
+        `This run includes all ${pool.length} script-derived prompts and can take multiple hours split across breaks. Kick it off anyway?`,
+      );
+    if (ok) startQuiz(pool, cfg, false);
   };
 
   const currentItem = quiz ? (quiz.items[quiz.index] ?? null) : null;
@@ -100,9 +248,9 @@ export function App() {
       if (q.index + 1 >= q.items.length) {
         const items = q.items;
         const answers = q.answers;
-        const marathon = q.marathon;
+        const run = q.run;
         const enteredFromBrowse = q.enteredFromBrowse;
-        setScreen({ name: "results", items, answers, marathon, enteredFromBrowse });
+        setScreen({ name: "results", items, answers, run, enteredFromBrowse });
         return null;
       }
       return {
@@ -182,15 +330,24 @@ export function App() {
     : 0;
   const progressMax = quiz?.items.length ?? 1;
 
+  const quizUi = quiz ? quizUiStrings(quiz.run) : null;
+
   return (
     <div className="app-shell">
       <header className="brand-lockup">
         <h1>Yada yada trivia</h1>
-        <p className="tagline">Twenty-five script-sourced questions per episode—no hugging, no learning.</p>
+        <p className="tagline">
+          Among the deepest open homages wired straight from transcript sources—
+          <strong> {corpus.questionCount}</strong> question-level prompts across{" "}
+          <strong>{corpus.episodeCount}</strong> episodes. Episode grinds, synchronized dailies, season silos, trivia-type laboratories,
+          mega-mixes, and exhaustive archive marathons in one offline-friendly site.
+        </p>
         <div className="pill-strip" aria-hidden>
-          <span className="pill">180 episodes</span>
-          <span className="pill">4500 prompts</span>
-          <span className="pill">Local play</span>
+          <span className="pill">{corpus.episodeCount}&nbsp;episode mirror</span>
+          <span className="pill">{corpus.questionCount}&nbsp;prompt matrix</span>
+          <span className="pill">
+            {CATEGORY_GROUPS.length + 4} challenge modes
+          </span>
         </div>
       </header>
 
@@ -198,7 +355,7 @@ export function App() {
         <div className="stack">
           <div className="card">
             <p className="card-muted" style={{ marginTop: 0 }}>
-              Jump into any episode catalogued on{" "}
+              Every multiple-choice node is generated from the verbatim script index at{" "}
               <a
                 href="http://www.seinfeldscripts.com/seinfeld-scripts.html"
                 target="_blank"
@@ -206,29 +363,177 @@ export function App() {
               >
                 SeinfeldScripts.com
                 <NewTabAnnouncement />
-              </a>
-              , or remix questions across the run.
+              </a>{" "}
+              (dialogue fingerprints, headings, structured metadata). Nothing here streams video or audio—we are purely a forensic
+              text playground for superfans chasing <em>everything</em> about the canon.
             </p>
-            <div className="stack">
+            <div className="row-between atlas-row">
+              <strong>Corpus intelligence</strong>
+              <button type="button" className="btn btn-ghost-light" onClick={goStats}>
+                Open atlas
+              </button>
+            </div>
+            <p className="card-muted corpus-footnote">
+              Explore per-season densities, trivia archetypes, and how the dataset breaks down across {corpus.distinctTypes.length}{" "}
+              distinct classifier tags.
+            </p>
+          </div>
+
+          <div className="card">
+            <strong>Daily hive-mind puzzle</strong>
+            <p className="card-muted" style={{ marginTop: "0.35rem" }}>
+              UTC date <code className="inline-code">{utcCalendarKey()}</code> locks everyone into the exact same {DAILY_COUNT}-prompt slate.
+              Bragging rights unlocked.
+            </p>
+            <button type="button" className="btn btn-teal btn-block" onClick={startDaily}>
+              Play today&apos;s seeded challenge ({DAILY_COUNT} questions)
+            </button>
+          </div>
+
+          <div className="card">
+            <strong>Classic episode arcs</strong>
+            <div className="stack" style={{ marginTop: "0.65rem" }}>
               <button type="button" className="btn btn-teal btn-block" onClick={startRandomEpisode}>
-                Random episode (25 questions)
+                Random installment · full 25-question screenplay pass
               </button>
               <button type="button" className="btn btn-ghost-light btn-block" onClick={goBrowse}>
-                Browse catalog by season
+                Searchable catalogue (title + production order)
               </button>
             </div>
           </div>
+
           <div className="card">
-            <strong>Marathon</strong>
+            <strong>Season silos · hyper-focused grinds</strong>
             <p className="card-muted" style={{ marginTop: "0.35rem" }}>
-              Shuffle the full question pool—a little Frank Costanza chaos.
+              Mash up only prompts tied to pilot/special arcs or any CBS/Fox-era season buckets—ideal for rewatches syncing with your
+              current binge tracker.
+            </p>
+            <div className="season-grid">
+              {corpus.bySeason.map(({ seasonIndex, episodes: epCt, questions: pq }) => {
+                const playable = Math.min(25, pq);
+                const disabled = pq === 0;
+                return (
+                  <button
+                    key={seasonIndex}
+                    type="button"
+                    className="btn btn-ghost-light season-chip"
+                    disabled={disabled}
+                    onClick={() => startSeasonMix(seasonIndex, 25)}
+                    title={`${pq.toLocaleString()} prompts in bucket`}
+                  >
+                    <span>{seasonTitle(seasonIndex)}</span>
+                    <small>
+                      {epCt} episodes · {pq.toLocaleString()} prompts
+                      {!disabled ? ` · samples ${playable} per hit` : null}
+                    </small>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="card">
+            <strong>Archetype laboratories</strong>
+            <p className="card-muted" style={{ marginTop: "0.35rem" }}>
+              Dialogue sleuths versus writers-room receipts versus meta chronology—all powered by granular type tags surfaced in the
+              generator.
+            </p>
+            <div className="category-list">
+              {CATEGORY_GROUPS.map((cat) => {
+                const cap = countQuestionsForTypes(corpus, cat.types);
+                const disabled = cap === 0;
+                const focus25 = Math.min(25, cap);
+                const deep = Math.min(60, cap);
+                return (
+                  <div key={cat.id} className="category-row">
+                    <div>
+                      <div className="category-title">{cat.label}</div>
+                      <div className="category-sub">{cat.subtitle}</div>
+                      <div className="category-cap">{cap.toLocaleString()} prompts indexed</div>
+                    </div>
+                    <div className="category-actions">
+                      <button
+                        type="button"
+                        className="btn btn-ghost-light"
+                        disabled={disabled || cap < 15}
+                        onClick={() => startCategoryMix(cat, Math.min(15, cap))}
+                      >
+                        15 sprint
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-ghost-light"
+                        disabled={disabled}
+                        onClick={() => startCategoryMix(cat, focus25)}
+                      >
+                        {focus25}-deep
+                      </button>
+                      {deep > focus25 ? (
+                        <button
+                          type="button"
+                          className="btn btn-ghost-light"
+                          disabled={disabled}
+                          onClick={() => startCategoryMix(cat, deep)}
+                        >
+                          {deep}-obsessed
+                        </button>
+                      ) : null}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {coverageGaps.length > 0 ? (
+            <div className="card">
+              <strong>Residual classifier tags</strong>
+              <p className="card-muted" style={{ marginTop: "0.35rem" }}>
+                Every prompt type is enumerated here—even the long tail that didn&apos;t fit a themed bucket yet—so obsessive
+                completists can still drill the entire taxonomy.
+              </p>
+              <div className="residual-tags">
+                {coverageGaps.map((row) => {
+                  const cap = row.count;
+                  const playable = Math.min(25, cap);
+                  const disabled = cap === 0;
+                  return (
+                    <button
+                      key={row.type}
+                      type="button"
+                      className="btn btn-ghost-light residual-chip"
+                      disabled={disabled}
+                      onClick={() => startSingleTypeLens(row.type, playable)}
+                      title={`${cap.toLocaleString()} prompts`}
+                    >
+                      <span>{readableTypeName(row.type)}</span>
+                      <small>{cap.toLocaleString()} indexed</small>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
+
+          <div className="card">
+            <strong>Total chaos mega-mixes</strong>
+            <p className="card-muted" style={{ marginTop: "0.35rem" }}>
+              Completely randomized pulls from the continental question pool—or flex with the entire corpus twice (ordered vs reshuffled).
             </p>
             <div className="marathon-actions">
-              {[10, 25, 50].map((n) => (
-                <button key={n} type="button" className="btn btn-red btn-block" onClick={() => startMarathon(n)}>
-                  {n} questions
+              {[10, 25, 50, 100].map((n) => (
+                <button key={n} type="button" className="btn btn-red btn-block" onClick={() => startMarathonSized(n)}>
+                  {n} random prompts
                 </button>
               ))}
+            </div>
+            <div className="stack full-corpus-row">
+              <button type="button" className="btn btn-teal btn-block" onClick={() => startFullCorpus("broadcast")}>
+                Canon order · entire matrix ({corpus.questionCount.toLocaleString()} prompts)
+              </button>
+              <button type="button" className="btn btn-ghost-light btn-block" onClick={() => startFullCorpus("shuffled")}>
+                Shuffle literally everything fresh
+              </button>
             </div>
           </div>
         </div>
@@ -239,13 +544,32 @@ export function App() {
           <div className="card">
             <div className="row-between">
               <strong>Select an episode</strong>
-              <button type="button" className="btn btn-ghost-light" onClick={goHome}>
-                Home
-              </button>
+              <div className="row-between" style={{ gap: "0.5rem", flexWrap: "wrap", justifyContent: "flex-end" }}>
+                <button type="button" className="btn btn-ghost-light" onClick={goStats}>
+                  Atlas
+                </button>
+                <button type="button" className="btn btn-ghost-light" onClick={goHome}>
+                  Home
+                </button>
+              </div>
             </div>
+            <label className="browse-search-label">
+              <span className="visually-hidden">Filter episodes</span>
+              <input
+                type="search"
+                className="browse-search-field"
+                placeholder="Filter by episode title or series number…"
+                value={browseSearch}
+                onChange={(e) => setBrowseSearch(e.target.value)}
+                autoComplete="off"
+              />
+            </label>
           </div>
           <div className="card stack">
-            {bySeason.map(([season, episodes]) => (
+            {filteredBySeasonBrowse.length === 0 ? (
+              <p className="card-muted">No episodes match “{browseSearch.trim()}”—try loosening your filter.</p>
+            ) : (
+              filteredBySeasonBrowse.map(([season, episodes]) => (
               <details key={season} className="season-acc">
                 <summary>
                   <span>{seasonTitle(season)}</span>
@@ -258,14 +582,15 @@ export function App() {
                     key={ep.seriesIndex}
                     type="button"
                     className="ep-link"
-                    onClick={() => startQuiz(episodeQuizItems(ep), false, true)}
+                    onClick={() => startQuiz(episodeQuizItems(ep), { mode: "episode" }, true)}
                   >
                     {ep.title}{" "}
                     <span style={{ fontWeight: 500, color: "var(--ink-muted)" }}>(#{ep.seriesIndex})</span>
                   </button>
                 ))}
               </details>
-            ))}
+            ))
+            )}
           </div>
         </div>
       )}
@@ -278,7 +603,7 @@ export function App() {
                 Quit quiz
               </button>
               <span className="episode-meta" aria-live="polite">
-                {quiz.marathon ? "Marathon • " : null}
+                {quizUi ? `${quizUi.subtitle} · ` : null}
                 {quiz.index + 1} / {quiz.items.length}
               </span>
             </div>
@@ -300,7 +625,7 @@ export function App() {
               />
             </div>
             <div className="episode-meta" style={{ marginTop: "1rem" }}>
-              {!quiz.marathon ? (
+              {!marathonStyleUi(quiz.run) ? (
                 <>
                   {seasonTitle(currentItem.episode.season)} · #{currentItem.episode.seriesIndex}{" "}
                   <span aria-hidden>·</span> {currentItem.episode.airDate}
@@ -312,6 +637,9 @@ export function App() {
                 </>
               )}
             </div>
+            <p className="question-type-chip" aria-label="Prompt archetype">
+              {readableTypeName(currentItem.question.type)}
+            </p>
             <p className="question-text">{currentItem.question.question}</p>
             <p id="quiz-keyboard-help" className="visually-hidden">
               Use number keys 1 through 4 to choose an answer. After each reveal, press Enter or Space to continue to the next
@@ -366,25 +694,98 @@ export function App() {
         </div>
       )}
 
+      {screen.name === "stats" && (
+        <div className="stack">
+          <div className="card">
+            <div className="row-between">
+              <strong>Corpus atlas · raw coverage</strong>
+              <button type="button" className="btn btn-ghost-light" onClick={goHome}>
+                Home
+              </button>
+            </div>
+            <p className="card-muted" style={{ marginTop: "0.65rem", marginBottom: "1rem" }}>
+              Transparent counts pulled straight from bundled JSON—no inflated marketing math. Tap any mode on the homepage to grind a
+              specific wedge of this histogram.
+            </p>
+            <dl className="mega-stats-grid">
+              <div>
+                <dt>Episode transcripts mirrored</dt>
+                <dd>{corpus.episodeCount}</dd>
+              </div>
+              <div>
+                <dt>Distinct prompt nodes</dt>
+                <dd>{corpus.questionCount.toLocaleString()}</dd>
+              </div>
+              <div>
+                <dt>Classifier archetypes</dt>
+                <dd>{corpus.distinctTypes.length}</dd>
+              </div>
+            </dl>
+          </div>
+          <div className="card">
+            <strong>Per-season density</strong>
+            <div className="table-wrap" style={{ marginTop: "0.75rem" }}>
+              <table className="data-sheet">
+                <thead>
+                  <tr>
+                    <th scope="col">Season</th>
+                    <th scope="col">Episodes</th>
+                    <th scope="col">Prompts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {corpus.bySeason.map((row) => (
+                    <tr key={row.seasonIndex}>
+                      <td>{seasonTitle(row.seasonIndex)}</td>
+                      <td>{row.episodes}</td>
+                      <td>{row.questions.toLocaleString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="card">
+            <strong>Classifier inventory</strong>
+            <p className="card-muted" style={{ marginTop: "0.35rem" }}>
+              Every label is emitted by the trivia generator so you can steer practice toward exactly the kind of screenplay signal you
+              care about.
+            </p>
+            <div className="table-wrap" style={{ marginTop: "0.75rem" }}>
+              <table className="data-sheet">
+                <thead>
+                  <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Prompts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {corpus.byType.map((row) => (
+                    <tr key={row.type}>
+                      <td>{readableTypeName(row.type)}</td>
+                      <td>{row.count.toLocaleString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
+
       {screen.name === "results" && (
         <ResultsPane
           items={screen.items}
           answers={screen.answers}
-          marathon={screen.marathon}
+          run={screen.run}
+          resultsTitle={quizUiStrings(screen.run).resultsTitle}
+          replayHint={quizUiStrings(screen.run).replayHint}
           enteredFromBrowse={screen.enteredFromBrowse}
           onHome={goHome}
           onBrowse={goBrowse}
-          onReplay={() => {
-            if (!screen.marathon && screen.items[0]) {
-              startQuiz(
-                episodeQuizItems(screen.items[0].episode),
-                false,
-                screen.enteredFromBrowse,
-              );
-            } else if (screen.items.length > 0) {
-              startMarathon(screen.items.length);
-            }
-          }}
+          onReplay={() =>
+            replayFromConfig(screen.run, screen.items, screen.enteredFromBrowse)
+          }
         />
       )}
 
@@ -399,7 +800,9 @@ export function App() {
 function ResultsPane({
   items,
   answers,
-  marathon,
+  run,
+  resultsTitle,
+  replayHint,
   enteredFromBrowse,
   onHome,
   onBrowse,
@@ -407,7 +810,9 @@ function ResultsPane({
 }: {
   items: QuizItem[];
   answers: Record<number, { choice: number; correct: boolean }>;
-  marathon: boolean;
+  run: QuizRunConfig;
+  resultsTitle: string;
+  replayHint: string;
   enteredFromBrowse: boolean;
   onHome: () => void;
   onBrowse: () => void;
@@ -432,7 +837,7 @@ function ResultsPane({
   return (
     <div className="stack">
       <div className="card">
-        <p className="episode-meta">{marathon ? "Marathon results" : "Episode results"}</p>
+        <p className="episode-meta">{resultsTitle}</p>
         <p className="results-score">{correctCt}&nbsp;<span style={{ opacity: 0.45 }}>/</span> {items.length}</p>
         <p className="card-muted">
           {wrongCt ? `${wrongCt} missed. ` : null}
@@ -440,7 +845,7 @@ function ResultsPane({
           {correctCt === items.length ? "Master of your domain." : "Serenity now—try again sometime."}
         </p>
 
-        {!marathon && items[0] && (
+        {run.mode === "episode" && items[0] && (
           <p style={{ marginBottom: "0.65rem", fontWeight: 600 }}>
             Episode:{" "}
             <a href={items[0].episode.primarySource} target="_blank" rel="noopener noreferrer">
@@ -456,7 +861,7 @@ function ResultsPane({
               Home
             </button>
             <button type="button" className="btn btn-teal" onClick={onReplay}>
-              {marathon ? "New marathon shuffle" : "Replay this episode"}
+              {replayHint}
             </button>
           </div>
           {enteredFromBrowse && (
