@@ -1,0 +1,7394 @@
+[
+  {
+    "seriesIndex": 65,
+    "season": 5,
+    "title": "The Mango",
+    "airDate": "9/16/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheMango.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:31.995Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “Jerry and Elaine. They made me nuts.”?",
+        "options": [
+          "RENE",
+          "KRAMER",
+          "JERRY",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “no, that's important to me. JERRY: We won't ruin the friendship. ELAINE: Yes we will! JERRY: Elaine... ELAINE…”?",
+        "options": [
+          "KARIN",
+          "KRAMER",
+          "Elaine",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “leaves the apartment) KRAMER: Want some mango? ELAINE: No, thanks. (”?",
+        "options": [
+          "Jerry",
+          "Elaine",
+          "George",
+          "KARIN"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “I feel like I got a B12 shot. This is like a taste explosion!”?",
+        "options": [
+          "GEORGE",
+          "Kramer",
+          "Transcribed by",
+          "KARIN"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “You know I'm a little hungry. You wouldn't happen to have any of that mango left”?",
+        "options": [
+          "KRAMER",
+          "JERRY",
+          "ELAINE",
+          "RENE"
+        ],
+        "correctIndex": 2,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “smiles sarcastically) JERRY: Maybe they've all been faking. ELAINE: I'm sure they're not. GEORGE: Maybe Karin…”?",
+        "options": [
+          "RENE",
+          "Elaine",
+          "KRAMER",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “enters the apartment) ELAINE: Hi George. GEORGE: I'm back, baby, I'm back! (”?",
+        "options": [
+          "Elaine",
+          "KARIN",
+          "Transcribed by",
+          "JERRY"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “laugh) ELAINE: You didn't know. JERRY: What? ELAINE: You didn't know. JERRY: Are you saying... (”?",
+        "options": [
+          "KARIN",
+          "Kramer",
+          "JOE",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “Look, Jerry, we have to have sex to save the friendship.”?",
+        "options": [
+          "Jerry",
+          "Kramer",
+          "George",
+          "ELAINE"
+        ],
+        "correctIndex": 3,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “Please, it's not necessary.”?",
+        "options": [
+          "JOE",
+          "RENE",
+          "GEORGE",
+          "Transcribed by"
+        ],
+        "correctIndex": 2,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “calls a waitress) GEORGE: I think I'll have a piece of cake. JERRY: With me? ELAINE: Well... JERRY: You faked…”?",
+        "options": [
+          "George",
+          "Transcribed by",
+          "KRAMER",
+          "ELAINE"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Come on: 'Oh George, oh Geeeooorge!' Come on! Not that I don't appreciate the effort that was put into it.”?",
+        "options": [
+          "ELAINE",
+          "JERRY",
+          "JOE",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “opens the door and then closes it again) ELAINE: All right, let's go, I give you half an hour. JERRY: What? E…”?",
+        "options": [
+          "Transcribed by",
+          "KRAMER",
+          "JOE",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “hangs up the phone) JERRY: Patty Lawrence had 'em! KRAMER: Okay, I'm gonna make you a fruit list, all right?…”?",
+        "options": [
+          "Jerry",
+          "GEORGE",
+          "Kramer",
+          "JOE"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 15,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "64",
+          "66",
+          "72",
+          "65"
+        ],
+        "correctIndex": 3,
+        "answer": "65"
+      },
+      {
+        "id": 16,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 6",
+          "Season 5",
+          "Season 4",
+          "Season 9"
+        ],
+        "correctIndex": 1,
+        "answer": "Season 5"
+      },
+      {
+        "id": 17,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "9/16/93",
+          "5/14/98",
+          "7/5/89",
+          "11/18/92"
+        ],
+        "correctIndex": 0,
+        "answer": "9/16/93"
+      },
+      {
+        "id": 18,
+        "type": "who_said",
+        "question": "Who says: “you gotta go to Joe's, you gotta get me some fruit! JERRY: Oh so what I'm going to buy all your fruit now? GE…”?",
+        "options": [
+          "Jerry",
+          "Transcribed by",
+          "Kramer",
+          "KARIN"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 19,
+        "type": "who_said",
+        "question": "Who says: “picks it up) JERRY: Hello... Oh hi Patty, thanks for calling me back. I just wanted to ask you a question: wh…”?",
+        "options": [
+          "Jerry",
+          "KRAMER",
+          "JOE",
+          "ELAINE"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “All right, let's go, I give you half an hour.”?",
+        "options": [
+          "GEORGE",
+          "ELAINE",
+          "Jerry",
+          "JOE"
+        ],
+        "correctIndex": 1,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “I don't know. Last time I got the tap.”?",
+        "options": [
+          "GEORGE",
+          "JERRY",
+          "ELAINE",
+          "Kramer"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “On your knees, Ajax, scrubbing, the whole deal”?",
+        "options": [
+          "Elaine",
+          "JERRY",
+          "George",
+          "KRAMER"
+        ],
+        "correctIndex": 1,
+        "answer": "JERRY"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “What, what are you talking about”?",
+        "options": [
+          "RENE",
+          "JOE",
+          "JERRY",
+          "KARIN"
+        ],
+        "correctIndex": 2,
+        "answer": "JERRY"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “No no, it was no joke.”?",
+        "options": [
+          "GEORGE",
+          "Transcribed by",
+          "KRAMER",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “Jerry no, that's important to me.”?",
+        "options": [
+          "JERRY",
+          "KRAMER",
+          "ELAINE",
+          "Transcribed by"
+        ],
+        "correctIndex": 2,
+        "answer": "ELAINE"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 66,
+    "season": 5,
+    "title": "The Puffy Shirt",
+    "airDate": "9/23/93",
+    "primarySource": "http://www.seinfeldscripts.com/ThePuffyShirt.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:32.233Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “No, George. We're going out to eat tonight with your father.”?",
+        "options": [
+          "ESTELLE",
+          "KRAMER",
+          "BRYANT",
+          "David"
+        ],
+        "correctIndex": 0,
+        "answer": "ESTELLE"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “Uh-huh.. (Finally realizes what Kramer said, he looks up)”?",
+        "options": [
+          "David",
+          "Frank",
+          "Kramer",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “(Runs over to him, not wanting him to leave) What? You're”?",
+        "options": [
+          "GEORGE",
+          "ELIANE",
+          "Kramer",
+          "PHOTOGRAPHER"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “Oh, Elaine and I are going out to dinner with Kramer and”?",
+        "options": [
+          "Stars",
+          "KRAMER",
+          "George",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Let's see.. oh, those are nice. You know, I've never noticed”?",
+        "options": [
+          "GEORGE",
+          "KRAMER",
+          "PHOTOGRAPHER",
+          "David"
+        ],
+        "correctIndex": 1,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “(Sarcastic) Yeah, yeah. I'm gonna move in with him. He”?",
+        "options": [
+          "FRANK",
+          "BRYANT",
+          "Elaine",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “I think you're all a little touched in the head. (Puts”?",
+        "options": [
+          "Broadcasted",
+          "ESTELLE",
+          "ELIANE",
+          "David"
+        ],
+        "correctIndex": 1,
+        "answer": "ESTELLE"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “No, no, no, no. Borrowing money from a friend is like having”?",
+        "options": [
+          "ELIANE",
+          "JERRY",
+          "ESTELLE",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “(Embarrassed) That's all I could find. (A moment passes)”?",
+        "options": [
+          "STAGEHAND",
+          "GEORGE",
+          "Elaine",
+          "JERRY"
+        ],
+        "correctIndex": 1,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “Yeah, take it easy. (Leaves)”?",
+        "options": [
+          "David",
+          "Frank",
+          "ELAINE",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “September 23, 1993 for the first time.”?",
+        "options": [
+          "Broadcasted",
+          "BRYANT",
+          "Kramer",
+          "ELAINE"
+        ],
+        "correctIndex": 0,
+        "answer": "Broadcasted"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Hey, George! (Holds out his hand. George shakes it - a”?",
+        "options": [
+          "KRAMER",
+          "Elaine",
+          "Jerry",
+          "WOMAN"
+        ],
+        "correctIndex": 0,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “(Defensively) You can look at them, but do NOT touch them.”?",
+        "options": [
+          "GEORGE",
+          "Frank",
+          "PHOTOGRAPHER",
+          "Stars"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “(Fishes a card out of her purse, then hands it to George)”?",
+        "options": [
+          "WOMAN",
+          "JERRY",
+          "ESTELLE",
+          "Frank"
+        ],
+        "correctIndex": 0,
+        "answer": "WOMAN"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Larry Charles",
+          "Andy Ackerman",
+          ": Larry David",
+          "Tom Cherones"
+        ],
+        "correctIndex": 2,
+        "answer": ": Larry David"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "Jason Alexander",
+          "Andy Ackerman",
+          "Tom Cherones",
+          ": Tom Cherones"
+        ],
+        "correctIndex": 3,
+        "answer": ": Tom Cherones"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “the world seeking a cure.. acupuncturists”?",
+        "options": [
+          "but none could match the beauty of his",
+          "herbalists.. swamis..",
+          "and that became his",
+          "It's a, a puffy shirt. (Leslie"
+        ],
+        "correctIndex": 1,
+        "answer": "herbalists.. swamis.."
+      },
+      {
+        "id": 18,
+        "type": "cast",
+        "question": "In the cast list, who plays “be the big new look in mens fashions”?",
+        "options": [
+          "but none could match the beauty of his",
+          "and that became his",
+          "herbalists.. swamis..",
+          "It's a, a puffy shirt. (Leslie"
+        ],
+        "correctIndex": 3,
+        "answer": "It's a, a puffy shirt. (Leslie"
+      },
+      {
+        "id": 19,
+        "type": "cast",
+        "question": "In the cast list, who plays “I don't even think I'd pass it”?",
+        "options": [
+          "So..",
+          "It's a, a puffy shirt. (Leslie",
+          "and that became his",
+          "but none could match the beauty of his"
+        ],
+        "correctIndex": 0,
+        "answer": "So.."
+      },
+      {
+        "id": 20,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "73",
+          "65",
+          "67",
+          "66"
+        ],
+        "correctIndex": 3,
+        "answer": "66"
+      },
+      {
+        "id": 21,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 9",
+          "Season 4",
+          "Season 6",
+          "Season 5"
+        ],
+        "correctIndex": 3,
+        "answer": "Season 5"
+      },
+      {
+        "id": 22,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "9/23/93",
+          "5/14/98",
+          "7/5/89",
+          "11/18/92"
+        ],
+        "correctIndex": 0,
+        "answer": "9/23/93"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Yeah.. may - maybe I'll meet ya”?",
+        "options": [
+          "GEORGE",
+          "Directed by",
+          "Estelle",
+          "Stars"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “Bologna?! No one eats bologna anymore!”?",
+        "options": [
+          "Frank",
+          "ELAINE",
+          "ESTELLE",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “hands an Emory board to George. He takes it, then goes back to his manicure) ESTELLE: I always talk about you…”?",
+        "options": [
+          "FRANK",
+          "JERRY",
+          "Estelle",
+          "STAGEHAND"
+        ],
+        "correctIndex": 2,
+        "answer": "Estelle"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 67,
+    "season": 5,
+    "title": "The Glasses",
+    "airDate": "9/30/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheGlasses.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:32.473Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “You got bit by a strange dog and you didn't get a rabies shot”?",
+        "options": [
+          "JERRY",
+          "BLIND MAN",
+          "DOG OWNER",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “Oh I'm gonna take you over to the emergency room.”?",
+        "options": [
+          "JERRY",
+          "DOCTER",
+          "GEORGE",
+          "UNCLE LEO"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Ah, he'd just deny it.”?",
+        "options": [
+          "DOG OWNER",
+          "JERRY",
+          "Elaine",
+          "DWAYNE"
+        ],
+        "correctIndex": 1,
+        "answer": "JERRY"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “A bad side, an ugly side.”?",
+        "options": [
+          "KRAMER",
+          "DWAYNE",
+          "ELAINE",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “I've got such a headache. Oh, that's another symptom!”?",
+        "options": [
+          "KRAMER",
+          "George",
+          "ELAINE",
+          "AMY"
+        ],
+        "correctIndex": 2,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “Did you get the shot”?",
+        "options": [
+          "GEORGE",
+          "DOCTER",
+          "Transcribed by",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “enters the apartment wearing goggles) KRAMER: Yeah, rock on! (”?",
+        "options": [
+          "George",
+          "KRAMER",
+          "DOG OWNER",
+          "DWAYNE"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “Ooh, everything was going so well. She hadn't seen any flaws in me.”?",
+        "options": [
+          "JERRY",
+          "DWAYNE",
+          "KRAMER",
+          "DOCTER"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “Well, I'm very mysterious by nature.”?",
+        "options": [
+          "JERRY",
+          "ELAINE",
+          "Kramer",
+          "DOG OWNER"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “shows the phone) JERRY: Ah, see, told me they'd be back in a minute and THEY lied. AMY: You can't thrust anyo…”?",
+        "options": [
+          "UNCLE LEO",
+          "BLIND MAN",
+          "DOG OWNER",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “Little Snowball? He runs on batteries!”?",
+        "options": [
+          "DOG OWNER",
+          "Elaine",
+          "KRAMER",
+          "GEORGE"
+        ],
+        "correctIndex": 2,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “There is a side, an ugly side.”?",
+        "options": [
+          "AMY",
+          "Kramer",
+          "George",
+          "DWAYNE"
+        ],
+        "correctIndex": 0,
+        "answer": "AMY"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “I knew there had to be another side to you.”?",
+        "options": [
+          "AMY",
+          "GEORGE",
+          "Kramer",
+          "DOG OWNER"
+        ],
+        "correctIndex": 0,
+        "answer": "AMY"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “Yeah, yeah, take care.”?",
+        "options": [
+          "Transcribed by",
+          "DOG OWNER",
+          "JERRY",
+          "AMY"
+        ],
+        "correctIndex": 2,
+        "answer": "JERRY"
+      },
+      {
+        "id": 15,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "66",
+          "67",
+          "74",
+          "68"
+        ],
+        "correctIndex": 1,
+        "answer": "67"
+      },
+      {
+        "id": 16,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 6",
+          "Season 5",
+          "Season 9",
+          "Season 4"
+        ],
+        "correctIndex": 1,
+        "answer": "Season 5"
+      },
+      {
+        "id": 17,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "7/5/89",
+          "5/14/98",
+          "9/30/93"
+        ],
+        "correctIndex": 3,
+        "answer": "9/30/93"
+      },
+      {
+        "id": 18,
+        "type": "who_said",
+        "question": "Who says: “No, no, no. No trouble at all, it's a principal the thing.”?",
+        "options": [
+          "JERRY",
+          "DOG OWNER",
+          "Kramer",
+          "GEORGE"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 19,
+        "type": "who_said",
+        "question": "Who says: “knocks on the door) JERRY: A lot of women find that attractive. AMY: I find it annoying. JERRY: Really? (Uncl…”?",
+        "options": [
+          "KRAMER",
+          "Jerry",
+          "GEORGE",
+          "Elaine"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “Amy said nothing happened.”?",
+        "options": [
+          "BLIND MAN",
+          "AMY",
+          "JERRY",
+          "KRAMER"
+        ],
+        "correctIndex": 2,
+        "answer": "JERRY"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “Yeah, especially those frames.”?",
+        "options": [
+          "UNCLE LEO",
+          "Jerry",
+          "AMY",
+          "ELAINE"
+        ],
+        "correctIndex": 3,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “didn't even have his glasses on! JERRY: But he was squinting. ELAINE: So what? Squinting doesn't make that mu…”?",
+        "options": [
+          "UNCLE LEO",
+          "George",
+          "DWAYNE",
+          "JERRY"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “leaves the store and follows the dog owner) GEORGE: You! Dog man! ELAINE: My leg looks pretty bad. JERRY: Oh…”?",
+        "options": [
+          "DOCTER",
+          "BLIND MAN",
+          "AMY",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “enters the apartment) KRAMER: Hey. JERRY: Hey. KRAMER: Well I got it! JERRY: You got me the air conditioner?…”?",
+        "options": [
+          "UNCLE LEO",
+          "DWAYNE",
+          "AMY",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “Now, look at this. Cable's out.”?",
+        "options": [
+          "JERRY",
+          "Elaine",
+          "KRAMER",
+          "GEORGE"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 68,
+    "season": 5,
+    "title": "The Sniffing Accountant",
+    "airDate": "10/7/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheSniffingAccountant.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:32.711Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “That's importuning(?) continent.”?",
+        "options": [
+          "Farkus",
+          "Kramer",
+          "Estelle",
+          "Frank"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “reads on the couch.* Jerry: 'Dear Barry. Consider this letter to be official termination of our relationship…”?",
+        "options": [
+          "Newman",
+          "Elaine",
+          "Voice on the phone",
+          "Ralph"
+        ],
+        "correctIndex": 1,
+        "answer": "Elaine"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Get out of here! Lycra-spandex”?",
+        "options": [
+          "Frank",
+          "Lippman",
+          "Ralph",
+          "Estelle"
+        ],
+        "correctIndex": 0,
+        "answer": "Frank"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “I feel Tuesday and Wednesday...”?",
+        "options": [
+          "Jake",
+          "Kramer",
+          "Ms. De Granmont",
+          "Barry"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “So, it's nothing. Forget it, forget it, I just find it”?",
+        "options": [
+          "Jake",
+          "Woman",
+          "Barry",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “It's a letter from your friend Barry Prophet's lawyer.”?",
+        "options": [
+          "Farkus",
+          "Production Credits",
+          "Jerry",
+          "Newman"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “Well, I was just curious why you didn't use an exclamation”?",
+        "options": [
+          "Elaine",
+          "With",
+          "Newman",
+          "Jerry"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “gave it to me. Jerry: Mohair, I think. Ralph: Mohair, that figures, I'm allergic to mohair. Jerry: You mean y…”?",
+        "options": [
+          "Originally Aired",
+          "Woman",
+          "George",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “Jerry, listen, we went in on a CD together.”?",
+        "options": [
+          "Kramer",
+          "Farkus",
+          "Barry",
+          "Larry"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “What's up fellows? That'll be 14,30.”?",
+        "options": [
+          "Ralph",
+          "Bartender",
+          "Farkus to Ms. De Granmont",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "Ralph"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “If we put our three heads together we should come up with”?",
+        "options": [
+          "Ralph",
+          "Cast",
+          "Jerry",
+          "Newman"
+        ],
+        "correctIndex": 3,
+        "answer": "Newman"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Sniffing, with his nose.”?",
+        "options": [
+          "Jerry",
+          "Kramer",
+          "Woman",
+          "Estelle"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “Harris Frank...................................”?",
+        "options": [
+          "Voice on the phone",
+          "Ms. De Granmont",
+          "Estelle",
+          "Jerry"
+        ],
+        "correctIndex": 2,
+        "answer": "Estelle"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “Well, what else? Was he nervous? Did he use a lot of slang”?",
+        "options": [
+          "George",
+          "Kramer",
+          "Barry",
+          "Jerry"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Larry David & Jerry",
+          "Andy Ackerman",
+          "Larry Charles",
+          "Tom Cherones"
+        ],
+        "correctIndex": 0,
+        "answer": "Larry David & Jerry"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "Tom Cherones",
+          "Andy Ackerman",
+          "Jason Alexander",
+          "David Steinberg"
+        ],
+        "correctIndex": 0,
+        "answer": "Tom Cherones"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “Elaine Benes ......................”?",
+        "options": [
+          "Marty Rackham",
+          "Jerry Stiller",
+          "Jason Alexander",
+          "Julia Louis-Dreyfus"
+        ],
+        "correctIndex": 3,
+        "answer": "Julia Louis-Dreyfus"
+      },
+      {
+        "id": 18,
+        "type": "cast",
+        "question": "In the cast list, who plays “Farkus...............................”?",
+        "options": [
+          "George Shapiro, Howard West",
+          "Patrick Cronin",
+          "Peter Mehlman",
+          "Julia Louis-Dreyfus"
+        ],
+        "correctIndex": 1,
+        "answer": "Patrick Cronin"
+      },
+      {
+        "id": 19,
+        "type": "cast",
+        "question": "In the cast list, who plays “Estelle................................”?",
+        "options": [
+          "Estelle Harris",
+          "Larry David & Jerry Seinfeld",
+          "Peter Mehlman",
+          "Michael Richards"
+        ],
+        "correctIndex": 0,
+        "answer": "Estelle Harris"
+      },
+      {
+        "id": 20,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "75",
+          "67",
+          "69",
+          "68"
+        ],
+        "correctIndex": 3,
+        "answer": "68"
+      },
+      {
+        "id": 21,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 4",
+          "Season 6",
+          "Season 5",
+          "Season 9"
+        ],
+        "correctIndex": 2,
+        "answer": "Season 5"
+      },
+      {
+        "id": 22,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "7/5/89",
+          "5/14/98",
+          "10/7/93"
+        ],
+        "correctIndex": 3,
+        "answer": "10/7/93"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “If he's here on monday, you're not. Take a pick.”?",
+        "options": [
+          "Originally Aired",
+          "Ms. De Granmont",
+          "Ralph",
+          "Jake"
+        ],
+        "correctIndex": 1,
+        "answer": "Ms. De Granmont"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “enters* Kramer: Anything new on that guy on drugs? Elaine: He's not on drugs. Kramer: Then why the sniffing?…”?",
+        "options": [
+          "Lippman",
+          "Voice on the phone",
+          "Jerry",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “What was all that sniffing”?",
+        "options": [
+          "Jerry",
+          "George",
+          "Estelle",
+          "Jake"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 69,
+    "season": 5,
+    "title": "The Bris",
+    "airDate": "10/14/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheBris.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:32.951Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “Well I have to interview a Mohel.”?",
+        "options": [
+          "THE MOHEL BEGINS TWITCHING. ANGLE ON",
+          "Frank",
+          "ANGLE BACK ON",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “How should he know He blacked out. He fainted.”?",
+        "options": [
+          "Elaine",
+          "George",
+          "ANGLE BACK ON",
+          "Frank"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “BUT HE CONTINUES WALKING. FADE OUT END OF ACT ONE ACT TWO SCENE K (Jerry, Elaine, George, Kramer, Stan, Myra,…”?",
+        "options": [
+          "Kramer",
+          "Frank",
+          "ANGLE ON",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “LOOKS THE OTHER WAY.”?",
+        "options": [
+          "Elaine",
+          "George",
+          "SFX",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Excuse me. What happened to the man, that was in this room before? Resident I don't know what you're talking…”?",
+        "options": [
+          "SFX",
+          "ANGLE ON",
+          "Jerry",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “All right, if pig-man comes along, we'll squeeze him in. I'll see you later.”?",
+        "options": [
+          "SFX",
+          "Frank",
+          "Kramer",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “AND MYRA. SHE IS SOBBING.”?",
+        "options": [
+          "SFX",
+          "Frank",
+          "ANGLE ON",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “Yes. Mrs. SWEEDLER A man plummeted tragically to his ultimate demise -”?",
+        "options": [
+          "SFX",
+          "THE MOHEL BEGINS TWITCHING. ANGLE ON",
+          "ANGLE BACK ON",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “What's wrong with you”?",
+        "options": [
+          "Elaine",
+          "THE MOHEL BEGINS TWITCHING. ANGLE ON",
+          "ANGLE BACK ON",
+          "Kramer"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “COMES DASHING DOWN THE HALLWAY. HE IS CARRYING THE PIG MAN ON HIS BACK. THE MALE NURSE AND SECURITY GUARDS AR…”?",
+        "options": [
+          "SFX",
+          "Jerry",
+          "Kramer",
+          "ANGLE BACK ON"
+        ],
+        "correctIndex": 2,
+        "answer": "Kramer"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “Hey have you ever seen one of those”?",
+        "options": [
+          "THE MOHEL BEGINS TWITCHING. ANGLE ON",
+          "Kramer",
+          "Elaine",
+          "George"
+        ],
+        "correctIndex": 2,
+        "answer": "Elaine"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “How did I get to be Godfather? I don't even know him that well. Just cause we're on the softball team and I'm…”?",
+        "options": [
+          "Kramer",
+          "Jerry",
+          "Frank",
+          "THE MOHEL BEGINS TWITCHING. ANGLE ON"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “(STILL HOLDING HIS NOSE UP ) This doesn't look familiar to you? Resident Sir”?",
+        "options": [
+          "Jerry",
+          "Kramer",
+          "Frank",
+          "ANGLE ON"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “LIFTS NOSE UP WITH HER THUMB.”?",
+        "options": [
+          "SFX",
+          "Elaine",
+          "Frank",
+          "THE MOHEL BEGINS TWITCHING. ANGLE ON"
+        ],
+        "correctIndex": 1,
+        "answer": "Elaine"
+      },
+      {
+        "id": 15,
+        "type": "cast",
+        "question": "In the cast list, who plays “So uh.”?",
+        "options": [
+          "(TO JERRY) Jerry!",
+          "ever been to a bris before?",
+          "JERRY SEINFELD",
+          "TOM ALLAN ROBBINS"
+        ],
+        "correctIndex": 1,
+        "answer": "ever been to a bris before?"
+      },
+      {
+        "id": 16,
+        "type": "cast",
+        "question": "In the cast list, who plays “MYRA.....................................”?",
+        "options": [
+          "CHARLES LEVIN",
+          "JEANNIE ELIAS",
+          "or something.",
+          "JOHN GEGENHUBER"
+        ],
+        "correctIndex": 1,
+        "answer": "JEANNIE ELIAS"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “JERRY....................................”?",
+        "options": [
+          "JERRY SEINFELD",
+          "JULIA LOUIS- DREYFUS",
+          "TOM ALLAN ROBBINS",
+          "emancipate him?"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY SEINFELD"
+      },
+      {
+        "id": 18,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "68",
+          "70",
+          "69",
+          "76"
+        ],
+        "correctIndex": 2,
+        "answer": "69"
+      },
+      {
+        "id": 19,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 9",
+          "Season 4",
+          "Season 6",
+          "Season 5"
+        ],
+        "correctIndex": 3,
+        "answer": "Season 5"
+      },
+      {
+        "id": 20,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "10/14/93",
+          "7/5/89",
+          "5/14/98"
+        ],
+        "correctIndex": 1,
+        "answer": "10/14/93"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “But I'm the pitcher. You're the catcher. We have a special relationship.”?",
+        "options": [
+          "ANGLE BACK ON",
+          "George",
+          "SFX",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “AND MOHEL GET INTO A STRUGGLE. MOHEL (cont;d) It was your fault!”?",
+        "options": [
+          "ANGLE BACK ON",
+          "Jerry",
+          "SFX",
+          "ANGLE ON"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Alright Kramer, enough of this. Let's go find George.”?",
+        "options": [
+          "SFX",
+          "ANGLE ON",
+          "Kramer",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “Oh, don't worry. I'm gonna show him to you, and you'll never be the same.”?",
+        "options": [
+          "Kramer",
+          "SFX",
+          "Elaine",
+          "Frank"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “Flinched? I did not flinch. George, did I flinch”?",
+        "options": [
+          "SFX",
+          "Jerry",
+          "ANGLE BACK ON",
+          "Frank"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 70,
+    "season": 5,
+    "title": "The Lip Reader",
+    "airDate": "10/28/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheLipReader.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:33.199Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “springs into action running toward the ball and runs into Monica Sellas. Monica falls to the ground in pain.…”?",
+        "options": [
+          "Kramer",
+          "Announcer",
+          "Boy",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “Yeah, and I don't poof up my hair when I got to a movie”?",
+        "options": [
+          "Elaine",
+          "Announcer",
+          "Laura",
+          "Todd"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “then looks confused like what he said just didn't sound right. At Jerry's apartment. Jerry: But I thought thi…”?",
+        "options": [
+          "Man",
+          "Jerry",
+          "Newman",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “Thus ends the great ball man experiment.”?",
+        "options": [
+          "Jerry",
+          "Guest Stars",
+          "Boy",
+          "Gwen"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Oh I got a date with Laura the lineswoman.”?",
+        "options": [
+          "Jerry",
+          "Announcer",
+          "Boy",
+          "Cast"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “I may be old, but I'm spry.”?",
+        "options": [
+          "Boy",
+          "Man",
+          "Kramer",
+          "Guest Stars"
+        ],
+        "correctIndex": 2,
+        "answer": "Kramer"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “\"To the victor goes the spoils.\" What are you”?",
+        "options": [
+          "Announcer",
+          "Newman",
+          "Jerry",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “at Laura's place. Jerry: So I really had a good time. Laura: Yeah, me too. Jerry: So you want to go to the pa…”?",
+        "options": [
+          "Jerry",
+          "George",
+          "Boy",
+          "Driver"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “(Puts his napkin over his mouth) I don't know George. I'm”?",
+        "options": [
+          "Boy",
+          "Todd",
+          "Jerry",
+          "Cast"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “I'm going to have to be honest with you. I'm going deaf.”?",
+        "options": [
+          "Elaine",
+          "Guest Stars",
+          "Laura",
+          "Cast"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “That you had ice cream all over your face. They were talking”?",
+        "options": [
+          "Kramer",
+          "Transcribed by",
+          "Radio",
+          "Newman"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “and Laura start signing to each other. We see confusion from them as they are signing.”?",
+        "options": [
+          "Kramer",
+          "Gwen",
+          "Boy",
+          "Coworker"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “and Kramer: No. Elaine: No. When I shoo squirrels away, I always say \"get out of here\". I never ever throw th…”?",
+        "options": [
+          "Jerry",
+          "Announcer",
+          "Elaine",
+          "Cast"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “Oh come on. If she's that superficial you don't want her.”?",
+        "options": [
+          "Elaine",
+          "Announcer",
+          "Cast",
+          "Coworker"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 15,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "71",
+          "77",
+          "70",
+          "69"
+        ],
+        "correctIndex": 2,
+        "answer": "70"
+      },
+      {
+        "id": 16,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 9",
+          "Season 5",
+          "Season 4",
+          "Season 6"
+        ],
+        "correctIndex": 1,
+        "answer": "Season 5"
+      },
+      {
+        "id": 17,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "10/28/93",
+          "5/14/98",
+          "11/18/92",
+          "7/5/89"
+        ],
+        "correctIndex": 0,
+        "answer": "10/28/93"
+      },
+      {
+        "id": 18,
+        "type": "who_said",
+        "question": "Who says: “It's two completely different sounds. \"ih\" and”?",
+        "options": [
+          "Coworker",
+          "Cast",
+          "Newman",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 19,
+        "type": "who_said",
+        "question": "Who says: “is annoyed and still ignoring him) Miss? Elaine: Pardon me? Driver: Books, that's what you do? Elaine: Yeah.…”?",
+        "options": [
+          "Coworker",
+          "Boy",
+          "Announcer",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “Well if she can't tell \"six\" from \"sex\"”?",
+        "options": [
+          "Elaine",
+          "Gwen",
+          "Coworker",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “Yeah. Well aparently word's out.”?",
+        "options": [
+          "Kramer",
+          "Coworker",
+          "Gwen",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “Yeah yeah Pete, he can get you great tickets to something.”?",
+        "options": [
+          "Kramer",
+          "Jerry",
+          "Announcer",
+          "Laura"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “So she sees you with hot fudge on your face and she ends”?",
+        "options": [
+          "Laura",
+          "Jerry",
+          "Kramer",
+          "George"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “No. She tried to give me the \"it's not you, it's me\"”?",
+        "options": [
+          "Man",
+          "Guest Stars",
+          "Boy",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “So you want to go to the party on Friday night”?",
+        "options": [
+          "Jerry",
+          "Gwen",
+          "Radio",
+          "Driver"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 71,
+    "season": 5,
+    "title": "The Non-Fat Yogurt",
+    "airDate": "11/4/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheNonFatYogurt.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:33.434Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “Please, doctor. Doctor I've examined you.”?",
+        "options": [
+          "George",
+          "Jerry",
+          "Rudy",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “What? Lady Every word out of my son's mouth now is *beep*, *beep*, *beep*. You know what he said to me five m…”?",
+        "options": [
+          "Kramer",
+          "Newman",
+          "Lloyd",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Braun, who is believed to be responsible for the name tag fiasco. We now take you to Giuliani headquarters wh…”?",
+        "options": [
+          "Rudy",
+          "George",
+          "Elaine",
+          "Lloyd"
+        ],
+        "correctIndex": 3,
+        "answer": "Lloyd"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “Oh, great. Thanks a lot!”?",
+        "options": [
+          "Jerry",
+          "Kramer",
+          "Newman",
+          "Lloyd"
+        ],
+        "correctIndex": 3,
+        "answer": "Lloyd"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Ooh! I asked Mr. Dinkins if he knew any good orthopedists, and he said he had the best. So, I made an appoint…”?",
+        "options": [
+          "George",
+          "Elaine",
+          "Rudy",
+          "Lloyd"
+        ],
+        "correctIndex": 3,
+        "answer": "Lloyd"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “Well, let's start the insanity.”?",
+        "options": [
+          "Lloyd",
+          "Newman",
+          "Rudy",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “No. Mom I like tap dancing. Dad Tap dancing. Anyone can tap dance. It's all in those shoes. Mom Are you kiddi…”?",
+        "options": [
+          "Rudy",
+          "George",
+          "Jerry",
+          "Kramer"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “Well, it comes and goes. Dad It's like some kind of a spasm.”?",
+        "options": [
+          "George",
+          "Elaine",
+          "Newman",
+          "Rudy"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “I can't eat this. Boy Thanks for ruining my daddy's business, you fat *beep*! Home Full Scripts Community Epi…”?",
+        "options": [
+          "George",
+          "Kramer",
+          "Newman",
+          "Elaine"
+        ],
+        "correctIndex": 2,
+        "answer": "Newman"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “Well, you're getting heavy. Yeah, you look like you put on five, ten pounds.”?",
+        "options": [
+          "Rudy",
+          "Kramer",
+          "Elaine",
+          "Lloyd"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “Oh, look, he's going to ask you about my arm. So, just tell him I banged it against a desk. And it's been mov…”?",
+        "options": [
+          "Jerry",
+          "George",
+          "Kramer",
+          "Elaine"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Ooh! Test tubes. Cool!”?",
+        "options": [
+          "Lloyd",
+          "Kramer",
+          "Newman",
+          "George"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “Ah, Mary, we've been eating a lot of your husband's yogurt at the yogurt place - does that have any fat in it…”?",
+        "options": [
+          "George",
+          "Newman",
+          "Jerry",
+          "Rudy"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “I wonder what actually happened in that lab.”?",
+        "options": [
+          "Elaine",
+          "Newman",
+          "George",
+          "Rudy"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 15,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "70",
+          "71",
+          "78",
+          "72"
+        ],
+        "correctIndex": 1,
+        "answer": "71"
+      },
+      {
+        "id": 16,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 6",
+          "Season 5",
+          "Season 9",
+          "Season 4"
+        ],
+        "correctIndex": 1,
+        "answer": "Season 5"
+      },
+      {
+        "id": 17,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "5/14/98",
+          "11/4/93",
+          "7/5/89",
+          "11/18/92"
+        ],
+        "correctIndex": 1,
+        "answer": "11/4/93"
+      },
+      {
+        "id": 18,
+        "type": "who_said",
+        "question": "Who says: “Name tags! Name tags! What kind of an idiot thinks anybody would be interested in an idea like that. Dad I do…”?",
+        "options": [
+          "Jerry",
+          "Elaine",
+          "Rudy",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 19,
+        "type": "who_said",
+        "question": "Who says: “The next morning, I woke up, and it was going like this. I can control it if I really concentrate. But otherw…”?",
+        "options": [
+          "Elaine",
+          "George",
+          "Newman",
+          "Jerry"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “Braun. He's a big advisor to Mayor Dinkins. He thinks he's so cool.”?",
+        "options": [
+          "Lloyd",
+          "Jerry",
+          "Elaine",
+          "George"
+        ],
+        "correctIndex": 0,
+        "answer": "Lloyd"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “Why do you say that”?",
+        "options": [
+          "Rudy",
+          "Kramer",
+          "Lloyd",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “That's right. Hey, George.”?",
+        "options": [
+          "Lloyd",
+          "Jerry",
+          "Newman",
+          "George"
+        ],
+        "correctIndex": 0,
+        "answer": "Lloyd"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Giddy-up! Dad Tommy Tune is a very good dancer. You ever see Tommy Tune dancing”?",
+        "options": [
+          "Jerry",
+          "Newman",
+          "Kramer",
+          "Lloyd"
+        ],
+        "correctIndex": 2,
+        "answer": "Kramer"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “Wow, that's a bitch, huh”?",
+        "options": [
+          "Newman",
+          "George",
+          "Elaine",
+          "Lloyd"
+        ],
+        "correctIndex": 3,
+        "answer": "Lloyd"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “You know, Kramer's going to clean up on this place.”?",
+        "options": [
+          "George",
+          "Jerry",
+          "Newman",
+          "Lloyd"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 72,
+    "season": 5,
+    "title": "The Barber",
+    "airDate": "11/11/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheBarber.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:33.667Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “I show up. I pretend I have the job. The guy's on vacation.”?",
+        "options": [
+          "Gino",
+          "George",
+          "Jerry",
+          "Tuttle"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “I'm going to go out for a little bit. I'll be right back.”?",
+        "options": [
+          "Transcribed by",
+          "Gino",
+          "David",
+          "Cast"
+        ],
+        "correctIndex": 1,
+        "answer": "Gino"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “All right, I'll see you later.”?",
+        "options": [
+          "Newman",
+          "Jerry",
+          "Kramer",
+          "Tuttle"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “Well I, if it's your day off I really... (tries to leave)”?",
+        "options": [
+          "Jerry",
+          "Secretary",
+          "Transcribed by",
+          "Tuttle"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Hey, you are Pensky material. Would you ever consider coming”?",
+        "options": [
+          "Pensky",
+          "Gino",
+          "Transcribed by",
+          "Enzo"
+        ],
+        "correctIndex": 0,
+        "answer": "Pensky"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “\"I want you to have this job, of course the Board”?",
+        "options": [
+          "Mike",
+          "David",
+          "Cast",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “Take your time. (Gino leaves) You happy with the haircut”?",
+        "options": [
+          "Enzo",
+          "Mr. Tuttle",
+          "Transcribed by",
+          "David"
+        ],
+        "correctIndex": 0,
+        "answer": "Enzo"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “What would you wear”?",
+        "options": [
+          "Elaine",
+          "Cast",
+          "Newman",
+          "Pensky"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “You're going to get me a sample of Jerry's hair.”?",
+        "options": [
+          "Pensky",
+          "Jerry",
+          "Guest Stars",
+          "Enzo"
+        ],
+        "correctIndex": 3,
+        "answer": "Enzo"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “If you want to watch, sit down. You're making me nervous.”?",
+        "options": [
+          "Elaine",
+          "George",
+          "Jerry",
+          "Man"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “All right, geez. You're crazy.”?",
+        "options": [
+          "Elaine",
+          "George",
+          "David",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Don't lie. I know it was you. I get a sample of your hair.”?",
+        "options": [
+          "Enzo",
+          "Guest Stars",
+          "Mr. Tuttle",
+          "Gino"
+        ],
+        "correctIndex": 0,
+        "answer": "Enzo"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “Yeah, yeah, yeah, hey.”?",
+        "options": [
+          "Mr. Tuttle",
+          "Tuttle",
+          "Guest Stars",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “All right, go in the bedroom. Open the window. You can go”?",
+        "options": [
+          "Secretary",
+          "David",
+          "Jerry",
+          "Pensky"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 15,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "79",
+          "71",
+          "73",
+          "72"
+        ],
+        "correctIndex": 3,
+        "answer": "72"
+      },
+      {
+        "id": 16,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 9",
+          "Season 5",
+          "Season 6",
+          "Season 4"
+        ],
+        "correctIndex": 1,
+        "answer": "Season 5"
+      },
+      {
+        "id": 17,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/11/93",
+          "5/14/98",
+          "11/18/92",
+          "7/5/89"
+        ],
+        "correctIndex": 0,
+        "answer": "11/11/93"
+      },
+      {
+        "id": 18,
+        "type": "who_said",
+        "question": "Who says: “I can't. He loves me. He says I'm his most loyal customer.”?",
+        "options": [
+          "Tuttle",
+          "Jerry",
+          "Secretary",
+          "Man"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      },
+      {
+        "id": 19,
+        "type": "who_said",
+        "question": "Who says: “What are you kidding? Look at him. He's grotesque.”?",
+        "options": [
+          "Pensky",
+          "Kramer",
+          "Jerry",
+          "David"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “Sample? (under his breath) Newman. Uh, I was there but I”?",
+        "options": [
+          "Man",
+          "Elaine",
+          "Jerry",
+          "Mr. Tuttle"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “No, actually I was just...”?",
+        "options": [
+          "Gino",
+          "Pensky",
+          "Jerry",
+          "Tuttle"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “He didn't get to finish it. His uncle came in. We almost”?",
+        "options": [
+          "George",
+          "Kramer",
+          "Enzo",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “I want you to have this job. Of course...”?",
+        "options": [
+          "Pensky",
+          "Mr. Tuttle",
+          "Jerry",
+          "David"
+        ],
+        "correctIndex": 1,
+        "answer": "Mr. Tuttle"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “walks into his office. He sets down his briefcase and coat and sits down. He quickly flips through the folder…”?",
+        "options": [
+          "Secretary",
+          "Mr. Tuttle",
+          "Guest Stars",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “I am aware. I am aware.”?",
+        "options": [
+          "George",
+          "Transcribed by",
+          "Pensky",
+          "Newman"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 73,
+    "season": 5,
+    "title": "The Masseuse",
+    "airDate": "11/18/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheMasseuse.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:33.906Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “Why, what's wrong? (he grabs her hands and force her to keep them”?",
+        "options": [
+          "KRAMER",
+          "Karen",
+          "JOANNE",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “is back to his usual way of speaking) JERRY: The massages are out! KRAMER: Wha-- JERRY: Ahh!!! They're out! K…”?",
+        "options": [
+          "JOEL",
+          "Kramer",
+          "JODI",
+          "Jerry"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Look, I'll drive out here tomorrow and I'll show the I.D. I got”?",
+        "options": [
+          "GEORGE",
+          "KAREN",
+          "KRAMER",
+          "Elaine"
+        ],
+        "correctIndex": 2,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “Look, who are you kidding? You come up to my apartment with your”?",
+        "options": [
+          "JERRY",
+          "ANNOUNCER",
+          "George",
+          "JOEL"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Oh, yeah. (snaps fingers) You know, I forgot my wallet.”?",
+        "options": [
+          "TICKET MAN",
+          "George",
+          "ANNOUNCER",
+          "KRAMER"
+        ],
+        "correctIndex": 3,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “Look it's no secret what's going on between us. (to Jerry) She”?",
+        "options": [
+          "GEORGE",
+          "KRAMER",
+          "KAREN",
+          "I mean every two seconds"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “and Jody are sitting next to each other on the couch, watching TV) JERRY: I strained my neck last night. JODI…”?",
+        "options": [
+          "MICHAEL",
+          "JOEL",
+          "Jerry",
+          "Elaine"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “a massage. JERRY: Kramer! (tries to hide he's upset and jealous) JODI: I got to run. I have an appointment do…”?",
+        "options": [
+          "ANNOUNCER",
+          "I mean every two seconds",
+          "Elaine",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “is laughing and she seems to be the only one to find him funny) So I go into this clothing store and the sale…”?",
+        "options": [
+          "MICHAEL",
+          "Karen",
+          "KRAMER",
+          "Jerry"
+        ],
+        "correctIndex": 1,
+        "answer": "Karen"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “I'm sorry. I need proof.”?",
+        "options": [
+          "TICKET MAN",
+          "Karen",
+          "MICHAEL",
+          "ANNOUNCER"
+        ],
+        "correctIndex": 0,
+        "answer": "TICKET MAN"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “Oh, Stuart's a lot better! (talking like a baby) Little Stuart”?",
+        "options": [
+          "Jerry",
+          "ELAINE",
+          "Kramer",
+          "KAREN"
+        ],
+        "correctIndex": 1,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Remy Rifkin? Should I get a beret”?",
+        "options": [
+          "JOEL",
+          "Karen",
+          "TICKET MAN",
+          "MICHAEL"
+        ],
+        "correctIndex": 0,
+        "answer": "JOEL"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “The game's about to start. I wonder where your friend Kramer is.”?",
+        "options": [
+          "Kramer",
+          "JOEL",
+          "Elaine",
+          "JOANNE"
+        ],
+        "correctIndex": 1,
+        "answer": "JOEL"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “(as he touches her) Uhh! What are you doing”?",
+        "options": [
+          "JODI",
+          "Jerry",
+          "ELAINE",
+          "ANNOUNCER"
+        ],
+        "correctIndex": 2,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 15,
+        "type": "cast",
+        "question": "In the cast list, who plays “know.”?",
+        "options": [
+          "(she makes a move with her head like George did in 'The Mango'",
+          "and deep... Jerry, she rubs",
+          "That's good. (he tries to go further. He grabs her hands over his",
+          "Jerry"
+        ],
+        "correctIndex": 0,
+        "answer": "(she makes a move with her head like George did in 'The Mango'"
+      },
+      {
+        "id": 16,
+        "type": "cast",
+        "question": "In the cast list, who plays “uh.”?",
+        "options": [
+          "That's good. (he tries to go further. He grabs her hands over his",
+          "(she makes a move with her head like George did in 'The Mango'",
+          "Jerry",
+          "and deep... Jerry, she rubs"
+        ],
+        "correctIndex": 0,
+        "answer": "That's good. (he tries to go further. He grabs her hands over his"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “over your entire body. And she rubs long.”?",
+        "options": [
+          "Jerry",
+          "(she makes a move with her head like George did in 'The Mango'",
+          "That's good. (he tries to go further. He grabs her hands over his",
+          "and deep... Jerry, she rubs"
+        ],
+        "correctIndex": 3,
+        "answer": "and deep... Jerry, she rubs"
+      },
+      {
+        "id": 18,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "74",
+          "80",
+          "73",
+          "72"
+        ],
+        "correctIndex": 2,
+        "answer": "73"
+      },
+      {
+        "id": 19,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 5",
+          "Season 6",
+          "Season 4",
+          "Season 9"
+        ],
+        "correctIndex": 0,
+        "answer": "Season 5"
+      },
+      {
+        "id": 20,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "7/5/89",
+          "5/14/98",
+          "11/18/93"
+        ],
+        "correctIndex": 3,
+        "answer": "11/18/93"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “Come on, just look at me. Tell me I'm not Kramer.”?",
+        "options": [
+          "KAREN",
+          "JOANNE",
+          "George",
+          "KRAMER"
+        ],
+        "correctIndex": 3,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “is following to keep talking to Jodi) GEORGE: Whatever. Believe me, if I wasn't involved right now, I wouldn'…”?",
+        "options": [
+          "Karen",
+          "I mean every two seconds",
+          "George",
+          "JOEL"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “What were her exact--”?",
+        "options": [
+          "GEORGE",
+          "JOANNE",
+          "JOEL",
+          "KRAMER"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “Please give it to me. I love to help people. This is what I do.”?",
+        "options": [
+          "MICHAEL",
+          "GEORGE",
+          "JERRY",
+          "JOANNE"
+        ],
+        "correctIndex": 1,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “All right now you listen and you listen good! (he grabs Kramer's”?",
+        "options": [
+          "Karen",
+          "JOEL",
+          "ANNOUNCER",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 74,
+    "season": 5,
+    "title": "The Cigar Store Indian",
+    "airDate": "12/9/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheCigarStoreIndian.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:34.155Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “Yeah, that's part of it. (sniffs) Kasha”?",
+        "options": [
+          "Written by",
+          "JERRY",
+          "WINONA",
+          "Guest Cast"
+        ],
+        "correctIndex": 1,
+        "answer": "JERRY"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “I'm sorry, I'm not familiar with that term.”?",
+        "options": [
+          "JERRY",
+          "Written by",
+          "Directed by",
+          "Estelle"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Alright, we'll take the subway.”?",
+        "options": [
+          "JERRY",
+          "LIPPMAN",
+          "GEORGE",
+          "KRAMER"
+        ],
+        "correctIndex": 3,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “Eh, eh, ah. Winona's gonna be there”?",
+        "options": [
+          "Kramer",
+          "SYLVIA",
+          "JERRY",
+          "MAILMAN"
+        ],
+        "correctIndex": 2,
+        "answer": "JERRY"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “enters. ELAINE: Hi. KRAMER: Yeah uh,”?",
+        "options": [
+          "Kramer",
+          "SYLVIA",
+          "Frank",
+          "Guest Cast"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “You can't give something and then take it back. I mean, what”?",
+        "options": [
+          "Frank",
+          "ESTELLE",
+          "Kramer",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “You can always tell what was the best year of your father's”?",
+        "options": [
+          "JERRY",
+          "Directed by",
+          "George",
+          "Guest Cast"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “(jumping to his feet) Elaine! Hello! You look scrumptious.”?",
+        "options": [
+          "GEPETTO",
+          "Directed by",
+          "KRAMER",
+          "RICKY"
+        ],
+        "correctIndex": 3,
+        "answer": "RICKY"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “I'll see you later. (he leaves with unseemly haste)”?",
+        "options": [
+          "JERRY",
+          "SPIKE",
+          "Original Air Date",
+          "GEORGE"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “Egh. These aren't candies.”?",
+        "options": [
+          "Elaine",
+          "Guest Cast",
+          "AL ROKER",
+          "KRAMER"
+        ],
+        "correctIndex": 3,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “(regarding photo) Ahh! Is this your son in the bubble bath”?",
+        "options": [
+          "THE GIRLS",
+          "SYLVIA",
+          "Directed by",
+          "Kramer"
+        ],
+        "correctIndex": 1,
+        "answer": "SYLVIA"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Just put a coffee table book over it.”?",
+        "options": [
+          "AL ROKER",
+          "SPIKE",
+          "Written by",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “Hey, hey, hey, hey. You know what would make a great coffee”?",
+        "options": [
+          "KRAMER",
+          "Lloyd",
+          "ESTELLE",
+          "WINONA"
+        ],
+        "correctIndex": 0,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “What about, what about this thing”?",
+        "options": [
+          "FRANK",
+          "JERRY",
+          "KRAMER",
+          "ESTELLE"
+        ],
+        "correctIndex": 1,
+        "answer": "JERRY"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          ": Tom Gammill & Max Pross",
+          "Andy Ackerman",
+          "Larry Charles",
+          "Tom Cherones"
+        ],
+        "correctIndex": 0,
+        "answer": ": Tom Gammill & Max Pross"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "Andy Ackerman",
+          "Jason Alexander",
+          "Tom Cherones",
+          ": Tom Cherones"
+        ],
+        "correctIndex": 3,
+        "answer": ": Tom Cherones"
+      },
+      {
+        "id": 17,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "81",
+          "73",
+          "75",
+          "74"
+        ],
+        "correctIndex": 3,
+        "answer": "74"
+      },
+      {
+        "id": 18,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 5",
+          "Season 6",
+          "Season 4",
+          "Season 9"
+        ],
+        "correctIndex": 0,
+        "answer": "Season 5"
+      },
+      {
+        "id": 19,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "12/9/93",
+          "5/14/98",
+          "11/18/92",
+          "7/5/89"
+        ],
+        "correctIndex": 0,
+        "answer": "12/9/93"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “Benes? Oh, she's my son's friend. FRANK: (shouting) And she's not welcome in this house! RICKY: (entering) Oh…”?",
+        "options": [
+          "Elaine",
+          "GEPETTO",
+          "JERRY",
+          "LIPPMAN"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “(picks it up) I was having coffee, I put it on the coffee”?",
+        "options": [
+          "JERRY",
+          "RICKY",
+          "Frank",
+          "GEPETTO"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “tries to enter the carriage just as the doors close. They close on his arm, trapping it. JERRY: Elaine! A guy…”?",
+        "options": [
+          "FRANK",
+          "Directed by",
+          "LIPPMAN",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “I don't understand. How can you have a cigar store, without”?",
+        "options": [
+          "GEPETTO",
+          "KRAMER",
+          "MAILMAN",
+          "ESTELLE"
+        ],
+        "correctIndex": 1,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “That's fantastic. (Elaine looks gobsmacked) Who's your”?",
+        "options": [
+          "Estelle",
+          "LIPPMAN",
+          "GEORGE",
+          "MAILMAN"
+        ],
+        "correctIndex": 1,
+        "answer": "LIPPMAN"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “These are worth like, a lot of money.”?",
+        "options": [
+          "GEPETTO",
+          "RICKY",
+          "Original Air Date",
+          "SYLVIA"
+        ],
+        "correctIndex": 1,
+        "answer": "RICKY"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 75,
+    "season": 5,
+    "title": "The Conversion",
+    "airDate": "12/16/93",
+    "primarySource": "http://www.seinfeldscripts.com/TheConversion.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:34.396Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “leaves. Jerry&#146;s girlfriend appears at the doorway. Jerry: Oh hi. Jerry&#146;s girlfriend: I just wanted…”?",
+        "options": [
+          "Cast",
+          "Jerry",
+          "Waiter",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “She knew I didn&#146;t have a job, she knew I lived at”?",
+        "options": [
+          "Guest Stars",
+          "Frank",
+          "Father-priest 2",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “enters. He is flinging a slinky. Jerry: Oh a slinky. Where did you get it? Kramer: Sister Roberta gave it to…”?",
+        "options": [
+          "George",
+          "Kramer",
+          "Elaine",
+          "Cast"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “Costanza Jason Alexander”?",
+        "options": [
+          "Father-priest",
+          "Sister Roberta",
+          "Father-priest 2",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “knocks on the door *knock, knock, knock* Jerry&#146;s girlfriend: Hi. Jerry: Hi. Can I use your bathroom? At…”?",
+        "options": [
+          "Elaine",
+          "Sister Roberta",
+          "Woman",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “Yeah, it&#146;s like Edward the Eighth abdicating the throne”?",
+        "options": [
+          "Kramer",
+          "Crowd",
+          "Waiter",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “I was just kidding around. George: No. I wouldn&#146;t even have to tell her. I could surprise her. Elaine:”?",
+        "options": [
+          "Crowd",
+          "Karen",
+          "Jerry",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “I would. I always open medicine cabinets.”?",
+        "options": [
+          "Woman",
+          "Doctor",
+          "George",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “I can&#146;t. I met them. They&#146;re devout. You know,”?",
+        "options": [
+          "George",
+          "Estelle",
+          "Kramer",
+          "Father-priest 2"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “What? Now he&#146;s a doctor? Before he was a podiatrist.”?",
+        "options": [
+          "George",
+          "Elaine",
+          "Crowd",
+          "Estelle"
+        ],
+        "correctIndex": 1,
+        "answer": "Elaine"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “Well I didn&#146;t do it for my mother.”?",
+        "options": [
+          "Guest Stars",
+          "Frank",
+          "George",
+          "Woman"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “is in the bathroom with his Latvian Orthodox books. *knock, knock, knock* Estelle:”?",
+        "options": [
+          "George",
+          "Crowd",
+          "Sister Roberta",
+          "Frank"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “the soap) Here you go. At George&#146;s parent&#146;s house.”?",
+        "options": [
+          "Jerry",
+          "Woman",
+          "Frank",
+          "Crowd"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “I think it would be romantic.”?",
+        "options": [
+          "Karen",
+          "Woman",
+          "Sister Roberta",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 15,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "82",
+          "74",
+          "76",
+          "75"
+        ],
+        "correctIndex": 3,
+        "answer": "75"
+      },
+      {
+        "id": 16,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 5",
+          "Season 6",
+          "Season 9",
+          "Season 4"
+        ],
+        "correctIndex": 0,
+        "answer": "Season 5"
+      },
+      {
+        "id": 17,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "7/5/89",
+          "5/14/98",
+          "11/18/92",
+          "12/16/93"
+        ],
+        "correctIndex": 3,
+        "answer": "12/16/93"
+      },
+      {
+        "id": 18,
+        "type": "who_said",
+        "question": "Who says: “opens his door. He is wearing a ring of garlics around his neck. Kramer: Hey. Jerry: Hey. What are you doing?…”?",
+        "options": [
+          "Kramer",
+          "Waiter",
+          "Sister Roberta",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 19,
+        "type": "who_said",
+        "question": "Who says: “I&#146;m telling you I have this power. And I have no control over it.”?",
+        "options": [
+          "Jerry",
+          "Elaine",
+          "Cast",
+          "Woman"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “Costanza. George: You know what? I could probably do this. What&#146;s the difference. Elaine:”?",
+        "options": [
+          "Doctor",
+          "Sister Roberta",
+          "Estelle",
+          "Cast"
+        ],
+        "correctIndex": 2,
+        "answer": "Estelle"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “COSTANZA | | 3:P.M. | | | | | | | +---------------------+ The sign is on a black background with white stick-…”?",
+        "options": [
+          "George",
+          "Estelle",
+          "Doctor",
+          "Transcribed by"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “I went to podiatry school because I like feet. I chose”?",
+        "options": [
+          "Crowd",
+          "Guest Stars",
+          "Kramer",
+          "Doctor"
+        ],
+        "correctIndex": 3,
+        "answer": "Doctor"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Okay. All right bye.”?",
+        "options": [
+          "Transcribed by",
+          "Doctor",
+          "Woman",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “She&#146;s limiting herself to Latvian Orthodox? Too bad.”?",
+        "options": [
+          "Estelle",
+          "Woman",
+          "Father-priest 2",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “Um, you know I&#146;m starting to think that maybe lobster”?",
+        "options": [
+          "Woman",
+          "Kramer",
+          "George",
+          "Waiter"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 76,
+    "season": 5,
+    "title": "The Stall",
+    "airDate": "1/6/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheStall.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:34.667Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “yeah me too JANE ok so I'll see you Saturday night”?",
+        "options": [
+          "Elaine",
+          "George",
+          "Kramer",
+          "Jerry"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “he's not a mimbo, he's an exciting, charismatic man he just happened to have a perfect face”?",
+        "options": [
+          "Original broadcasting date",
+          "Kramer",
+          "Elaine",
+          "George"
+        ],
+        "correctIndex": 2,
+        "answer": "Elaine"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “hey you know it's weird because that voice sounded a little familiar to me”?",
+        "options": [
+          "Original broadcasting date",
+          "Elaine",
+          "Kramer",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “it's different for a man”?",
+        "options": [
+          "Jerry",
+          "Original broadcasting date",
+          "Larry",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “you get no rush from bowling”?",
+        "options": [
+          "Original broadcasting date",
+          "Kramer",
+          "George",
+          "Elaine"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “has a non sexual crush on him”?",
+        "options": [
+          "Original broadcasting date",
+          "Jerry",
+          "Kramer",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “you said \"step off\"? wow, that is too much hey..huh hey (”?",
+        "options": [
+          "Elaine",
+          "Larry",
+          "Kramer",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “bowling! what do you see bowling? bowling's insane! bowling is crazy time TONY bowling? I don't think so”?",
+        "options": [
+          "Original broadcasting date",
+          "George",
+          "Elaine",
+          "Larry"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “it's huh.. gonna be pretty dangerous up there”?",
+        "options": [
+          "Elaine",
+          "George",
+          "Jerry",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “all right! rock-climbing! J..just the 2 of us? alright! hey I'll make some sandwiches, what what do you like?…”?",
+        "options": [
+          "Kramer",
+          "Original broadcasting date",
+          "ELAINE",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “the 4 of us are going out Saturday right? hat should be fun”?",
+        "options": [
+          "Kramer",
+          "Jerry",
+          "George",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “I looked for you too, I was all the way over on the side”?",
+        "options": [
+          "Larry",
+          "Kramer",
+          "George",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “my man, what are you doing maana”?",
+        "options": [
+          "Kramer",
+          "Larry",
+          "ELAINE",
+          "George"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “what?.. that's ridiculous!”?",
+        "options": [
+          "George",
+          "Larry",
+          "Jerry",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Larry Charles",
+          "Tom Cherones",
+          "David Steinberg",
+          "Andy Ackerman"
+        ],
+        "correctIndex": 0,
+        "answer": "Larry Charles"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "Jason Alexander",
+          "Andy Ackerman",
+          "Tom Cherones",
+          "David Steinberg"
+        ],
+        "correctIndex": 2,
+        "answer": "Tom Cherones"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “Tony”?",
+        "options": [
+          "\"hey dude, you better step off\"",
+          "this is kind of embarrassing but.. there's no toilet",
+          "took a bit of a tumble",
+          "George you got it?"
+        ],
+        "correctIndex": 2,
+        "answer": "took a bit of a tumble"
+      },
+      {
+        "id": 18,
+        "type": "cast",
+        "question": "In the cast list, who plays “trust me”?",
+        "options": [
+          "I'm sorry",
+          "alright buddy, take it easy Kramer",
+          "nah it's good",
+          "George you got it?"
+        ],
+        "correctIndex": 2,
+        "answer": "nah it's good"
+      },
+      {
+        "id": 19,
+        "type": "cast",
+        "question": "In the cast list, who plays “so I said huh”?",
+        "options": [
+          "took a bit of a tumble",
+          "huh hey",
+          "she huh..",
+          "\"hey dude, you better step off\""
+        ],
+        "correctIndex": 3,
+        "answer": "\"hey dude, you better step off\""
+      },
+      {
+        "id": 20,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "83",
+          "75",
+          "77",
+          "76"
+        ],
+        "correctIndex": 3,
+        "answer": "76"
+      },
+      {
+        "id": 21,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 6",
+          "Season 4",
+          "Season 5",
+          "Season 9"
+        ],
+        "correctIndex": 2,
+        "answer": "Season 5"
+      },
+      {
+        "id": 22,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "7/5/89",
+          "5/14/98",
+          "1/6/94"
+        ],
+        "correctIndex": 3,
+        "answer": "1/6/94"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “yeah yeah, (in a flinty voice) flinty (on the rocks) (”?",
+        "options": [
+          "ELAINE",
+          "Kramer",
+          "George",
+          "Larry"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “alright alright, I gotta buy some bread TONY yeah yeah, you know I'm definitely down for some rock-climbing”?",
+        "options": [
+          "George",
+          "Elaine",
+          "Larry",
+          "Original broadcasting date"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “I'm in the stall and there's no toilet paper”?",
+        "options": [
+          "George",
+          "Elaine",
+          "Kramer",
+          "Jerry"
+        ],
+        "correctIndex": 1,
+        "answer": "Elaine"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 77,
+    "season": 5,
+    "title": "The Dinner Party",
+    "airDate": "2/3/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheDinnerParty.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:34.912Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “Yeah, Jerry, come with me.”?",
+        "options": [
+          "Cleck",
+          "Man",
+          "David",
+          "ELAINE"
+        ],
+        "correctIndex": 3,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “If you had five chickens could you tell them apart by just the”?",
+        "options": [
+          "MAN2",
+          "Man",
+          "David",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Ah, great. With the wine I'm in over twenty dollars now.”?",
+        "options": [
+          "Kramer",
+          "Directed by",
+          "CLERK",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “I mean we can put a man on the moon but we're basically still”?",
+        "options": [
+          "Transcribed by",
+          "CLERK",
+          "GEORGE",
+          "Elaine"
+        ],
+        "correctIndex": 2,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “You found a hair in your Farina”?",
+        "options": [
+          "Cleck",
+          "GEORGE",
+          "ELAINE",
+          "BARBARA"
+        ],
+        "correctIndex": 2,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “Yeah, he could build the rocket but he's still stupid for double-parking”?",
+        "options": [
+          "KRAMER",
+          "Man",
+          "MAN2",
+          "CLERK"
+        ],
+        "correctIndex": 0,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “You have to take a number.”?",
+        "options": [
+          "CLERK",
+          "Man",
+          "Transcribed by",
+          "MAN2"
+        ],
+        "correctIndex": 0,
+        "answer": "CLERK"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “So you really understand my point about building a rocket and”?",
+        "options": [
+          "Barbara",
+          "GEORGE",
+          "Transcribed by",
+          "ELAINE"
+        ],
+        "correctIndex": 1,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “No, we've already got this. I'll just take it off.”?",
+        "options": [
+          "Frank",
+          "Barbara",
+          "ELAINE",
+          "Transcribed by"
+        ],
+        "correctIndex": 2,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “No noo no, we just bought this. . . . Um, you sold us a cake”?",
+        "options": [
+          "David",
+          "Kramer",
+          "JERRY",
+          "ELAINE"
+        ],
+        "correctIndex": 3,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “I know that's why I bought them but they're not comfortable.”?",
+        "options": [
+          "Man",
+          "YYY",
+          "GEORGE",
+          "ELAINE"
+        ],
+        "correctIndex": 2,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Um, um, Look to the cookie Elaine. Look to the cookie.”?",
+        "options": [
+          "KRAMER",
+          "Directed by",
+          "Cleck",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “It was a little hair. I took it off.”?",
+        "options": [
+          "MAN2",
+          "MAN4",
+          "ELAINE",
+          "Transcribed by"
+        ],
+        "correctIndex": 2,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “All right . . . I once had a hair in my Farina and I freaked out.”?",
+        "options": [
+          "JERRY",
+          "YYY",
+          "CLERK",
+          "Kramer"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Tom Cherones",
+          "Larry Charles",
+          "Andy Ackerman",
+          ": Larry David"
+        ],
+        "correctIndex": 3,
+        "answer": ": Larry David"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "Jason Alexander",
+          "Tom Cherones",
+          ": Tom Cherones",
+          "Andy Ackerman"
+        ],
+        "correctIndex": 2,
+        "answer": ": Tom Cherones"
+      },
+      {
+        "id": 17,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "77",
+          "78",
+          "76",
+          "84"
+        ],
+        "correctIndex": 0,
+        "answer": "77"
+      },
+      {
+        "id": 18,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 5",
+          "Season 9",
+          "Season 6",
+          "Season 4"
+        ],
+        "correctIndex": 0,
+        "answer": "Season 5"
+      },
+      {
+        "id": 19,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "7/5/89",
+          "5/14/98",
+          "2/3/94"
+        ],
+        "correctIndex": 3,
+        "answer": "2/3/94"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “\"&#133;well of course I noticed it too with those ample”?",
+        "options": [
+          "KRAMER",
+          "Directed by",
+          "Man",
+          "ELAINE"
+        ],
+        "correctIndex": 0,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “Sorry? You almost took my toe off. Why don't you watch what you're”?",
+        "options": [
+          "BARBARA",
+          "GEORGE",
+          "Kramer",
+          "ELAINE"
+        ],
+        "correctIndex": 3,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “That's the last Bobka. They got the last Bobka.”?",
+        "options": [
+          "JERRY",
+          "Transcribed by",
+          "YYY",
+          "MAN2"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “I'm on my way over there right now.”?",
+        "options": [
+          "JERRY",
+          "BARBARA",
+          "Kramer",
+          "Directed by"
+        ],
+        "correctIndex": 1,
+        "answer": "BARBARA"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “turns and breaks wine bottles] CLERK: You're paying for these. ELAINE: How was it? JERRY: As good as it gets.…”?",
+        "options": [
+          "KRAMER",
+          "Jerry",
+          "George",
+          "Clerk"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “But we were here ahead of you.”?",
+        "options": [
+          "Cleck",
+          "BARBARA",
+          "ELAINE",
+          "GEORGE"
+        ],
+        "correctIndex": 2,
+        "answer": "ELAINE"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 78,
+    "season": 5,
+    "title": "The Marine Biologist",
+    "airDate": "2/10/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheMarineBiologist.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:35.153Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “(still over excited) Who wants to have some fun!”?",
+        "options": [
+          "Kramer",
+          "Also",
+          "Cast",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “and Kramer) Hey listen to this, some woman found an electronic organizer, my name was in it, she wants me to…”?",
+        "options": [
+          "Corinne",
+          "George",
+          "Diane",
+          "Also"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “are sitting) George: Diane DeConn? You saw Diane DeConn! Jerry: Something huh? George: Yeah! How'd she look.…”?",
+        "options": [
+          "Larry",
+          "George",
+          "Voice",
+          "Woman at beach"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “and Diane are walking on the beach) George: Then of course with evolution the octopus lost the nostrils and t…”?",
+        "options": [
+          "Diane",
+          "Lippman",
+          "Cast",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “leaves and in the hall she meets up with Kramer, he is holding a set of golf clubs) Kramer: Ah, maybe you cou…”?",
+        "options": [
+          "Elaine",
+          "David",
+          "Woman at beach",
+          "George"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “She told me to \"Go to hell!\" and I took the bus”?",
+        "options": [
+          "Newman",
+          "Jerry",
+          "George",
+          "Crowd"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “is still itching cause the sand) Kramer: Oh, you like it huh. Elaine: It wouldn't stop beeping in the car so…”?",
+        "options": [
+          "Woman at beach",
+          "Elaine",
+          "Lippman",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “I got about fifty-feet out and then suddenly the great”?",
+        "options": [
+          "Lippman",
+          "Crowd",
+          "George",
+          "Diane"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “All right, All right. Out, Out.”?",
+        "options": [
+          "Hotel Clerk",
+          "Crowd",
+          "Lippman",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "Hotel Clerk"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “Ya I got to get Testikov on tape. If this woman ends up”?",
+        "options": [
+          "With",
+          "Elaine",
+          "Crowd",
+          "Also"
+        ],
+        "correctIndex": 1,
+        "answer": "Elaine"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “How much is Testikov getting from Pendman for this book”?",
+        "options": [
+          "Jerry",
+          "Woman at beach",
+          "Corinne",
+          "Testikov"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “is a marine biologist?! Jerry: A pretty damn good one, too! Diane: I can't believe it I mean I would never ha…”?",
+        "options": [
+          "Diane",
+          "Production Credits",
+          "With",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “is on the phone) Elaine: (to the phone)Well did he bring it up in the meeting? (”?",
+        "options": [
+          "Elaine",
+          "With",
+          "Originally Aired",
+          "Lippman"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “bangs into the room with his golf clubs) Kramer: Hey. Jerry: Hey. Kramer: Hey ya want these (He throws down t…”?",
+        "options": [
+          "Kramer",
+          "Diane",
+          "With",
+          "Originally Aired"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 15,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "Andy Ackerman",
+          "Jason Alexander",
+          "Tom Cherones",
+          "David Steinberg"
+        ],
+        "correctIndex": 2,
+        "answer": "Tom Cherones"
+      },
+      {
+        "id": 16,
+        "type": "cast",
+        "question": "In the cast list, who plays “processing...processing.”?",
+        "options": [
+          "Rosalind Allen",
+          "Carol Kane",
+          "Jerry Seinfeld",
+          "processing.(He opens the box and gets"
+        ],
+        "correctIndex": 3,
+        "answer": "processing.(He opens the box and gets"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “Elaine Benes .......................”?",
+        "options": [
+          "Richard Fancy",
+          "Daivid Blackwood",
+          "Larry David and Jerry Seinfeld",
+          "Julia Louis-Drefus"
+        ],
+        "correctIndex": 3,
+        "answer": "Julia Louis-Drefus"
+      },
+      {
+        "id": 18,
+        "type": "cast",
+        "question": "In the cast list, who plays “George Costanza ....................”?",
+        "options": [
+          "processing.(He opens the box and gets",
+          "Jason Alexander",
+          "we're finished!",
+          "Heather Morgan"
+        ],
+        "correctIndex": 1,
+        "answer": "Jason Alexander"
+      },
+      {
+        "id": 19,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "85",
+          "77",
+          "79",
+          "78"
+        ],
+        "correctIndex": 3,
+        "answer": "78"
+      },
+      {
+        "id": 20,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 9",
+          "Season 4",
+          "Season 6",
+          "Season 5"
+        ],
+        "correctIndex": 3,
+        "answer": "Season 5"
+      },
+      {
+        "id": 21,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "2/10/94",
+          "7/5/89",
+          "5/14/98"
+        ],
+        "correctIndex": 1,
+        "answer": "2/10/94"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “What, is this your mail? (She takes the mail and starts”?",
+        "options": [
+          "Crowd",
+          "Lippman",
+          "Woman at beach",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Yeah, I grabbed it on my way, I don't want my mother reading”?",
+        "options": [
+          "George",
+          "Testikov",
+          "Originally Aired",
+          "Kramer"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “and Diane are still walking) Diane: Your parents must be so proud of you, George. George: Oh, they're busting…”?",
+        "options": [
+          "Originally Aired",
+          "George",
+          "Elaine",
+          "Larry"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “No!!! The reason he's iron man is because he goes out there”?",
+        "options": [
+          "Kramer",
+          "David",
+          "Newman",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 79,
+    "season": 5,
+    "title": "The Pie",
+    "airDate": "2/17/94",
+    "primarySource": "http://www.seinfeldscripts.com/ThePie.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:35.398Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “goes to the saleswoman) ELAINE: You think you can pose me however you want? That's my ass in your window! SAL…”?",
+        "options": [
+          "Elaine",
+          "Transcribed by",
+          "BOB",
+          "RICKY"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “Then what the hell business is it of yours”?",
+        "options": [
+          "George",
+          "Guest Stars",
+          "SALESWOMAN",
+          "BOB"
+        ],
+        "correctIndex": 3,
+        "answer": "BOB"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “(to George) The chef said that he made it special for”?",
+        "options": [
+          "BOB",
+          "Health Inspector",
+          "OLIVE",
+          "WAITER"
+        ],
+        "correctIndex": 3,
+        "answer": "WAITER"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “Pretty good, wasn'it? I told you you should've tasted it.”?",
+        "options": [
+          "JERRY",
+          "WOMAN 1",
+          "Health Inspector",
+          "MACKENZIE"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Look, I'm doing you a favor. They're having an unadvertised sale.”?",
+        "options": [
+          "WOMAN 1",
+          "Transcribed by",
+          "BOB",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “Oh, all right. (Olive scratches, Kramer enjoys, Elaine and”?",
+        "options": [
+          "KRAMER",
+          "Jerry",
+          "RICKY'S BOSS",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “(Jerry gets up and walk to these persons) Uh... Excuse”?",
+        "options": [
+          "ELAINE",
+          "RICKY'S BOSS",
+          "WOMAN 2",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “Actually, the unadvertised sale starts on Friday.”?",
+        "options": [
+          "BOB",
+          "WAITER",
+          "SALESWOMAN",
+          "KRAMER"
+        ],
+        "correctIndex": 2,
+        "answer": "SALESWOMAN"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “(european accent) You are perfect for that suit.”?",
+        "options": [
+          "SALESWOMAN",
+          "WAITER",
+          "Jerry",
+          "AUDREY"
+        ],
+        "correctIndex": 0,
+        "answer": "SALESWOMAN"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “pretend to wash his hands) Health Inspector: Are you Poppie? POPPIE: I'm Poppie. Health Inspector: I think yo…”?",
+        "options": [
+          "Jerry",
+          "BOB",
+          "POPPIE",
+          "Health Inspector"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “Yes, hello. Party's over. (taking off the suit)”?",
+        "options": [
+          "GEORGE",
+          "Transcribed by",
+          "BOB",
+          "ELAINE"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “mannequin in Jerry's car) OLIVE: her? KRAMER: Yeah, there she is. That's my gal. OLIVE: You're a liar. I've s…”?",
+        "options": [
+          "Transcribed by",
+          "Guest Stars",
+          "Elaine",
+          "AUDREY"
+        ],
+        "correctIndex": 2,
+        "answer": "Elaine"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “Yes. Now take off those pants.”?",
+        "options": [
+          "GEORGE",
+          "BOB",
+          "STRANGER",
+          "WOMAN 1"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “throws his keys to Kramer) Well, I guess we're gonna go for a drive now. She really loves that. (”?",
+        "options": [
+          "Lloyd",
+          "Guest Stars",
+          "RICKY",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Andy Ackerman",
+          "Tom Cherones",
+          "Larry Charles",
+          "Tom Gammill and Max Pross; directed by Tom"
+        ],
+        "correctIndex": 3,
+        "answer": "Tom Gammill and Max Pross; directed by Tom"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "Tom Cherones",
+          "Jason Alexander",
+          "Tom",
+          "Andy Ackerman"
+        ],
+        "correctIndex": 2,
+        "answer": "Tom"
+      },
+      {
+        "id": 17,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "79",
+          "78",
+          "86",
+          "80"
+        ],
+        "correctIndex": 0,
+        "answer": "79"
+      },
+      {
+        "id": 18,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 9",
+          "Season 4",
+          "Season 6",
+          "Season 5"
+        ],
+        "correctIndex": 3,
+        "answer": "Season 5"
+      },
+      {
+        "id": 19,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "7/5/89",
+          "11/18/92",
+          "2/17/94",
+          "5/14/98"
+        ],
+        "correctIndex": 2,
+        "answer": "2/17/94"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “So you think you're not gonna get the job because your pants make”?",
+        "options": [
+          "JERRY",
+          "MACKENZIE",
+          "George",
+          "AUDREY"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “Did you give her a reason”?",
+        "options": [
+          "Health Inspector",
+          "JERRY",
+          "Lloyd",
+          "ELAINE"
+        ],
+        "correctIndex": 1,
+        "answer": "JERRY"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “walks to a different rack.) BOB: Where is it? Where is it? GEORGE: (”?",
+        "options": [
+          "Guest Stars",
+          "RICKY",
+          "KRAMER",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Pfft! What can you do? (looking at a tag on the suit)”?",
+        "options": [
+          "GEORGE",
+          "SALESWOMAN",
+          "Lloyd",
+          "Kramer"
+        ],
+        "correctIndex": 0,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “(leaving the european accent) No.”?",
+        "options": [
+          "SALESWOMAN",
+          "KRAMER",
+          "GEORGE",
+          "Transcribed by"
+        ],
+        "correctIndex": 2,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “comes back from the bathroom) KRAMER: Hey Jerry, I saw your girlfriend was in here before. JERRY: Audrey? KRA…”?",
+        "options": [
+          "SALESWOMAN",
+          "AUDREY",
+          "POPPIE",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 80,
+    "season": 5,
+    "title": "The Stand-In",
+    "airDate": "2/24/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheStand-In.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:35.634Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “sitting at the booth nearest to the door) GEORGE: So she's just sitting there, she's having a pleasant conver…”?",
+        "options": [
+          "Broadcast date",
+          "George",
+          "Elaine",
+          "KRAMER & MICKEY"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “Come on Johnny, let's go get something to eat.”?",
+        "options": [
+          "TAMMY",
+          "JERRY",
+          "Regulars",
+          "Kramer"
+        ],
+        "correctIndex": 0,
+        "answer": "TAMMY"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “(cont.) they go flying out of his hands, and one lands on her”?",
+        "options": [
+          "George",
+          "ELAINE",
+          "JERRY",
+          "JOHNNY"
+        ],
+        "correctIndex": 1,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “I haven't cracked a smile in months.”?",
+        "options": [
+          "FULTON",
+          "Regulars",
+          "George",
+          "SON"
+        ],
+        "correctIndex": 0,
+        "answer": "FULTON"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Now listen Porter, you know your mother and I love you very much.”?",
+        "options": [
+          "GEORGE",
+          "DIRECTOR",
+          "KRAMER",
+          "Transcribed by"
+        ],
+        "correctIndex": 2,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “So what does he care if you put lifts in”?",
+        "options": [
+          "JERRY",
+          "Kramer",
+          "Larry",
+          "ELAINE"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “Have you given any more thought to what we talked about? You know,”?",
+        "options": [
+          "PHIL",
+          "TAMMY",
+          "MICKEY",
+          "DAPHNE"
+        ],
+        "correctIndex": 3,
+        "answer": "DAPHNE"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “How do those lifts feel”?",
+        "options": [
+          "JOHNNY",
+          "AL",
+          "GEORGE",
+          "KRAMER"
+        ],
+        "correctIndex": 3,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “Ok everybody that's lunch... one hour.”?",
+        "options": [
+          "GEORGE",
+          "Mickey",
+          "DIRECTOR",
+          "Opening Monologue"
+        ],
+        "correctIndex": 2,
+        "answer": "DIRECTOR"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “So Tammy, finally, today's our big lunch.”?",
+        "options": [
+          "AL",
+          "SON",
+          "MICKEY",
+          "George"
+        ],
+        "correctIndex": 2,
+        "answer": "MICKEY"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “(pacing back and forth) Ya.”?",
+        "options": [
+          "PHIL",
+          "Broadcast date",
+          "KRAMER",
+          "DAPHNE"
+        ],
+        "correctIndex": 2,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Maybe. What's it to you”?",
+        "options": [
+          "David",
+          "DIRECTOR",
+          "Opening Monologue",
+          "MICKEY"
+        ],
+        "correctIndex": 3,
+        "answer": "MICKEY"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “(motions of making out) Well you were involved in some sort of”?",
+        "options": [
+          "FULTON",
+          "George",
+          "JERRY",
+          "TAMMY"
+        ],
+        "correctIndex": 2,
+        "answer": "JERRY"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “Hey. (to Elaine) Hey how was your date with Phil Titola”?",
+        "options": [
+          "KRAMER",
+          "AL",
+          "Regulars",
+          "George"
+        ],
+        "correctIndex": 0,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Larry David",
+          "Larry Charles",
+          "Tom Cherones",
+          "Andy Ackerman"
+        ],
+        "correctIndex": 0,
+        "answer": "Larry David"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "David Steinberg",
+          "Jason Alexander",
+          "Andy Ackerman",
+          "Tom Cherones"
+        ],
+        "correctIndex": 3,
+        "answer": "Tom Cherones"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “Joe Gieb .............................”?",
+        "options": [
+          "Phil",
+          "Cosmo Kramer",
+          "he can barely hold 'em. I mean",
+          "Johnny"
+        ],
+        "correctIndex": 3,
+        "answer": "Johnny"
+      },
+      {
+        "id": 18,
+        "type": "cast",
+        "question": "In the cast list, who plays “Jerome Betler ....................”?",
+        "options": [
+          "Cosmo Kramer",
+          "Daphne",
+          "Director",
+          "Tammy"
+        ],
+        "correctIndex": 2,
+        "answer": "Director"
+      },
+      {
+        "id": 19,
+        "type": "cast",
+        "question": "In the cast list, who plays “Layne Beamer ...................”?",
+        "options": [
+          "Father",
+          "Daphne",
+          "Tammy",
+          "Son"
+        ],
+        "correctIndex": 0,
+        "answer": "Father"
+      },
+      {
+        "id": 20,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "81",
+          "80",
+          "79",
+          "87"
+        ],
+        "correctIndex": 1,
+        "answer": "80"
+      },
+      {
+        "id": 21,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 6",
+          "Season 9",
+          "Season 5",
+          "Season 4"
+        ],
+        "correctIndex": 2,
+        "answer": "Season 5"
+      },
+      {
+        "id": 22,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "7/5/89",
+          "2/24/94",
+          "5/14/98"
+        ],
+        "correctIndex": 2,
+        "answer": "2/24/94"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Well how long you are going to keep this up”?",
+        "options": [
+          "DAPHNE",
+          "JERRY",
+          "SON",
+          "FULTON"
+        ],
+        "correctIndex": 1,
+        "answer": "JERRY"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “..so uh she's just sitting there and a uh Pachyderm, you remember”?",
+        "options": [
+          "JOHNNY",
+          "Transcribed by",
+          "George",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “This you are not going to believe. Al Netchie, that pimple. Tells”?",
+        "options": [
+          "ELAINE",
+          "JERRY",
+          "GEORGE",
+          "Kramer"
+        ],
+        "correctIndex": 2,
+        "answer": "GEORGE"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 81,
+    "season": 5,
+    "title": "The Wife",
+    "airDate": "3/17/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheWife.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:35.873Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “Well, I told my wife not to bring it.”?",
+        "options": [
+          "JERRY",
+          "Elaine into the building - Jerry",
+          "MARTY",
+          "PAULA"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “Yeah. Definite moisture.”?",
+        "options": [
+          "ELAINE",
+          "HELEN",
+          "Morty",
+          "GREG"
+        ],
+        "correctIndex": 0,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Can I have a sip of your water”?",
+        "options": [
+          "GREG",
+          "Elaine",
+          "UNCLE LEO",
+          "KRAMER"
+        ],
+        "correctIndex": 0,
+        "answer": "GREG"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “is trying to get the bundle of clothes from her so he can pay for the dry-cleaning. PAULA: I won't let you do…”?",
+        "options": [
+          "Jerry",
+          "UNCLE LEO",
+          "Elaine",
+          "MERYL"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Hey, that's how I maintain my glow.”?",
+        "options": [
+          "Helen",
+          "KRAMER",
+          "MORTY",
+          "GEORGE"
+        ],
+        "correctIndex": 1,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “Goodbye, Jerry. Oh, I forgot...<reaches in her purse>...this”?",
+        "options": [
+          "George",
+          "MORTY",
+          "Elaine",
+          "MERYL"
+        ],
+        "correctIndex": 3,
+        "answer": "MERYL"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “Hey, where's George? I thought he was with you.”?",
+        "options": [
+          "WAITRESS",
+          "Elaine",
+          "George",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “Are you kidding? That's very significant! If he was interested”?",
+        "options": [
+          "GEORGE",
+          "MORTY",
+          "ELAINE",
+          "Guest stars"
+        ],
+        "correctIndex": 2,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “paces outside impatiently, waiting for his quilt. MARTY: I'm sorry, it's not ready yet. <”?",
+        "options": [
+          "Kramer",
+          "ELAINE",
+          "George",
+          "Helen"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “No. I guess I just wasn't ready for the responsibilities of a”?",
+        "options": [
+          "Elaine into the building - Jerry",
+          "UNCLE LEO",
+          "ELAINE",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “So? We've always just kind've pecked. This one had a totally”?",
+        "options": [
+          "ELAINE",
+          "MARTY",
+          "George",
+          "ANNA"
+        ],
+        "correctIndex": 0,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “I'm looking in the first drawer. It's not here.”?",
+        "options": [
+          "Elaine",
+          "KRAMER",
+          "OWNER",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “Can I get you anything else”?",
+        "options": [
+          "OWNER",
+          "ANNA",
+          "HELEN",
+          "WAITRESS"
+        ],
+        "correctIndex": 3,
+        "answer": "WAITRESS"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “and Greg at the health club. A sweaty Greg is exercising on a leg machine.> ELAINE: Hi, Greg. GREG: Hey, Elai…”?",
+        "options": [
+          "Elaine",
+          "ANNA",
+          "Elaine into the building - Jerry",
+          "JERRY"
+        ],
+        "correctIndex": 0,
+        "answer": "Elaine"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Larry Charles",
+          "Andy Ackerman",
+          "Peter Mehlman",
+          "Tom Cherones"
+        ],
+        "correctIndex": 2,
+        "answer": "Peter Mehlman"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "Tom Cherones. Written by Peter Mehlman",
+          "Jason Alexander",
+          "Andy Ackerman",
+          "Tom Cherones"
+        ],
+        "correctIndex": 0,
+        "answer": "Tom Cherones. Written by Peter Mehlman"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “to me.”?",
+        "options": [
+          "when things don't go right, he kinda takes it personally.",
+          "that's it, I'm asking this guy out.> Um,",
+          "George",
+          "Jerry"
+        ],
+        "correctIndex": 0,
+        "answer": "when things don't go right, he kinda takes it personally."
+      },
+      {
+        "id": 18,
+        "type": "cast",
+        "question": "In the cast list, who plays “have an olive project.”?",
+        "options": [
+          "George",
+          "Jerry",
+          "when things don't go right, he kinda takes it personally.",
+          "that's it, I'm asking this guy out.> Um,"
+        ],
+        "correctIndex": 3,
+        "answer": "that's it, I'm asking this guy out.> Um,"
+      },
+      {
+        "id": 19,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "88",
+          "81",
+          "82",
+          "80"
+        ],
+        "correctIndex": 1,
+        "answer": "81"
+      },
+      {
+        "id": 20,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 9",
+          "Season 6",
+          "Season 5",
+          "Season 4"
+        ],
+        "correctIndex": 2,
+        "answer": "Season 5"
+      },
+      {
+        "id": 21,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "3/17/94",
+          "5/14/98",
+          "7/5/89",
+          "11/18/92"
+        ],
+        "correctIndex": 0,
+        "answer": "3/17/94"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “Yeah. <Spies the shapely manager of the health club.> Oh,”?",
+        "options": [
+          "GREG",
+          "PAULA",
+          "JERRY",
+          "MERYL"
+        ],
+        "correctIndex": 0,
+        "answer": "GREG"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “I didn't do anything with it.”?",
+        "options": [
+          "MERYL",
+          "Helen",
+          "UNCLE LEO",
+          "PAULA"
+        ],
+        "correctIndex": 0,
+        "answer": "MERYL"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “(defensive): Well...I was in the locker room showering, and I...I had to go, so... JERRY: Here we go. GEORGE:…”?",
+        "options": [
+          "GREG",
+          "Jerry's stand-up",
+          "MORTY",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “considers.> New scene -”?",
+        "options": [
+          "George",
+          "Susan",
+          "ANNA",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 82,
+    "season": 5,
+    "title": "The Raincoats (1)",
+    "airDate": "4/28/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheRaincoats.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:36.126Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “You must be Aaron, I've heard about you.”?",
+        "options": [
+          "KRAMER",
+          "GEORGE",
+          "Elaine",
+          "Newman"
+        ],
+        "correctIndex": 0,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “is pointing at a painting while talking to”?",
+        "options": [
+          "Helen",
+          "GEORGE",
+          "Larry",
+          "Morty"
+        ],
+        "correctIndex": 3,
+        "answer": "Morty"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “We're going with a select charter group.”?",
+        "options": [
+          "MORTY",
+          "GEORGE",
+          "RACHEL",
+          "DORIS"
+        ],
+        "correctIndex": 0,
+        "answer": "MORTY"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “N-na I'm paying for the trip.”?",
+        "options": [
+          "JERRY",
+          "FRANK",
+          "Newman",
+          "ELAINE"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “(grabbing his jacket) Hey oo, I just remembered uh my parents”?",
+        "options": [
+          "Helen",
+          "JACK",
+          "WOMAN",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “Hey uh let me take you're coat.”?",
+        "options": [
+          "JACK",
+          "Morty",
+          "GEORGE",
+          "JERRY"
+        ],
+        "correctIndex": 2,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “what are you doing here? GEORGE: Uh, I'm just selling some of Dad's things, (looking into Kramer's eyes) that…”?",
+        "options": [
+          "Jerry",
+          "George",
+          "MR. GOLDSTEIN",
+          "Kramer"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “I haven't been able to reach him. Hey I'll call him right now.”?",
+        "options": [
+          "ALEC",
+          "MORTY",
+          "Estelle",
+          "Frank"
+        ],
+        "correctIndex": 1,
+        "answer": "MORTY"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “Oh, you should have gone to the Costanzas' for dinner. Mmm the”?",
+        "options": [
+          "Helen",
+          "KRAMER",
+          "Rudy",
+          "RACHEL"
+        ],
+        "correctIndex": 1,
+        "answer": "KRAMER"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “and Aaron enter) EVERYONE: Hi. MORTY: Hello”?",
+        "options": [
+          "GEORGE",
+          "MORTY",
+          "RUDY",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “What happens if the husband dies after the wife, who brings in”?",
+        "options": [
+          "Morty",
+          "GEORGE",
+          "NOTE",
+          "Newman"
+        ],
+        "correctIndex": 1,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Charles Both Directed by Tom Cherones -----------------------------------------------------------------------…”?",
+        "options": [
+          "Larry",
+          "Newman",
+          "Broadcast date",
+          "HELEN & MORTY"
+        ],
+        "correctIndex": 0,
+        "answer": "Larry"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “No I haven't seen it yet.”?",
+        "options": [
+          "ELAINE",
+          "JERRY",
+          "JOANNE",
+          "HELEN & MORTY"
+        ],
+        "correctIndex": 1,
+        "answer": "JERRY"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “Well, they were in from out of town, I thought they would enjoy”?",
+        "options": [
+          "Kramer",
+          "Regulars",
+          "Larry",
+          "AARON"
+        ],
+        "correctIndex": 3,
+        "answer": "AARON"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Andy Ackerman",
+          "Tom Cherones",
+          "Larry Charles",
+          "Tom Gammill & Max Pross and Larry David & Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Tom Gammill & Max Pross and Larry David & Jerry"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "David Steinberg",
+          "Jason Alexander",
+          "Andy Ackerman",
+          "Tom Cherones"
+        ],
+        "correctIndex": 3,
+        "answer": "Tom Cherones"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “LaRita Shelby .................”?",
+        "options": [
+          "Joey",
+          "Rudy",
+          "Doris Klompus",
+          "Tour Leader"
+        ],
+        "correctIndex": 3,
+        "answer": "Tour Leader"
+      },
+      {
+        "id": 18,
+        "type": "cast",
+        "question": "In the cast list, who plays “Dorien Wilson ...................”?",
+        "options": [
+          "Alec",
+          "Rudy",
+          "Doris Klompus",
+          "Joanne"
+        ],
+        "correctIndex": 0,
+        "answer": "Alec"
+      },
+      {
+        "id": 19,
+        "type": "cast",
+        "question": "In the cast list, who plays “Stephen Pearlman ............”?",
+        "options": [
+          "Joey",
+          "Mr. Goldstein",
+          "Tour Leader",
+          "Cosmo Kramer"
+        ],
+        "correctIndex": 1,
+        "answer": "Mr. Goldstein"
+      },
+      {
+        "id": 20,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "89",
+          "81",
+          "83",
+          "82"
+        ],
+        "correctIndex": 3,
+        "answer": "82"
+      },
+      {
+        "id": 21,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 4",
+          "Season 6",
+          "Season 5",
+          "Season 9"
+        ],
+        "correctIndex": 2,
+        "answer": "Season 5"
+      },
+      {
+        "id": 22,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "7/5/89",
+          "4/28/94",
+          "11/18/92",
+          "5/14/98"
+        ],
+        "correctIndex": 1,
+        "answer": "4/28/94"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “See everybody later (Morty and Helen leave; Aaron closes the door”?",
+        "options": [
+          "AARON",
+          "NEWMAN",
+          "Rudy",
+          "JOEY"
+        ],
+        "correctIndex": 0,
+        "answer": "AARON"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “(getting up in Helen's face) So how long you folks in town”?",
+        "options": [
+          "AARON",
+          "Kramer",
+          "HELEN & MORTY",
+          "Broadcast date"
+        ],
+        "correctIndex": 0,
+        "answer": "AARON"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “continue to look at him funny) (”?",
+        "options": [
+          "MORTY",
+          "Elaine",
+          "Rudy",
+          "DORIS"
+        ],
+        "correctIndex": 1,
+        "answer": "Elaine"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 83,
+    "season": 5,
+    "title": "The Raincoats (2)",
+    "airDate": "4/28/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheRaincoats2.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:36.373Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “You had dinner with the Seinfelds”?",
+        "options": [
+          "Estelle",
+          "HELEN",
+          "Broadcast date",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “Oh, n-no comparison.”?",
+        "options": [
+          "MORTY",
+          "ANNOUNCEMENT",
+          "Larry",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Rudy?! That skunk, I knew he didn't burn those clothes.”?",
+        "options": [
+          "KRAMER",
+          "GEORGE",
+          "Estelle",
+          "MORTY"
+        ],
+        "correctIndex": 1,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “as he is about to leave) Hey give 'em our best though. GEORGE: (quietly) Ya. JERRY: (walking over toward”?",
+        "options": [
+          "Newman",
+          "George",
+          "JOEY",
+          "Estelle"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “was necking during Schindler's List? NEWMAN: Yes! A more offensive spectacle I cannot recall. Anyway I just r…”?",
+        "options": [
+          "HELEN",
+          "George",
+          "Jerry",
+          "JOANNE"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “The broken window, Klompus never fixed it. They just walked right”?",
+        "options": [
+          "AARON",
+          "Regulars",
+          "Elaine",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “Well, they were in from out of town, I thought they would enjoy”?",
+        "options": [
+          "AARON",
+          "Newman",
+          "KRAMER",
+          "GEORGE"
+        ],
+        "correctIndex": 0,
+        "answer": "AARON"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “Uh, let me ask you a question. How come you asked Mr. and Mrs.”?",
+        "options": [
+          "HELEN",
+          "Estelle",
+          "DORIS",
+          "ELAINE"
+        ],
+        "correctIndex": 3,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “Nobody died. Jack I want you to do me a big favor. (Jerry holding”?",
+        "options": [
+          "AARON",
+          "Elaine",
+          "RUDY",
+          "MORTY"
+        ],
+        "correctIndex": 3,
+        "answer": "MORTY"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “is already sitting next to”?",
+        "options": [
+          "Estelle",
+          "ALEC",
+          "HELEN",
+          "AARON"
+        ],
+        "correctIndex": 0,
+        "answer": "Estelle"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “Those are my coats. I saved them, I stored them, I've been waiting”?",
+        "options": [
+          "MORTY",
+          "KRAMER",
+          "GEORGE",
+          "ELAINE"
+        ],
+        "correctIndex": 0,
+        "answer": "MORTY"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “Well don't let him take advantage of you like that.”?",
+        "options": [
+          "FRANK",
+          "Helen",
+          "Guest Stars",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “He also came up with an idea for a brimless rain-hat but that”?",
+        "options": [
+          "JERRY",
+          "Rudy",
+          "Helen",
+          "Estelle"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “George, you have no idea how fantastic this is.”?",
+        "options": [
+          "FRANK",
+          "ALEC",
+          "HELEN & MORTY",
+          "ESTELLE"
+        ],
+        "correctIndex": 1,
+        "answer": "ALEC"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Tom Cherones",
+          "Larry Charles",
+          "Andy Ackerman",
+          "Tom Gammill & Max Pross and Larry David & Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Tom Gammill & Max Pross and Larry David & Jerry"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "David Steinberg",
+          "Tom Cherones",
+          "Andy Ackerman",
+          "Jason Alexander"
+        ],
+        "correctIndex": 1,
+        "answer": "Tom Cherones"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “LaRita Shelby .................”?",
+        "options": [
+          "Cosmo Kramer",
+          "Jerry Seinfeld",
+          "Mr. Goldstein",
+          "Tour Leader"
+        ],
+        "correctIndex": 3,
+        "answer": "Tour Leader"
+      },
+      {
+        "id": 18,
+        "type": "cast",
+        "question": "In the cast list, who plays “Judge Reinhold ................”?",
+        "options": [
+          "Aaron",
+          "Alec",
+          "Joanne",
+          "Mr. Goldstein"
+        ],
+        "correctIndex": 0,
+        "answer": "Aaron"
+      },
+      {
+        "id": 19,
+        "type": "cast",
+        "question": "In the cast list, who plays “Dorien Wilson ...................”?",
+        "options": [
+          "Mr. Goldstein",
+          "Doris Klompus",
+          "Tour Leader",
+          "Alec"
+        ],
+        "correctIndex": 3,
+        "answer": "Alec"
+      },
+      {
+        "id": 20,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "83",
+          "84",
+          "90",
+          "82"
+        ],
+        "correctIndex": 0,
+        "answer": "83"
+      },
+      {
+        "id": 21,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 6",
+          "Season 9",
+          "Season 5",
+          "Season 4"
+        ],
+        "correctIndex": 2,
+        "answer": "Season 5"
+      },
+      {
+        "id": 22,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "7/5/89",
+          "5/14/98",
+          "4/28/94"
+        ],
+        "correctIndex": 3,
+        "answer": "4/28/94"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Oohh, boy. They could use a vacation.”?",
+        "options": [
+          "JERRY",
+          "ELAINE",
+          "RUDY",
+          "GEORGE"
+        ],
+        "correctIndex": 1,
+        "answer": "ELAINE"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “you missed a couple. WOMAN: Bon-jour, welcome to the Gateway to Paris Charter Flight. JERRY: (turns around no…”?",
+        "options": [
+          "AARON",
+          "Kramer",
+          "FRANK",
+          "ANNOUNCEMENT"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “Why wouldn't they like us? (tastes the Paella; disgusted) Again”?",
+        "options": [
+          "JOANNE",
+          "ANNOUNCEMENT",
+          "ESTELLE",
+          "FRANK"
+        ],
+        "correctIndex": 3,
+        "answer": "FRANK"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 84,
+    "season": 5,
+    "title": "The Fire",
+    "airDate": "5/5/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheFire.html",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:36.628Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “(voice is hoarse from screaming): I...was trying to lead the way. We needed a leader! Someone to lead the way…”?",
+        "options": [
+          "Guest stars",
+          "Kramer",
+          "George",
+          "Estelle"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “pokes his head in the door. JERRY: Hey, nice shoes. What, you wear sandals to work? It's always nice to walk…”?",
+        "options": [
+          "Jerry",
+          "George",
+          "Kramer",
+          "OTHER CO-WORKERS IN HALLWAY"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Yeah, you should see George get along with this kid!”?",
+        "options": [
+          "Frank",
+          "JERRY",
+          "ERIC",
+          "George"
+        ],
+        "correctIndex": 1,
+        "answer": "JERRY"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “on-stage.> JERRY: I mean, Bozo the Clown...does he really need \"the clown\" in his title, as clown? Bozo, \"the…”?",
+        "options": [
+          "Elaine",
+          "FIREMAN",
+          "TOBY",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “at the coffee shop. GEORGE: So she doesn't want to see me anymore. JERRY: Did you knock her over too, or just…”?",
+        "options": [
+          "ROBIN",
+          "ERIC",
+          "Jerry",
+          "Kramer"
+        ],
+        "correctIndex": 2,
+        "answer": "Jerry"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “onstage. JERRY: ...that's why men hunt and women nest.”?",
+        "options": [
+          "FIREMAN",
+          "Elaine",
+          "Estelle",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “You probably couldn't see because of the smoke.”?",
+        "options": [
+          "Larry",
+          "JOANNE",
+          "ERIC",
+          "JERRY"
+        ],
+        "correctIndex": 3,
+        "answer": "JERRY"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “throws two quick punches and a massive uppercut> - knocked him out cold! GEORGE: How could you do that?! KRAM…”?",
+        "options": [
+          "Kramer",
+          "OTHER CO-WORKERS IN HALLWAY",
+          "JOANNE",
+          "Elaine"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “in the bar. ROBIN: George! This is Ronnie Kaye! GEORGE: The prop comic? <Ronnie holds up his water gun and sm…”?",
+        "options": [
+          "KRAMER",
+          "George",
+          "Estelle",
+          "TOBY"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “are sitting in the audience near the front. JERRY: Men definitely hit the remote button more than women... TO…”?",
+        "options": [
+          "JOANNE",
+          "Elaine",
+          "ROBIN'S MOTHER",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “I should have let her have it! I held back because of Kramer.”?",
+        "options": [
+          "JERRY",
+          "Larry",
+          "GEORGE",
+          "Estelle"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “with his big shoe.> ROBIN'S MOTHER: That's the coward that left us to die! Commercial break. Cut back to”?",
+        "options": [
+          "RONNIE",
+          "OTHER CO-WORKERS IN HALLWAY",
+          "ELAINE",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “and Toby enter.> KRAMER: Hey, Jerry. Toby, this is Jerry. TOBY: This is so exciting! Look, I have goosebumps!…”?",
+        "options": [
+          "Guest stars",
+          "JERRY",
+          "FIREMAN",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “a magazine> GEORGE: What's that? JERRY: It's the Leonard Christian article about my show. Plus my gig in Miam…”?",
+        "options": [
+          "FIREMAN",
+          "RONNIE",
+          "George",
+          "TOBY"
+        ],
+        "correctIndex": 2,
+        "answer": "George"
+      },
+      {
+        "id": 15,
+        "type": "written_by",
+        "question": "According to the script transcription, who is credited as “Written By”?",
+        "options": [
+          "Tom Cherones",
+          "Andy Ackerman",
+          "Larry Charles",
+          "David Steinberg"
+        ],
+        "correctIndex": 2,
+        "answer": "Larry Charles"
+      },
+      {
+        "id": 16,
+        "type": "directed_by",
+        "question": "According to the script transcription, who is credited as “Directed By”?",
+        "options": [
+          "Jason Alexander",
+          "Tom Cherones",
+          "Tom Cherones. Written by Larry Charles",
+          "Andy Ackerman"
+        ],
+        "correctIndex": 2,
+        "answer": "Tom Cherones. Written by Larry Charles"
+      },
+      {
+        "id": 17,
+        "type": "cast",
+        "question": "In the cast list, who plays “hit the remote more than women.”?",
+        "options": [
+          "men don't care what's on TV, men only",
+          "was a safety precaution! In a fire, you stay close to",
+          "has Lippman, uh, hired anyone?",
+          "and they always tell you, no matter what, whatever"
+        ],
+        "correctIndex": 0,
+        "answer": "men don't care what's on TV, men only"
+      },
+      {
+        "id": 18,
+        "type": "cast",
+        "question": "In the cast list, who plays “out from all the commotion.”?",
+        "options": [
+          "was a safety precaution! In a fire, you stay close to",
+          "has Lippman, uh, hired anyone?",
+          "' I'd probably get lost, have to go back to the room,",
+          "the bus is out of control! So, I grab him"
+        ],
+        "correctIndex": 3,
+        "answer": "the bus is out of control! So, I grab him"
+      },
+      {
+        "id": 19,
+        "type": "cast",
+        "question": "In the cast list, who plays “candy machine.”?",
+        "options": [
+          "and they always tell you, no matter what, whatever",
+          "' I'd probably get lost, have to go back to the room,",
+          "men don't care what's on TV, men only",
+          "was a safety precaution! In a fire, you stay close to"
+        ],
+        "correctIndex": 1,
+        "answer": "' I'd probably get lost, have to go back to the room,"
+      },
+      {
+        "id": 20,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "91",
+          "83",
+          "85",
+          "84"
+        ],
+        "correctIndex": 3,
+        "answer": "84"
+      },
+      {
+        "id": 21,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 5",
+          "Season 6",
+          "Season 4",
+          "Season 9"
+        ],
+        "correctIndex": 0,
+        "answer": "Season 5"
+      },
+      {
+        "id": 22,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "5/5/94",
+          "5/14/98",
+          "7/5/89"
+        ],
+        "correctIndex": 1,
+        "answer": "5/5/94"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “How can you call yourself a clown and not know who Bozo is”?",
+        "options": [
+          "Estelle",
+          "Jerry's stand-up",
+          "Jerry",
+          "GEORGE"
+        ],
+        "correctIndex": 3,
+        "answer": "GEORGE"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “enters and sees Robin working.> GEORGE: Robin? Robin! ROBIN: George, what is it? I'm working. GEORGE: Robin,…”?",
+        "options": [
+          "Estelle",
+          "ANNOUNCER",
+          "Guest stars",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “...that's why men hunt and women nest.”?",
+        "options": [
+          "JERRY",
+          "ERIC",
+          "JOANNE",
+          "FIREMAN"
+        ],
+        "correctIndex": 0,
+        "answer": "JERRY"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 85,
+    "season": 5,
+    "title": "The Hamptons",
+    "airDate": "5/12/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheHamptons.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:36.904Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “How is he gonna pay off a thousand dollar fine”?",
+        "options": [
+          "Michael",
+          "Ben",
+          "George",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “relieved, then confused, not knowing if he was being nice to her or to the baby) % Rachel and”?",
+        "options": [
+          "George",
+          "Opening Monologue",
+          "Elaine",
+          "Jane"
+        ],
+        "correctIndex": 2,
+        "answer": "Elaine"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Oh, very refreshing. (Thinking again) Sex is like joining”?",
+        "options": [
+          "Rachel",
+          "Jane",
+          "Elaine",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “comes outside) George: Hey Rachel! Rachel: (Quickly gets out of seat) Hi. I'm gonna go in there to change. (S…”?",
+        "options": [
+          "Elaine",
+          "Rachel",
+          "Opening Monologue",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “Umm... This is so good.”?",
+        "options": [
+          "Jerry",
+          "Michael",
+          "Kramer",
+          "Rachel"
+        ],
+        "correctIndex": 3,
+        "answer": "Rachel"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “Yeah. I love Hampton tomatoes. You know, you can eat 'em”?",
+        "options": [
+          "Ben",
+          "Jerry",
+          "Jane",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “Face up on her back”?",
+        "options": [
+          "Jerry",
+          "Michael",
+          "Opening Monologue",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “What if she discusses it with Jane”?",
+        "options": [
+          "Carol",
+          "Jane",
+          "Kramer",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “How do women know about shrinkage? (They see Elaine walking”?",
+        "options": [
+          "George",
+          "Jane",
+          "Rachel",
+          "Michael"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “Think of me as a doctor. (They go outside again)”?",
+        "options": [
+          "Jerry",
+          "Jane",
+          "George",
+          "Opening Monologue"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “So you feel you were short changed.”?",
+        "options": [
+          "Opening Monologue",
+          "Elaine",
+          "George",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “No, you don't wanna do that. You'll be uncomfortable.”?",
+        "options": [
+          "Jerry",
+          "Rachel",
+          "Michael",
+          "Jane"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “outside of the house in the back. Kramer: Hey Jerry. Rub some lotion on my back. Jerry: Who are you, Mrs. Rob…”?",
+        "options": [
+          "Michael",
+          "Jerry",
+          "Rachel",
+          "Jane"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “Hey, there's a tomato stand, let's stop, I can get some”?",
+        "options": [
+          "Opening Monologue",
+          "Police",
+          "Jane",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 15,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "92",
+          "85",
+          "86",
+          "84"
+        ],
+        "correctIndex": 1,
+        "answer": "85"
+      },
+      {
+        "id": 16,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 5",
+          "Season 6",
+          "Season 9",
+          "Season 4"
+        ],
+        "correctIndex": 0,
+        "answer": "Season 5"
+      },
+      {
+        "id": 17,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "5/12/94",
+          "5/14/98",
+          "11/18/92",
+          "7/5/89"
+        ],
+        "correctIndex": 0,
+        "answer": "5/12/94"
+      },
+      {
+        "id": 18,
+        "type": "who_said",
+        "question": "Who says: “Train was so crowded. I had to sit in the seat facing the”?",
+        "options": [
+          "Carol",
+          "Police",
+          "George",
+          "Rachel"
+        ],
+        "correctIndex": 3,
+        "answer": "Rachel"
+      },
+      {
+        "id": 19,
+        "type": "who_said",
+        "question": "Who says: “(To Rachel) And, uh, you eat eggs, right”?",
+        "options": [
+          "George",
+          "Jerry",
+          "Ben",
+          "Carol"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “and Jane in another car driving to the Hamptons. George: I never tasted a cough medicine I didn't love. Jane:…”?",
+        "options": [
+          "Ben",
+          "Jerry",
+          "Opening Monologue",
+          "George"
+        ],
+        "correctIndex": 3,
+        "answer": "George"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “Ah, I'm gonna go pick up Rachel at the station.”?",
+        "options": [
+          "Police",
+          "Jane",
+          "Opening Monologue",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “No, I got 'em in the ocean.”?",
+        "options": [
+          "Kramer",
+          "Jerry",
+          "Ben",
+          "Carol"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Well, I found this rope and I kept tugging on it, and all”?",
+        "options": [
+          "Carol",
+          "Kramer",
+          "Elaine",
+          "Jerry"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “(Jerry realizes the situation is hopeless) All right.”?",
+        "options": [
+          "Police",
+          "George",
+          "Carol",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “Wow. You're so pious. I really respect that. You know when”?",
+        "options": [
+          "Jane",
+          "Michael",
+          "Ben",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      }
+    ]
+  },
+  {
+    "seriesIndex": 86,
+    "season": 5,
+    "title": "The Opposite",
+    "airDate": "5/19/94",
+    "primarySource": "http://www.seinfeldscripts.com/TheOpposite.htm",
+    "indexSource": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+    "generatedAt": "2026-05-13T14:39:37.158Z",
+    "questions": [
+      {
+        "id": 1,
+        "type": "who_said",
+        "question": "Who says: “Jerry, did you hear this”?",
+        "options": [
+          "George",
+          "Victoria",
+          "Helen",
+          "Estelle"
+        ],
+        "correctIndex": 3,
+        "answer": "Estelle"
+      },
+      {
+        "id": 2,
+        "type": "who_said",
+        "question": "Who says: “: Yeah, the jewel thief.”?",
+        "options": [
+          "Regis",
+          "Frank",
+          "Jake",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 3,
+        "type": "who_said",
+        "question": "Who says: “Why don't you tell me about some of your previous”?",
+        "options": [
+          "First stop",
+          "Mr. Cushman",
+          "Rachel",
+          "Mr Lippman"
+        ],
+        "correctIndex": 1,
+        "answer": "Mr. Cushman"
+      },
+      {
+        "id": 4,
+        "type": "who_said",
+        "question": "Who says: “: You know who you are? Even Steven *Cut to G's car; G and Victoria driving Victoria : Are you growing a bear…”?",
+        "options": [
+          "Helen",
+          "Kramer",
+          "Mr. Steinbrenner",
+          "Victoria"
+        ],
+        "correctIndex": 1,
+        "answer": "Kramer"
+      },
+      {
+        "id": 5,
+        "type": "who_said",
+        "question": "Who says: “: I don't think we should. We really don't know each other very well. Victoria : Who are you,”?",
+        "options": [
+          "Man no.3",
+          "George",
+          "Rachel",
+          "Kramer"
+        ],
+        "correctIndex": 1,
+        "answer": "George"
+      },
+      {
+        "id": 6,
+        "type": "who_said",
+        "question": "Who says: “You know you could've thrown a pencil out the window and”?",
+        "options": [
+          "Man",
+          "Jerry",
+          "Kathy Lee",
+          "Frank"
+        ],
+        "correctIndex": 1,
+        "answer": "Jerry"
+      },
+      {
+        "id": 7,
+        "type": "who_said",
+        "question": "Who says: “Do you have twenty bucks”?",
+        "options": [
+          "Victoria",
+          "Rachel",
+          "Kathy Lee",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 8,
+        "type": "who_said",
+        "question": "Who says: “Do you know what's going on here? Can't you see what's”?",
+        "options": [
+          "Waitress",
+          "Frank",
+          "Mr. Steinbrenner",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 9,
+        "type": "who_said",
+        "question": "Who says: “Oh yeah? How'd you do”?",
+        "options": [
+          "Tina",
+          "Kathy Lee",
+          "Man no.3",
+          "Elaine"
+        ],
+        "correctIndex": 3,
+        "answer": "Elaine"
+      },
+      {
+        "id": 10,
+        "type": "who_said",
+        "question": "Who says: “: Oh, you better believe it!”?",
+        "options": [
+          "Kramer",
+          "Estelle",
+          "First stop",
+          "Mr. Steinbrenner"
+        ],
+        "correctIndex": 0,
+        "answer": "Kramer"
+      },
+      {
+        "id": 11,
+        "type": "who_said",
+        "question": "Who says: “: Hey. Buddy, it's all happening!”?",
+        "options": [
+          "Helen",
+          "Mr Lippman",
+          "Kramer",
+          "Man no.1"
+        ],
+        "correctIndex": 2,
+        "answer": "Kramer"
+      },
+      {
+        "id": 12,
+        "type": "who_said",
+        "question": "Who says: “: He knows what he's doing. ( G pulls both his parents to him )”?",
+        "options": [
+          "Rachel",
+          "First stop",
+          "Secretary",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 13,
+        "type": "who_said",
+        "question": "Who says: “Wait, wait, wait, that's too much. Mine was more than”?",
+        "options": [
+          "Mr. Cushman",
+          "Frank",
+          "Regis",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      },
+      {
+        "id": 14,
+        "type": "who_said",
+        "question": "Who says: “: How're things going”?",
+        "options": [
+          "George",
+          "Theater Manager",
+          "Man no.1",
+          "Jerry"
+        ],
+        "correctIndex": 3,
+        "answer": "Jerry"
+      },
+      {
+        "id": 15,
+        "type": "cast",
+        "question": "In the cast list, who plays “alright .”?",
+        "options": [
+          "George",
+          "Jerry",
+          "good luck!",
+          "okay, bye."
+        ],
+        "correctIndex": 3,
+        "answer": "okay, bye."
+      },
+      {
+        "id": 16,
+        "type": "cast",
+        "question": "In the cast list, who plays “a while. And .”?",
+        "options": [
+          "good luck!",
+          "okay, bye.",
+          "Jerry",
+          "George"
+        ],
+        "correctIndex": 0,
+        "answer": "good luck!"
+      },
+      {
+        "id": 17,
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
+        "options": [
+          "86",
+          "87",
+          "85",
+          "93"
+        ],
+        "correctIndex": 0,
+        "answer": "86"
+      },
+      {
+        "id": 18,
+        "type": "meta_season",
+        "question": "On SeinfeldScripts.com, this episode is grouped under which season header?",
+        "options": [
+          "Season 9",
+          "Season 4",
+          "Season 6",
+          "Season 5"
+        ],
+        "correctIndex": 3,
+        "answer": "Season 5"
+      },
+      {
+        "id": 19,
+        "type": "meta_airdate",
+        "question": "The SeinfeldScripts episode index lists which original airdate stamp for this episode?",
+        "options": [
+          "11/18/92",
+          "7/5/89",
+          "5/14/98",
+          "5/19/94"
+        ],
+        "correctIndex": 3,
+        "answer": "5/19/94"
+      },
+      {
+        "id": 20,
+        "type": "who_said",
+        "question": "Who says: “What the hell was that”?",
+        "options": [
+          "Jerry",
+          "Man no.1",
+          "Helen",
+          "Estelle"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 21,
+        "type": "who_said",
+        "question": "Who says: “I'm tellin' ya, this guy's bonkos! He really is!”?",
+        "options": [
+          "Secretary",
+          "Regis",
+          "Mr. Steinbrenner",
+          "Mr Lippman"
+        ],
+        "correctIndex": 1,
+        "answer": "Regis"
+      },
+      {
+        "id": 22,
+        "type": "who_said",
+        "question": "Who says: “: I'm the assistant to the travelling secretary. I'm going on the road trips with them! I'll be on the plane.…”?",
+        "options": [
+          "George",
+          "Mr. Lippman",
+          "First stop",
+          "Secretary"
+        ],
+        "correctIndex": 0,
+        "answer": "George"
+      },
+      {
+        "id": 23,
+        "type": "who_said",
+        "question": "Who says: “Oh, it's on file, right here. ( points to his head )”?",
+        "options": [
+          "First stop",
+          "Elaine",
+          "Kramer",
+          "Secretary"
+        ],
+        "correctIndex": 2,
+        "answer": "Kramer"
+      },
+      {
+        "id": 24,
+        "type": "who_said",
+        "question": "Who says: “: Ah ... let's call it even. * Closing monologue”?",
+        "options": [
+          "Jerry",
+          "Tina",
+          "Mr. Cushman",
+          "Man no.1"
+        ],
+        "correctIndex": 0,
+        "answer": "Jerry"
+      },
+      {
+        "id": 25,
+        "type": "who_said",
+        "question": "Who says: “takes a sip of coffee, then spits it out all over Kathy Lee's dress ) Regis : We'll be right back. * Cut to J…”?",
+        "options": [
+          "First stop",
+          "Mr. Steinbrenner",
+          "Helen",
+          "Kramer"
+        ],
+        "correctIndex": 3,
+        "answer": "Kramer"
+      }
+    ]
+  }
+]

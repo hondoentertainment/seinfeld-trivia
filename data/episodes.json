@@ -1,0 +1,1267 @@
+{
+  "source": "http://www.seinfeldscripts.com/seinfeld-scripts.html",
+  "generatedAt": "2026-05-13T14:38:03.033Z",
+  "episodeCount": 180,
+  "episodes": [
+    {
+      "seriesIndex": 1,
+      "season": 0,
+      "title": "Good News Bad News",
+      "airDate": "7/5/89",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSeinfeldChronicles.htm"
+    },
+    {
+      "seriesIndex": 2,
+      "season": 1,
+      "title": "The Stakeout",
+      "airDate": "5/31/90",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheStakeout.htm"
+    },
+    {
+      "seriesIndex": 3,
+      "season": 1,
+      "title": "The Robbery",
+      "airDate": "6/7/90",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheRobbery.htm"
+    },
+    {
+      "seriesIndex": 4,
+      "season": 1,
+      "title": "Male Unbonding",
+      "airDate": "6/14/90",
+      "scriptUrl": "http://www.seinfeldscripts.com/MaleUnbonding.htm"
+    },
+    {
+      "seriesIndex": 5,
+      "season": 1,
+      "title": "The Stock Tip",
+      "airDate": "6/21/90",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheStockTip.htm"
+    },
+    {
+      "seriesIndex": 6,
+      "season": 2,
+      "title": "The Ex-Girlfriend",
+      "airDate": "1/23/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheExGirlfriend.htm"
+    },
+    {
+      "seriesIndex": 7,
+      "season": 2,
+      "title": "The Pony Remark",
+      "airDate": "1/30/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePonyRemark.htm"
+    },
+    {
+      "seriesIndex": 8,
+      "season": 2,
+      "title": "The Jacket",
+      "airDate": "2/6/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheJacket.htm"
+    },
+    {
+      "seriesIndex": 9,
+      "season": 2,
+      "title": "The Phone Message",
+      "airDate": "2/13/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePhoneMessage.htm"
+    },
+    {
+      "seriesIndex": 10,
+      "season": 2,
+      "title": "The Apartment",
+      "airDate": "4/4/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheApartment.htm"
+    },
+    {
+      "seriesIndex": 11,
+      "season": 2,
+      "title": "The Statue",
+      "airDate": "4/11/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheStatue.htm"
+    },
+    {
+      "seriesIndex": 12,
+      "season": 2,
+      "title": "The Revenge",
+      "airDate": "4/18/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheRevenge.htm"
+    },
+    {
+      "seriesIndex": 13,
+      "season": 2,
+      "title": "The Heart Attack",
+      "airDate": "4/25/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheHeartAttack.htm"
+    },
+    {
+      "seriesIndex": 14,
+      "season": 2,
+      "title": "The Deal",
+      "airDate": "5/2/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheDeal.htm"
+    },
+    {
+      "seriesIndex": 15,
+      "season": 2,
+      "title": "The Baby Shower",
+      "airDate": "5/16/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBabyShower.htm"
+    },
+    {
+      "seriesIndex": 16,
+      "season": 2,
+      "title": "The Chinese Restaurant",
+      "airDate": "5/23/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheChineseRestaurant.htm"
+    },
+    {
+      "seriesIndex": 17,
+      "season": 2,
+      "title": "The Busboy",
+      "airDate": "6/26/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBusboy.htm"
+    },
+    {
+      "seriesIndex": 18,
+      "season": 3,
+      "title": "The Note",
+      "airDate": "9/18/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheNote.html"
+    },
+    {
+      "seriesIndex": 19,
+      "season": 3,
+      "title": "The Truth",
+      "airDate": "9/25/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheTruth.htm"
+    },
+    {
+      "seriesIndex": 20,
+      "season": 3,
+      "title": "The Pen",
+      "airDate": "10/2/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePen.html"
+    },
+    {
+      "seriesIndex": 21,
+      "season": 3,
+      "title": "The Dog",
+      "airDate": "10/9/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheDog.htm"
+    },
+    {
+      "seriesIndex": 22,
+      "season": 3,
+      "title": "The Library",
+      "airDate": "10/16/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheLibrary.htm"
+    },
+    {
+      "seriesIndex": 23,
+      "season": 3,
+      "title": "The Parking Garage",
+      "airDate": "10/30/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheParkingGarage.htm"
+    },
+    {
+      "seriesIndex": 24,
+      "season": 3,
+      "title": "The Cafe",
+      "airDate": "11/6/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheCafe.html"
+    },
+    {
+      "seriesIndex": 25,
+      "season": 3,
+      "title": "The Tape",
+      "airDate": "11/13/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheTape.htm"
+    },
+    {
+      "seriesIndex": 26,
+      "season": 3,
+      "title": "The Nose Job",
+      "airDate": "11/20/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheNoseJob.html"
+    },
+    {
+      "seriesIndex": 27,
+      "season": 3,
+      "title": "The Stranded",
+      "airDate": "11/27/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheStranded.html"
+    },
+    {
+      "seriesIndex": 28,
+      "season": 3,
+      "title": "The Alternate Side",
+      "airDate": "12/4/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheAlternateSide.htm"
+    },
+    {
+      "seriesIndex": 29,
+      "season": 3,
+      "title": "The Red Dot",
+      "airDate": "12/11/91",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheRedDot.htm"
+    },
+    {
+      "seriesIndex": 30,
+      "season": 3,
+      "title": "The Subway",
+      "airDate": "1/8/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSubway.htm"
+    },
+    {
+      "seriesIndex": 31,
+      "season": 3,
+      "title": "The Pez Dispenser",
+      "airDate": "1/15/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePezDispenser.htm"
+    },
+    {
+      "seriesIndex": 32,
+      "season": 3,
+      "title": "The Suicide",
+      "airDate": "1/29/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSuicide.html"
+    },
+    {
+      "seriesIndex": 33,
+      "season": 3,
+      "title": "The Fix-Up",
+      "airDate": "2/5/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFixUp.html"
+    },
+    {
+      "seriesIndex": 34,
+      "season": 3,
+      "title": "The Boyfriend (1)",
+      "airDate": "2/12/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBoyfriend1.htm"
+    },
+    {
+      "seriesIndex": 35,
+      "season": 3,
+      "title": "The Boyfriend (2)",
+      "airDate": "2/12/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBoyfriend2.htm"
+    },
+    {
+      "seriesIndex": 36,
+      "season": 3,
+      "title": "The Limo",
+      "airDate": "2/26/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheLimo.html"
+    },
+    {
+      "seriesIndex": 37,
+      "season": 3,
+      "title": "The Good Samaritan",
+      "airDate": "3/4/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheGoodSamaritan.html"
+    },
+    {
+      "seriesIndex": 38,
+      "season": 3,
+      "title": "The Letter",
+      "airDate": "3/25/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheLetter.htm"
+    },
+    {
+      "seriesIndex": 39,
+      "season": 3,
+      "title": "The Parking Spot",
+      "airDate": "2/4/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheParkingSpace.html"
+    },
+    {
+      "seriesIndex": 40,
+      "season": 3,
+      "title": "The Keys",
+      "airDate": "5/6/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheKeys.html"
+    },
+    {
+      "seriesIndex": 41,
+      "season": 4,
+      "title": "The Trip (1)",
+      "airDate": "8/12/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheTrip1.htm"
+    },
+    {
+      "seriesIndex": 42,
+      "season": 4,
+      "title": "The Trip (2)",
+      "airDate": "8/19/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheTrip2.html"
+    },
+    {
+      "seriesIndex": 43,
+      "season": 4,
+      "title": "The Pitch",
+      "airDate": "9/16/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePitch.htm"
+    },
+    {
+      "seriesIndex": 44,
+      "season": 4,
+      "title": "The Ticket",
+      "airDate": "9/16/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheTicket.html"
+    },
+    {
+      "seriesIndex": 45,
+      "season": 4,
+      "title": "The Wallet",
+      "airDate": "9/23/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheWallet.html"
+    },
+    {
+      "seriesIndex": 46,
+      "season": 4,
+      "title": "The Watch",
+      "airDate": "9/23/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheWatch.html"
+    },
+    {
+      "seriesIndex": 47,
+      "season": 4,
+      "title": "The Bubble Boy",
+      "airDate": "10/7/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBubbleBoy.htm"
+    },
+    {
+      "seriesIndex": 48,
+      "season": 4,
+      "title": "The Cheever Letters",
+      "airDate": "10/28/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheCheeverLetters.htm"
+    },
+    {
+      "seriesIndex": 49,
+      "season": 4,
+      "title": "The Opera",
+      "airDate": "11/4/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheOpera.html"
+    },
+    {
+      "seriesIndex": 50,
+      "season": 4,
+      "title": "The Virgin",
+      "airDate": "11/11/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheVirgin.htm"
+    },
+    {
+      "seriesIndex": 51,
+      "season": 4,
+      "title": "The Contest",
+      "airDate": "11/18/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheContest.htm"
+    },
+    {
+      "seriesIndex": 52,
+      "season": 4,
+      "title": "The Airport",
+      "airDate": "11/25/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheAirport.htm"
+    },
+    {
+      "seriesIndex": 53,
+      "season": 4,
+      "title": "The Pick",
+      "airDate": "12/16/92",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePick.htm"
+    },
+    {
+      "seriesIndex": 54,
+      "season": 4,
+      "title": "The Movie",
+      "airDate": "1/6/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMovie.htm"
+    },
+    {
+      "seriesIndex": 55,
+      "season": 4,
+      "title": "The Visa",
+      "airDate": "1/27/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheVisa.html"
+    },
+    {
+      "seriesIndex": 56,
+      "season": 4,
+      "title": "The Shoes",
+      "airDate": "4 Feb /93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheShoes.html"
+    },
+    {
+      "seriesIndex": 57,
+      "season": 4,
+      "title": "The Outing",
+      "airDate": "11 Feb /93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheOuting.htm"
+    },
+    {
+      "seriesIndex": 58,
+      "season": 4,
+      "title": "The Old Man",
+      "airDate": "2/18/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheOldMan.htm"
+    },
+    {
+      "seriesIndex": 59,
+      "season": 4,
+      "title": "The Implant",
+      "airDate": "2/25/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheImplant.html"
+    },
+    {
+      "seriesIndex": 60,
+      "season": 4,
+      "title": "The Junior Mint",
+      "airDate": "3/18/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheJuniorMints.htm"
+    },
+    {
+      "seriesIndex": 61,
+      "season": 4,
+      "title": "The Smelly Car",
+      "airDate": "4/15/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSmellyCar.htm"
+    },
+    {
+      "seriesIndex": 62,
+      "season": 4,
+      "title": "The Handicap Spot",
+      "airDate": "5/13/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheHandicapSpot.html"
+    },
+    {
+      "seriesIndex": 63,
+      "season": 4,
+      "title": "The Pilot (1)",
+      "airDate": "5/20/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePilot.html"
+    },
+    {
+      "seriesIndex": 64,
+      "season": 4,
+      "title": "The Pilot (2)",
+      "airDate": "5/20/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePilot2.html"
+    },
+    {
+      "seriesIndex": 65,
+      "season": 5,
+      "title": "The Mango",
+      "airDate": "9/16/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMango.html"
+    },
+    {
+      "seriesIndex": 66,
+      "season": 5,
+      "title": "The Puffy Shirt",
+      "airDate": "9/23/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePuffyShirt.htm"
+    },
+    {
+      "seriesIndex": 67,
+      "season": 5,
+      "title": "The Glasses",
+      "airDate": "9/30/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheGlasses.html"
+    },
+    {
+      "seriesIndex": 68,
+      "season": 5,
+      "title": "The Sniffing Accountant",
+      "airDate": "10/7/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSniffingAccountant.htm"
+    },
+    {
+      "seriesIndex": 69,
+      "season": 5,
+      "title": "The Bris",
+      "airDate": "10/14/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBris.htm"
+    },
+    {
+      "seriesIndex": 70,
+      "season": 5,
+      "title": "The Lip Reader",
+      "airDate": "10/28/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheLipReader.htm"
+    },
+    {
+      "seriesIndex": 71,
+      "season": 5,
+      "title": "The Non-Fat Yogurt",
+      "airDate": "11/4/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheNonFatYogurt.html"
+    },
+    {
+      "seriesIndex": 72,
+      "season": 5,
+      "title": "The Barber",
+      "airDate": "11/11/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBarber.htm"
+    },
+    {
+      "seriesIndex": 73,
+      "season": 5,
+      "title": "The Masseuse",
+      "airDate": "11/18/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMasseuse.html"
+    },
+    {
+      "seriesIndex": 74,
+      "season": 5,
+      "title": "The Cigar Store Indian",
+      "airDate": "12/9/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheCigarStoreIndian.htm"
+    },
+    {
+      "seriesIndex": 75,
+      "season": 5,
+      "title": "The Conversion",
+      "airDate": "12/16/93",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheConversion.htm"
+    },
+    {
+      "seriesIndex": 76,
+      "season": 5,
+      "title": "The Stall",
+      "airDate": "1/6/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheStall.htm"
+    },
+    {
+      "seriesIndex": 77,
+      "season": 5,
+      "title": "The Dinner Party",
+      "airDate": "2/3/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheDinnerParty.html"
+    },
+    {
+      "seriesIndex": 78,
+      "season": 5,
+      "title": "The Marine Biologist",
+      "airDate": "2/10/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMarineBiologist.htm"
+    },
+    {
+      "seriesIndex": 79,
+      "season": 5,
+      "title": "The Pie",
+      "airDate": "2/17/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePie.html"
+    },
+    {
+      "seriesIndex": 80,
+      "season": 5,
+      "title": "The Stand-In",
+      "airDate": "2/24/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheStand-In.html"
+    },
+    {
+      "seriesIndex": 81,
+      "season": 5,
+      "title": "The Wife",
+      "airDate": "3/17/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheWife.html"
+    },
+    {
+      "seriesIndex": 82,
+      "season": 5,
+      "title": "The Raincoats (1)",
+      "airDate": "4/28/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheRaincoats.html"
+    },
+    {
+      "seriesIndex": 83,
+      "season": 5,
+      "title": "The Raincoats (2)",
+      "airDate": "4/28/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheRaincoats2.html"
+    },
+    {
+      "seriesIndex": 84,
+      "season": 5,
+      "title": "The Fire",
+      "airDate": "5/5/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFire.html"
+    },
+    {
+      "seriesIndex": 85,
+      "season": 5,
+      "title": "The Hamptons",
+      "airDate": "5/12/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheHamptons.htm"
+    },
+    {
+      "seriesIndex": 86,
+      "season": 5,
+      "title": "The Opposite",
+      "airDate": "5/19/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheOpposite.htm"
+    },
+    {
+      "seriesIndex": 87,
+      "season": 6,
+      "title": "The Chaperone",
+      "airDate": "9/22/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheChaperone.html"
+    },
+    {
+      "seriesIndex": 88,
+      "season": 6,
+      "title": "The Big Salad",
+      "airDate": "9/29/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBigSalad.html"
+    },
+    {
+      "seriesIndex": 89,
+      "season": 6,
+      "title": "The Pledge Drive",
+      "airDate": "10/6/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePledgeDrive.html"
+    },
+    {
+      "seriesIndex": 90,
+      "season": 6,
+      "title": "The Chinese Woman",
+      "airDate": "10/13/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheChineseWoman.htm"
+    },
+    {
+      "seriesIndex": 91,
+      "season": 6,
+      "title": "The Couch",
+      "airDate": "10/27/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheCouch.html"
+    },
+    {
+      "seriesIndex": 92,
+      "season": 6,
+      "title": "The Gymnast",
+      "airDate": "11/3/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheGymnast.html"
+    },
+    {
+      "seriesIndex": 93,
+      "season": 6,
+      "title": "The Soup",
+      "airDate": "11/10/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSoup.html"
+    },
+    {
+      "seriesIndex": 94,
+      "season": 6,
+      "title": "The Mom &amp; Pop Store",
+      "airDate": "11/17/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMomAndPopStore.html"
+    },
+    {
+      "seriesIndex": 95,
+      "season": 6,
+      "title": "The Secretary",
+      "airDate": "12/8/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSecretary.html"
+    },
+    {
+      "seriesIndex": 96,
+      "season": 6,
+      "title": "The Race",
+      "airDate": "12/15/94",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheRace.html"
+    },
+    {
+      "seriesIndex": 97,
+      "season": 6,
+      "title": "The Switch",
+      "airDate": "1/5/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSwitch.htm"
+    },
+    {
+      "seriesIndex": 98,
+      "season": 6,
+      "title": "The Label Maker",
+      "airDate": "1/19/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheLabelMaker.html"
+    },
+    {
+      "seriesIndex": 99,
+      "season": 6,
+      "title": "The Scofflaw",
+      "airDate": "1/26/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheScofflaw.htm"
+    },
+    {
+      "seriesIndex": 100,
+      "season": 6,
+      "title": "Highlights of 100 (1)",
+      "airDate": "2/2/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/Highlights-of-100-1.html"
+    },
+    {
+      "seriesIndex": 101,
+      "season": 6,
+      "title": "Highlights of 100 (2)",
+      "airDate": "2/2/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/Highlights-of-100-2.html"
+    },
+    {
+      "seriesIndex": 102,
+      "season": 6,
+      "title": "The Beard",
+      "airDate": "2/9/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBeard.htm"
+    },
+    {
+      "seriesIndex": 103,
+      "season": 6,
+      "title": "The Kiss Hello",
+      "airDate": "2/16/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheKissHello.html"
+    },
+    {
+      "seriesIndex": 104,
+      "season": 6,
+      "title": "The Doorman",
+      "airDate": "2/23/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheDoorman.html"
+    },
+    {
+      "seriesIndex": 105,
+      "season": 6,
+      "title": "The Jimmy",
+      "airDate": "3/16/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheJimmy.htm"
+    },
+    {
+      "seriesIndex": 106,
+      "season": 6,
+      "title": "The Doodle",
+      "airDate": "4/6/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheDoodle.htm"
+    },
+    {
+      "seriesIndex": 107,
+      "season": 6,
+      "title": "The Fusilli Jerry",
+      "airDate": "4/27/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFusilliJerry.htm"
+    },
+    {
+      "seriesIndex": 108,
+      "season": 6,
+      "title": "The Diplomat's Club",
+      "airDate": "5/4/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheDiplomatClub.htm"
+    },
+    {
+      "seriesIndex": 109,
+      "season": 6,
+      "title": "The Face Painter",
+      "airDate": "5/11/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFacePainter.html"
+    },
+    {
+      "seriesIndex": 110,
+      "season": 6,
+      "title": "The Understudy",
+      "airDate": "5/18/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheUnderstudy.html"
+    },
+    {
+      "seriesIndex": 111,
+      "season": 7,
+      "title": "The Engagement",
+      "airDate": "9/21/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheEngagement.html"
+    },
+    {
+      "seriesIndex": 112,
+      "season": 7,
+      "title": "The Postponement",
+      "airDate": "9/28/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePostponement.html"
+    },
+    {
+      "seriesIndex": 113,
+      "season": 7,
+      "title": "The Maestro",
+      "airDate": "10/5/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMaestro.htm"
+    },
+    {
+      "seriesIndex": 114,
+      "season": 7,
+      "title": "The Wink",
+      "airDate": "10/12/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheWink.html"
+    },
+    {
+      "seriesIndex": 115,
+      "season": 7,
+      "title": "The Hot Tub",
+      "airDate": "10/19/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheHotTub.htm"
+    },
+    {
+      "seriesIndex": 116,
+      "season": 7,
+      "title": "The Soup Nazi",
+      "airDate": "11/2/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSoupNazi.htm"
+    },
+    {
+      "seriesIndex": 117,
+      "season": 7,
+      "title": "The Secret Code",
+      "airDate": "11/9/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSecretCode2.htm"
+    },
+    {
+      "seriesIndex": 118,
+      "season": 7,
+      "title": "The Pool Guy",
+      "airDate": "11/16/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePoolGuy.html"
+    },
+    {
+      "seriesIndex": 119,
+      "season": 7,
+      "title": "The Sponge",
+      "airDate": "12/7/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSponge.html"
+    },
+    {
+      "seriesIndex": 120,
+      "season": 7,
+      "title": "The Gum",
+      "airDate": "12/14/95",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheGum.html"
+    },
+    {
+      "seriesIndex": 121,
+      "season": 7,
+      "title": "The Rye",
+      "airDate": "1/4/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheRye.htm"
+    },
+    {
+      "seriesIndex": 122,
+      "season": 7,
+      "title": "The Caddy",
+      "airDate": "1/25/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheCaddy.html"
+    },
+    {
+      "seriesIndex": 123,
+      "season": 7,
+      "title": "The Seven",
+      "airDate": "2/1/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSeven.html"
+    },
+    {
+      "seriesIndex": 124,
+      "season": 7,
+      "title": "The Cadillac (1)",
+      "airDate": "2/8/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheCadillac1.html"
+    },
+    {
+      "seriesIndex": 125,
+      "season": 7,
+      "title": "The Cadillac (2)",
+      "airDate": "2/8/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheCadillac2.html"
+    },
+    {
+      "seriesIndex": 126,
+      "season": 7,
+      "title": "The Shower Head",
+      "airDate": "2/15/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheShowerhead.htm"
+    },
+    {
+      "seriesIndex": 127,
+      "season": 7,
+      "title": "The Doll",
+      "airDate": "2/22/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheDoll.htm"
+    },
+    {
+      "seriesIndex": 128,
+      "season": 7,
+      "title": "The Friars Club",
+      "airDate": "3/7/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFriarsClub.html"
+    },
+    {
+      "seriesIndex": 129,
+      "season": 7,
+      "title": "The Wig Master",
+      "airDate": "4/4/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheWigMaster.htm"
+    },
+    {
+      "seriesIndex": 130,
+      "season": 7,
+      "title": "The Calzone",
+      "airDate": "4/25 /96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheCalzone.htm"
+    },
+    {
+      "seriesIndex": 131,
+      "season": 7,
+      "title": "The Bottle Deposit (1)",
+      "airDate": "5/2/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBottleDeposit1.html"
+    },
+    {
+      "seriesIndex": 132,
+      "season": 7,
+      "title": "The Bottle Deposit (2)",
+      "airDate": "5/2/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBottleDeposit2.html"
+    },
+    {
+      "seriesIndex": 133,
+      "season": 7,
+      "title": "The Wait Out",
+      "airDate": "5/9/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheWaitOut.htm"
+    },
+    {
+      "seriesIndex": 134,
+      "season": 7,
+      "title": "The Invitations",
+      "airDate": "5/16/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheInvitations.htm"
+    },
+    {
+      "seriesIndex": 135,
+      "season": 8,
+      "title": "The Foundation",
+      "airDate": "9/19/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFoundation.html"
+    },
+    {
+      "seriesIndex": 136,
+      "season": 8,
+      "title": "The Soul Mate",
+      "airDate": "9/26/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSoulMate.html"
+    },
+    {
+      "seriesIndex": 137,
+      "season": 8,
+      "title": "The Bizarro Jerry",
+      "airDate": "10/3/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBizarroJerry.htm"
+    },
+    {
+      "seriesIndex": 138,
+      "season": 8,
+      "title": "The Little Kicks",
+      "airDate": "10/10/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheLittleKicks.htm"
+    },
+    {
+      "seriesIndex": 139,
+      "season": 8,
+      "title": "The Package",
+      "airDate": "10/17/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePackage.htm"
+    },
+    {
+      "seriesIndex": 140,
+      "season": 8,
+      "title": "The Fatigues",
+      "airDate": "10/31/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFatigues.html"
+    },
+    {
+      "seriesIndex": 141,
+      "season": 8,
+      "title": "The Checks",
+      "airDate": "11/7/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheChecks.html"
+    },
+    {
+      "seriesIndex": 142,
+      "season": 8,
+      "title": "The Chicken Roaster",
+      "airDate": "11/14/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheChickenRoaster.htm"
+    },
+    {
+      "seriesIndex": 143,
+      "season": 8,
+      "title": "The Abstinence",
+      "airDate": "11/21/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheAbstinence.htm"
+    },
+    {
+      "seriesIndex": 144,
+      "season": 8,
+      "title": "The Andrea Doria",
+      "airDate": "12/19/96",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheAndreaDoria.htm"
+    },
+    {
+      "seriesIndex": 145,
+      "season": 8,
+      "title": "The Little Jerry",
+      "airDate": "1/9/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheLittleJerry.html"
+    },
+    {
+      "seriesIndex": 146,
+      "season": 8,
+      "title": "The Money",
+      "airDate": "1/16/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMoney.html"
+    },
+    {
+      "seriesIndex": 147,
+      "season": 8,
+      "title": "The Comeback",
+      "airDate": "1/30/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheComeback.html"
+    },
+    {
+      "seriesIndex": 148,
+      "season": 8,
+      "title": "The Van Buren Boys",
+      "airDate": "2/6/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheVanBurenBoys.htm"
+    },
+    {
+      "seriesIndex": 149,
+      "season": 8,
+      "title": "The Susie",
+      "airDate": "2/13/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSuzie.htm"
+    },
+    {
+      "seriesIndex": 150,
+      "season": 8,
+      "title": "The Pothole",
+      "airDate": "2/20/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePothole.htm"
+    },
+    {
+      "seriesIndex": 151,
+      "season": 8,
+      "title": "The English Patient",
+      "airDate": "3/13/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheEnglishPatient.html"
+    },
+    {
+      "seriesIndex": 152,
+      "season": 8,
+      "title": "The Nap",
+      "airDate": "4/10/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheNap.html"
+    },
+    {
+      "seriesIndex": 153,
+      "season": 8,
+      "title": "The Yada Yada",
+      "airDate": "4/24/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheYadaYada.htm"
+    },
+    {
+      "seriesIndex": 154,
+      "season": 8,
+      "title": "The Millennium",
+      "airDate": "5/1/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMillennium.html"
+    },
+    {
+      "seriesIndex": 155,
+      "season": 8,
+      "title": "The Muffin Tops",
+      "airDate": "5/8/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMuffinTops.htm"
+    },
+    {
+      "seriesIndex": 156,
+      "season": 8,
+      "title": "The Summer of George",
+      "airDate": "5/15/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSummerofGeorge.htm"
+    },
+    {
+      "seriesIndex": 157,
+      "season": 9,
+      "title": "The Butter Shave",
+      "airDate": "9/25/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheButterShave.htm"
+    },
+    {
+      "seriesIndex": 158,
+      "season": 9,
+      "title": "The Voice",
+      "airDate": "10/2/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheVoice.htm"
+    },
+    {
+      "seriesIndex": 159,
+      "season": 9,
+      "title": "The Serenity Now",
+      "airDate": "10/9/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSerenityNow.htm"
+    },
+    {
+      "seriesIndex": 160,
+      "season": 9,
+      "title": "The Blood",
+      "airDate": "10/16/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBlood.html"
+    },
+    {
+      "seriesIndex": 161,
+      "season": 9,
+      "title": "The Junk Mail",
+      "airDate": "10/30/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheJunkMail.htm"
+    },
+    {
+      "seriesIndex": 162,
+      "season": 9,
+      "title": "The Merv Griffin Show",
+      "airDate": "11/6/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMervGriffinShow.htm"
+    },
+    {
+      "seriesIndex": 163,
+      "season": 9,
+      "title": "The Slicer",
+      "airDate": "11/13/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheSlicer.html"
+    },
+    {
+      "seriesIndex": 164,
+      "season": 9,
+      "title": "The Betrayal",
+      "airDate": "11/20/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBetrayal.htm"
+    },
+    {
+      "seriesIndex": 165,
+      "season": 9,
+      "title": "The Apology",
+      "airDate": "12/11/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheApology.htm"
+    },
+    {
+      "seriesIndex": 166,
+      "season": 9,
+      "title": "The Strike",
+      "airDate": "12/18/97",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheStrike.htm"
+    },
+    {
+      "seriesIndex": 167,
+      "season": 9,
+      "title": "The Dealership",
+      "airDate": "1/8/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheDealership.htm"
+    },
+    {
+      "seriesIndex": 168,
+      "season": 9,
+      "title": "The Reverse Peephole",
+      "airDate": "1/15/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheReversePeephole.htm"
+    },
+    {
+      "seriesIndex": 169,
+      "season": 9,
+      "title": "The Cartoon",
+      "airDate": "1/29/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheCartoon.htm"
+    },
+    {
+      "seriesIndex": 170,
+      "season": 9,
+      "title": "The Strongbox",
+      "airDate": "2/5/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheStrongbox.htm"
+    },
+    {
+      "seriesIndex": 171,
+      "season": 9,
+      "title": "The Wizard",
+      "airDate": "2/26/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheWizard.htm"
+    },
+    {
+      "seriesIndex": 172,
+      "season": 9,
+      "title": "The Burning",
+      "airDate": "3/19/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBurning.html"
+    },
+    {
+      "seriesIndex": 173,
+      "season": 9,
+      "title": "The Bookstore",
+      "airDate": "4/9/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheBookstore.htm"
+    },
+    {
+      "seriesIndex": 174,
+      "season": 9,
+      "title": "The Frogger",
+      "airDate": "4/23/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFrogger.htm"
+    },
+    {
+      "seriesIndex": 175,
+      "season": 9,
+      "title": "The Maid",
+      "airDate": "4/30/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheMaid.htm"
+    },
+    {
+      "seriesIndex": 176,
+      "season": 9,
+      "title": "The Puerto Rican Day",
+      "airDate": "5/7/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/ThePuertoRicanDay.htm"
+    },
+    {
+      "seriesIndex": 177,
+      "season": 9,
+      "title": "The Clip Show (1)",
+      "airDate": "5/7/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/The-Clip-Show-1.html"
+    },
+    {
+      "seriesIndex": 178,
+      "season": 9,
+      "title": "The Clip Show (2)",
+      "airDate": "5/14/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/The-Clip-Show-2.html"
+    },
+    {
+      "seriesIndex": 179,
+      "season": 9,
+      "title": "The Finale (1)",
+      "airDate": "5/14/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFinale.htm"
+    },
+    {
+      "seriesIndex": 180,
+      "season": 9,
+      "title": "The Finale (2)",
+      "airDate": "5/14/98",
+      "scriptUrl": "http://www.seinfeldscripts.com/TheFinale.htm"
+    }
+  ]
+}
