@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { PwaUpdateBar } from "./components/PwaUpdateBar";
+import { AboutScreen } from "./screens/AboutScreen";
+import { TrustScreen } from "./screens/TrustScreen";
 import type { EpisodeBundle, GameScreen, QuizItem, QuizRunConfig } from "./types";
 import { CATEGORY_GROUPS, readableTypeName } from "./lib/categories";
 import { buildCorpusBreakdown, countQuestionsForTypes } from "./lib/corpusStats";
@@ -9,7 +11,8 @@ import {
   recordDailyPersonalBest,
   type DailyPersonalRow,
 } from "./lib/localDailyBest";
-import { buildQuestionReportBody, githubNewIssueUrl } from "./lib/questionFeedback";
+import { buildQuestionReportBody, githubNewIssueUrl, mailtoFeedbackUrl } from "./lib/questionFeedback";
+import { buildDailyResultShareUrl, parseDailyShareSearch, stripLaunchQueryParams, type DailySharePayload } from "./lib/shareLinks";
 import { computeAnsweredTypeBreakdown } from "./lib/resultsBreakdown";
 import { loadEpisodes } from "./loadTriviaCorpus";
 import { marathonStyleUi, quizUiStrings } from "./quizLabels";
@@ -152,6 +155,29 @@ function utcCalendarKey(d = new Date()) {
 
 const DAILY_COUNT = 15;
 
+function documentTitleForScreen(screen: GameScreen, inQuiz: boolean): string {
+  const base = "Yada yada trivia";
+  if (inQuiz) return `Quiz · ${base}`;
+  switch (screen.name) {
+    case "home":
+      return `${base} · Seinfeld quiz`;
+    case "about":
+      return `About · ${base}`;
+    case "trust":
+      return `Trust & sources · ${base}`;
+    case "browse":
+      return `Episode catalog · ${base}`;
+    case "stats":
+      return `Corpus atlas · ${base}`;
+    case "quiz":
+      return `Quiz · ${base}`;
+    case "results":
+      return `Results · ${base}`;
+    default:
+      return base;
+  }
+}
+
 export function App() {
   const [screen, setScreen] = useState<GameScreen>({ name: "home" });
   const [quiz, setQuiz] = useState<QuizPhase | null>(null);
@@ -170,6 +196,7 @@ export function App() {
   const [episodes, setEpisodes] = useState<EpisodeBundle[] | null>(null);
   const [isCorpusLoading, setIsCorpusLoading] = useState(false);
   const [corpusLoadError, setCorpusLoadError] = useState<string | null>(null);
+  const [sharedDailyScore, setSharedDailyScore] = useState<DailySharePayload | null>(null);
 
   const ensureEpisodes = useCallback(async () => {
     if (episodes) return episodes;
@@ -190,10 +217,24 @@ export function App() {
   }, [episodes]);
 
   useEffect(() => {
-    if (screen.name === "browse" || screen.name === "stats") {
+    if (screen.name === "browse" || screen.name === "stats" || screen.name === "about" || screen.name === "trust") {
       void ensureEpisodes();
     }
   }, [screen.name, ensureEpisodes]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const parsed = parseDailyShareSearch(window.location.search);
+    if (parsed) setSharedDailyScore(parsed);
+    const navScreen = params.get("screen");
+    if (navScreen === "about") setScreen({ name: "about" });
+    else if (navScreen === "trust") setScreen({ name: "trust" });
+  }, []);
+
+  useEffect(() => {
+    const inQuiz = screen.name === "quiz" && quiz !== null;
+    document.title = documentTitleForScreen(screen, inQuiz);
+  }, [screen, quiz]);
 
   useEffect(() => {
     setNotice(null);
@@ -242,7 +283,19 @@ export function App() {
   const goHome = useCallback(() => {
     setBrowseSearch("");
     setQuiz(null);
+    setSharedDailyScore(null);
+    stripLaunchQueryParams();
     setScreen({ name: "home" });
+  }, []);
+
+  const goAbout = useCallback(() => {
+    setQuiz(null);
+    setScreen({ name: "about" });
+  }, []);
+
+  const goTrust = useCallback(() => {
+    setQuiz(null);
+    setScreen({ name: "trust" });
   }, []);
 
   const goBrowse = useCallback(() => {
@@ -348,10 +401,24 @@ export function App() {
   };
 
   const startDaily = async () => {
+    setSharedDailyScore(null);
+    stripLaunchQueryParams();
     const archive = await ensureEpisodes();
     if (!archive) return;
     const key = utcCalendarKey();
     startQuiz(dailyChallengeQuizItems(archive, key, DAILY_COUNT), { mode: "daily", dateKeyUtc: key, count: DAILY_COUNT }, false);
+  };
+
+  const startDailyForDate = async (dateKeyUtc: string) => {
+    setSharedDailyScore(null);
+    stripLaunchQueryParams();
+    const archive = await ensureEpisodes();
+    if (!archive) return;
+    startQuiz(
+      dailyChallengeQuizItems(archive, dateKeyUtc, DAILY_COUNT),
+      { mode: "daily", dateKeyUtc, count: DAILY_COUNT },
+      false,
+    );
   };
 
   const startSeasonMix = async (season: number, request: number) => {
@@ -565,6 +632,17 @@ export function App() {
             {CATEGORY_GROUPS.length + 4} challenge modes
           </span>
         </div>
+        <nav className="site-nav" aria-label="Site sections">
+          <button type="button" className="btn btn-ghost-light site-nav-btn" onClick={goAbout}>
+            About
+          </button>
+          <button type="button" className="btn btn-ghost-light site-nav-btn" onClick={goTrust}>
+            Trust &amp; sources
+          </button>
+          <button type="button" className="btn btn-ghost-light site-nav-btn" onClick={() => void startDaily()}>
+            Daily challenge
+          </button>
+        </nav>
       </header>
 
       <main id="main-content" tabIndex={-1}>
@@ -584,6 +662,43 @@ export function App() {
 
       {screen.name === "home" && (
         <div className="stack">
+          {sharedDailyScore ? (
+            <div className="card share-landing-card" role="region" aria-label="Shared daily score">
+              <h2 className="card-heading" style={{ marginTop: 0 }}>
+                Someone shared a daily score
+              </h2>
+              <p className="card-muted">
+                <strong>
+                  {sharedDailyScore.correct}/{sharedDailyScore.total}
+                </strong>{" "}
+                on UTC date <code className="inline-code">{sharedDailyScore.dateKeyUtc}</code> — same seeded deck everyone played that day.
+              </p>
+              <div className="row-between" style={{ flexWrap: "wrap", gap: "0.5rem", marginTop: "0.75rem" }}>
+                <button
+                  type="button"
+                  className="btn btn-teal"
+                  onClick={() => void startDailyForDate(sharedDailyScore.dateKeyUtc)}
+                  disabled={isCorpusLoading}
+                >
+                  Play that day&apos;s puzzle
+                </button>
+                <button type="button" className="btn btn-ghost-light" onClick={() => void startDaily()} disabled={isCorpusLoading}>
+                  Today&apos;s UTC daily instead
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-ghost-light"
+                  onClick={() => {
+                    setSharedDailyScore(null);
+                    stripLaunchQueryParams();
+                  }}
+                >
+                  Dismiss
+                </button>
+              </div>
+            </div>
+          ) : null}
+
           <div className="card">
             <p className="card-muted" style={{ marginTop: 0 }}>
               Every multiple-choice node is generated from the verbatim script index at{" "}
@@ -600,14 +715,52 @@ export function App() {
             </p>
             <div className="row-between atlas-row">
               <h2 className="card-heading">Corpus intelligence</h2>
-              <button type="button" className="btn btn-ghost-light" onClick={goStats}>
-                Open atlas
-              </button>
+              <div className="row-between" style={{ gap: "0.35rem", flexWrap: "wrap", justifyContent: "flex-end" }}>
+                <button type="button" className="btn btn-ghost-light" onClick={goTrust}>
+                  Trust
+                </button>
+                <button type="button" className="btn btn-ghost-light" onClick={goStats}>
+                  Open atlas
+                </button>
+              </div>
             </div>
             <p className="card-muted corpus-footnote">
               Explore per-season densities, trivia archetypes, and how the dataset breaks down across {corpus.distinctTypes.length}{" "}
               distinct classifier tags.
             </p>
+          </div>
+
+          <div className="card">
+            <h2 className="card-heading">Fast paths · fan-favorite drills</h2>
+            <p className="card-muted" style={{ marginTop: "0.35rem" }}>
+              One tap into the densest practice lanes—dialogue sleuths, episode craft, and metatext chronology.
+            </p>
+            <div className="fast-path-grid" style={{ marginTop: "0.75rem" }}>
+              <button
+                type="button"
+                className="btn btn-teal btn-block"
+                disabled={isCorpusLoading}
+                onClick={() => void startCategoryMix(CATEGORY_GROUPS[0]!, 25)}
+              >
+                Dialogue · 25 cards
+              </button>
+              <button
+                type="button"
+                className="btn btn-ghost-light btn-block"
+                disabled={isCorpusLoading}
+                onClick={() => void startCategoryMix(CATEGORY_GROUPS[1]!, 25)}
+              >
+                Episode craft · 25 cards
+              </button>
+              <button
+                type="button"
+                className="btn btn-ghost-light btn-block"
+                disabled={isCorpusLoading}
+                onClick={() => void startCategoryMix(CATEGORY_GROUPS[4]!, 25)}
+              >
+                Lore &amp; chronology · 25 cards
+              </button>
+            </div>
           </div>
 
           <div className="card">
@@ -770,6 +923,12 @@ export function App() {
         </div>
       )}
 
+      {screen.name === "about" && (
+        <AboutScreen onHome={goHome} onTrust={goTrust} onDaily={() => void startDaily()} />
+      )}
+
+      {screen.name === "trust" && <TrustScreen onHome={goHome} onAbout={goAbout} />}
+
       {screen.name === "browse" && (
         <div className="stack">
           <div className="card">
@@ -900,9 +1059,14 @@ export function App() {
                 className="btn btn-ghost-light"
                 onClick={async () => {
                   const body = buildQuestionReportBody(currentItem);
-                  const url = githubNewIssueUrl("Trivia question QA", body);
-                  if (url) {
-                    window.open(url, "_blank", "noopener,noreferrer");
+                  const gh = githubNewIssueUrl("Trivia question QA", body);
+                  if (gh) {
+                    window.open(gh, "_blank", "noopener,noreferrer");
+                    return;
+                  }
+                  const mail = mailtoFeedbackUrl("Seinfeld trivia QA", body);
+                  if (mail) {
+                    window.location.href = mail;
                     return;
                   }
                   try {
@@ -1106,9 +1270,24 @@ export function App() {
 
       </main>
 
-      <footer style={{ marginTop: "3rem", textAlign: "center", opacity: 0.68, fontSize: "0.78rem", lineHeight: 1.5 }}>
-        Scripts & episode index credited to SeinfeldScripts.com fan transcripts. Questions are algorithmically derived and
-        may include imperfect parsing—consult the script link on each bundle if something feels off.
+      <footer className="site-footer">
+        <p style={{ margin: 0 }}>
+          Scripts & episode index credited to SeinfeldScripts.com fan transcripts. Questions are algorithmically derived and may include
+          imperfect parsing—consult the script link on each bundle if something feels off.
+        </p>
+        <p style={{ margin: "0.5rem 0 0" }}>
+          <button type="button" className="footer-inline-btn" onClick={goAbout}>
+            About
+          </button>
+          {" · "}
+          <button type="button" className="footer-inline-btn" onClick={goTrust}>
+            Trust &amp; sources
+          </button>
+          {" · "}
+          <a href="/sitemap.xml" className="footer-inline-link">
+            Sitemap
+          </a>
+        </p>
       </footer>
       {confirm ? <ConfirmDialog {...confirm} onCancel={closeConfirm} /> : null}
     </div>
@@ -1166,7 +1345,28 @@ function ResultsPane({
     setDailySnapshot(getDailyPersonalBest(run.dateKeyUtc));
   }, [run, correctCt, items.length]);
 
-  const shareLine = `${SITE_CANONICAL} · ${quizUiStrings(run).resultsTitle}: ${correctCt}/${items.length} (${accuracyPct}% answered correctly)`;
+  useEffect(() => {
+    if (run.mode !== "daily") return;
+    const u = new URL(window.location.href);
+    u.searchParams.set("d", run.dateKeyUtc);
+    u.searchParams.set("s", String(correctCt));
+    u.searchParams.set("t", String(items.length));
+    window.history.replaceState({}, "", u.toString());
+  }, [run, correctCt, items.length]);
+
+  const shareUrl =
+    run.mode === "daily"
+      ? buildDailyResultShareUrl({
+          dateKeyUtc: run.dateKeyUtc,
+          correct: correctCt,
+          total: items.length,
+        })
+      : SITE_CANONICAL;
+
+  const shareLine =
+    run.mode === "daily"
+      ? `${correctCt}/${items.length} on the Yada yada daily (${run.dateKeyUtc} UTC). Same deck: ${shareUrl}`
+      : `${SITE_CANONICAL} · ${quizUiStrings(run).resultsTitle}: ${correctCt}/${items.length} (${accuracyPct}% answered correctly)`;
 
   const onShareScore = async () => {
     if (navigator.share) {
@@ -1174,7 +1374,7 @@ function ResultsPane({
         await navigator.share({
           title: "Yada yada trivia",
           text: shareLine,
-          url: SITE_CANONICAL,
+          url: shareUrl,
         });
       } catch (e) {
         if ((e as Error)?.name !== "AbortError") {
@@ -1188,6 +1388,15 @@ function ResultsPane({
       onToast("Score copied to clipboard.");
     } catch {
       onToast(`Copy manually: ${shareLine}`);
+    }
+  };
+
+  const onCopyShareLinkOnly = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      onToast(run.mode === "daily" ? "Share link copied — paste it anywhere." : "Link copied.");
+    } catch {
+      onToast(`Copy manually: ${shareUrl}`);
     }
   };
 
@@ -1215,9 +1424,14 @@ function ResultsPane({
         ) : null}
 
         <div className="row-between results-share-row">
-          <button type="button" className="btn btn-ghost-light" onClick={() => void onShareScore()}>
-            Share score
-          </button>
+          <div className="results-share-actions">
+            <button type="button" className="btn btn-ghost-light" onClick={() => void onShareScore()}>
+              Share score
+            </button>
+            <button type="button" className="btn btn-ghost-light" onClick={() => void onCopyShareLinkOnly()}>
+              {run.mode === "daily" ? "Copy share link" : "Copy site link"}
+            </button>
+          </div>
           {hasMisses ? (
             <button type="button" className="btn btn-teal" onClick={onRetryMisses}>
               Drill misses only ({wrongCt})

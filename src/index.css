@@ -799,6 +799,76 @@ kbd.key-hint {
   align-items: center;
 }
 
+.results-share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.site-nav-btn {
+  font-size: 0.82rem;
+  padding: 0.28rem 0.55rem;
+}
+
+.site-footer {
+  margin-top: 3rem;
+  text-align: center;
+  opacity: 0.68;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.footer-inline-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.footer-inline-link {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.fast-path-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.trust-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  line-height: 1.55;
+}
+
+.trust-list li {
+  margin-bottom: 0.45rem;
+}
+
+.inline-link {
+  font-weight: 600;
+}
+
+.share-landing-card {
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  background: rgba(201, 162, 39, 0.08);
+}
+
 .miss-source-link {
   font-weight: 600;
   white-space: nowrap;

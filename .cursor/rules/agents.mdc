@@ -1,0 +1,8 @@
+---
+description: Parallel workstreams for Seinfeld Trivia (corpus, shuffle, UX, SEO, perf).
+globs:
+  - "**/*"
+alwaysApply: false
+---
+
+Read @AGENTS.md when planning multi-step work or splitting tasks across agents. Prefer one lane per agent (data, shuffle, UI, SEO, PWA) to avoid conflicting edits to the same files.

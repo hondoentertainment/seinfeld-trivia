@@ -47,6 +47,8 @@ export type QuizRunConfig =
 
 export type GameScreen =
   | { name: "home" }
+  | { name: "about" }
+  | { name: "trust" }
   | { name: "browse" }
   | { name: "stats" }
   | {

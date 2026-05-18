@@ -20,3 +20,10 @@ export function githubNewIssueUrl(title: string, body: string): string | null {
   const b = encodeURIComponent(body);
   return `https://github.com/${repo}/issues/new?title=${t}&body=${b}`;
 }
+
+/** When `VITE_FEEDBACK_EMAIL` is set at build time, opens the user’s mail client with a prefilled QA report. */
+export function mailtoFeedbackUrl(subject: string, body: string): string | null {
+  const to = import.meta.env.VITE_FEEDBACK_EMAIL as string | undefined;
+  if (!to?.includes("@")) return null;
+  return `mailto:${encodeURIComponent(to.trim())}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
