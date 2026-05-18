@@ -65,3 +65,5 @@ export function AboutScreen(props: {
     </div>
   );
 }
+
+export default AboutScreen;

@@ -80,3 +80,5 @@ export function TrustScreen(props: { onHome: () => void; onAbout: () => void }) 
     </div>
   );
 }
+
+export default TrustScreen;

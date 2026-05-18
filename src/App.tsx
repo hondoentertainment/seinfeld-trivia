@@ -1,22 +1,16 @@
-import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState, lazy, Suspense } from "react";
 import { PwaUpdateBar } from "./components/PwaUpdateBar";
-import { AboutScreen } from "./screens/AboutScreen";
-import { TrustScreen } from "./screens/TrustScreen";
+import { ScreenFallback } from "./components/ScreenFallback";
 import type { EpisodeBundle, GameScreen, QuizItem, QuizRunConfig } from "./types";
 import { CATEGORY_GROUPS, readableTypeName } from "./lib/categories";
 import { buildCorpusBreakdown, countQuestionsForTypes } from "./lib/corpusStats";
 import { CORPUS_SUMMARY } from "./lib/corpusSummary";
-import {
-  getDailyPersonalBest,
-  recordDailyPersonalBest,
-  type DailyPersonalRow,
-} from "./lib/localDailyBest";
 import { buildQuestionReportBody, githubNewIssueUrl, mailtoFeedbackUrl } from "./lib/questionFeedback";
-import { buildDailyResultShareUrl, parseDailyShareSearch, stripLaunchQueryParams, type DailySharePayload } from "./lib/shareLinks";
-import { computeAnsweredTypeBreakdown } from "./lib/resultsBreakdown";
+import { parseDailyShareSearch, stripLaunchQueryParams, type DailySharePayload } from "./lib/shareLinks";
 import { loadEpisodes } from "./loadTriviaCorpus";
 import { marathonStyleUi, quizUiStrings } from "./quizLabels";
 import { readQuestionsReviewed, writeQuestionsReviewed } from "./lib/questionsReviewedStorage";
+import { seasonTitle } from "./lib/seasonTitle";
 import {
   dailyChallengeQuizItems,
   episodeQuizItems,
@@ -27,7 +21,13 @@ import {
   randomEpisode,
   shuffledFullCorpusRun,
 } from "./shuffle";
-import { SITE_CANONICAL } from "./siteConfig";
+import { NewTabAnnouncement } from "./ui/NewTabAnnouncement";
+
+const LazyBrowseScreen = lazy(() => import("./screens/BrowseScreen"));
+const LazyStatsScreen = lazy(() => import("./screens/StatsScreen"));
+const LazyResultsPane = lazy(() => import("./screens/ResultsPane"));
+const LazyAboutScreen = lazy(() => import("./screens/AboutScreen"));
+const LazyTrustScreen = lazy(() => import("./screens/TrustScreen"));
 
 type QuizPhase = {
   run: QuizRunConfig;
@@ -38,16 +38,6 @@ type QuizPhase = {
   lastPick: number | null;
   enteredFromBrowse: boolean;
 };
-
-function seasonTitle(s: number) {
-  if (s === 0) return "Pilot";
-  if (s === 10) return "Internet extras";
-  return `Season ${s}`;
-}
-
-function NewTabAnnouncement() {
-  return <span className="visually-hidden">opens in new tab</span>;
-}
 
 type ConfirmConfig = {
   title: string;
@@ -924,73 +914,30 @@ export function App() {
       )}
 
       {screen.name === "about" && (
-        <AboutScreen onHome={goHome} onTrust={goTrust} onDaily={() => void startDaily()} />
+        <Suspense fallback={<ScreenFallback />}>
+          <LazyAboutScreen onHome={goHome} onTrust={goTrust} onDaily={() => void startDaily()} />
+        </Suspense>
       )}
 
-      {screen.name === "trust" && <TrustScreen onHome={goHome} onAbout={goAbout} />}
+      {screen.name === "trust" && (
+        <Suspense fallback={<ScreenFallback />}>
+          <LazyTrustScreen onHome={goHome} onAbout={goAbout} />
+        </Suspense>
+      )}
 
       {screen.name === "browse" && (
-        <div className="stack">
-          <div className="card">
-            <div className="row-between">
-              <h2 className="card-heading">Select an episode</h2>
-              <nav aria-label="Catalog" className="row-between" style={{ gap: "0.5rem", flexWrap: "wrap", justifyContent: "flex-end" }}>
-                <button type="button" className="btn btn-ghost-light" onClick={goStats}>
-                  Atlas
-                </button>
-                <button type="button" className="btn btn-ghost-light" onClick={goHome}>
-                  Home
-                </button>
-              </nav>
-            </div>
-            <label className="browse-search-label">
-              <span className="visually-hidden">Filter episodes</span>
-              <input
-                type="search"
-                className="browse-search-field"
-                placeholder="Filter by episode title or series number…"
-                value={browseSearch}
-                onChange={(e) => setBrowseSearch(e.target.value)}
-                autoComplete="off"
-              />
-            </label>
-          </div>
-          {isCorpusLoading && !episodes ? (
-            <output className="card corpus-loading-status" aria-live="polite">
-              <span className="loading-wordmark">Loading episode catalogue</span>
-              <p className="card-muted">Fetching the full trivia archive…</p>
-            </output>
-          ) : null}
-          <div className="card stack">
-            {!episodes ? (
-              <p className="card-muted">The episode catalogue will appear as soon as the archive is ready.</p>
-            ) : filteredBySeasonBrowse.length === 0 ? (
-              <p className="card-muted">No episodes match “{browseSearch.trim()}”—try loosening your filter.</p>
-            ) : (
-              filteredBySeasonBrowse.map(([season, seasonEps]) => (
-              <details key={season} className="season-acc">
-                <summary>
-                  <span>{seasonTitle(season)}</span>
-                  <span style={{ fontWeight: 600, opacity: 0.55 }}>
-                    ({seasonEps.length}&nbsp;{seasonEps.length === 1 ? "episode" : "episodes"})
-                  </span>
-                </summary>
-                {seasonEps.map((ep) => (
-                  <button
-                    key={ep.seriesIndex}
-                    type="button"
-                    className="ep-link"
-                    onClick={() => startQuiz(episodeQuizItems(ep), { mode: "episode" }, true)}
-                  >
-                    {ep.title}{" "}
-                    <span style={{ fontWeight: 500, color: "var(--ink-muted)" }}>(#{ep.seriesIndex})</span>
-                  </button>
-                ))}
-              </details>
-            ))
-            )}
-          </div>
-        </div>
+        <Suspense fallback={<ScreenFallback />}>
+          <LazyBrowseScreen
+            browseSearch={browseSearch}
+            setBrowseSearch={setBrowseSearch}
+            filteredBySeasonBrowse={filteredBySeasonBrowse}
+            isCorpusLoading={isCorpusLoading}
+            episodes={episodes}
+            goStats={goStats}
+            goHome={goHome}
+            onEpisodeSelect={(ep) => startQuiz(episodeQuizItems(ep), { mode: "episode" }, true)}
+          />
+        </Suspense>
       )}
 
       {screen.name === "quiz" && currentItem && quiz && (
@@ -1149,123 +1096,44 @@ export function App() {
       )}
 
       {screen.name === "stats" && (
-        <div className="stack">
-          <div className="card">
-            <div className="row-between">
-              <h2 className="card-heading">Corpus atlas · raw coverage</h2>
-              <nav aria-label="Atlas">
-                <button type="button" className="btn btn-ghost-light" onClick={goHome}>
-                  Home
-                </button>
-              </nav>
-            </div>
-            <p className="card-muted" style={{ marginTop: "0.65rem", marginBottom: "1rem" }}>
-              Transparent counts pulled straight from bundled JSON—no inflated marketing math. Tap any mode on the homepage to grind a
-              specific wedge of this histogram.
-            </p>
-            <dl className="mega-stats-grid">
-              <div>
-                <dt>Episode transcripts mirrored</dt>
-                <dd>{corpus.episodeCount}</dd>
-              </div>
-              <div>
-                <dt>Distinct prompt nodes</dt>
-                <dd>{corpus.questionCount.toLocaleString()}</dd>
-              </div>
-              <div>
-                <dt>Classifier archetypes</dt>
-                <dd>{corpus.distinctTypes.length}</dd>
-              </div>
-              <div>
-                <dt>Lifetime prompts you&apos;ve reviewed</dt>
-                <dd>{questionsReviewed.toLocaleString()}</dd>
-              </div>
-            </dl>
-          </div>
-          <div className="card">
-            <h2 className="card-heading">Per-season density</h2>
-            <div className="table-wrap" style={{ marginTop: "0.75rem" }}>
-              <table className="data-sheet">
-                <caption className="visually-hidden">Episodes and question counts for each season</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Season</th>
-                    <th scope="col">Episodes</th>
-                    <th scope="col">Prompts</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {corpus.bySeason.map((row) => (
-                    <tr key={row.seasonIndex}>
-                      <td>{seasonTitle(row.seasonIndex)}</td>
-                      <td>{row.episodes}</td>
-                      <td>{row.questions.toLocaleString()}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="card">
-            <h2 className="card-heading">Classifier inventory</h2>
-            <p className="card-muted" style={{ marginTop: "0.35rem" }}>
-              Every label is emitted by the trivia generator so you can steer practice toward exactly the kind of screenplay signal you
-              care about.
-            </p>
-            <div className="table-wrap" style={{ marginTop: "0.75rem" }}>
-              <table className="data-sheet">
-                <caption className="visually-hidden">Question counts for each trivia classifier type</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Type</th>
-                    <th scope="col">Prompts</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {corpus.byType.map((row) => (
-                    <tr key={row.type}>
-                      <td>{readableTypeName(row.type)}</td>
-                      <td>{row.count.toLocaleString()}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        <Suspense fallback={<ScreenFallback />}>
+          <LazyStatsScreen corpus={corpus} questionsReviewed={questionsReviewed} goHome={goHome} />
+        </Suspense>
       )}
 
       {screen.name === "results" && (
-        <ResultsPane
-          items={screen.items}
-          answers={screen.answers}
-          run={screen.run}
-          resultsTitle={quizUiStrings(screen.run).resultsTitle}
-          replayHint={quizUiStrings(screen.run).replayHint}
-          enteredFromBrowse={screen.enteredFromBrowse}
-          onHome={goHome}
-          onBrowse={goBrowse}
-          onReplay={() =>
-            replayFromConfig(screen.run, screen.items, screen.enteredFromBrowse)
-          }
-          onRetryMisses={() => {
-            const missItems = screen.items.filter((_, i) => {
-              const a = screen.answers[i];
-              return !!(a && !a.correct);
-            });
-            if (missItems.length === 0) return;
-            startQuiz(
-              missItems,
-              {
-                mode: "miss_retry",
-                count: missItems.length,
-                sourceSummary: quizUiStrings(screen.run).resultsTitle,
-              },
-              screen.enteredFromBrowse,
-            );
-          }}
-          onToast={setNotice}
-        />
+        <Suspense fallback={<ScreenFallback />}>
+          <LazyResultsPane
+            items={screen.items}
+            answers={screen.answers}
+            run={screen.run}
+            resultsTitle={quizUiStrings(screen.run).resultsTitle}
+            replayHint={quizUiStrings(screen.run).replayHint}
+            enteredFromBrowse={screen.enteredFromBrowse}
+            onHome={goHome}
+            onBrowse={goBrowse}
+            onReplay={() =>
+              replayFromConfig(screen.run, screen.items, screen.enteredFromBrowse)
+            }
+            onRetryMisses={() => {
+              const missItems = screen.items.filter((_, i) => {
+                const a = screen.answers[i];
+                return !!(a && !a.correct);
+              });
+              if (missItems.length === 0) return;
+              startQuiz(
+                missItems,
+                {
+                  mode: "miss_retry",
+                  count: missItems.length,
+                  sourceSummary: quizUiStrings(screen.run).resultsTitle,
+                },
+                screen.enteredFromBrowse,
+              );
+            }}
+            onToast={setNotice}
+          />
+        </Suspense>
       )}
 
       </main>
@@ -1290,248 +1158,6 @@ export function App() {
         </p>
       </footer>
       {confirm ? <ConfirmDialog {...confirm} onCancel={closeConfirm} /> : null}
-    </div>
-  );
-}
-
-function ResultsPane({
-  items,
-  answers,
-  run,
-  resultsTitle,
-  replayHint,
-  enteredFromBrowse,
-  onHome,
-  onBrowse,
-  onReplay,
-  onRetryMisses,
-  onToast,
-}: {
-  items: QuizItem[];
-  answers: Record<number, { choice: number; correct: boolean }>;
-  run: QuizRunConfig;
-  resultsTitle: string;
-  replayHint: string;
-  enteredFromBrowse: boolean;
-  onHome: () => void;
-  onBrowse: () => void;
-  onReplay: () => void;
-  onRetryMisses: () => void;
-  onToast: (message: string) => void;
-}) {
-  let correctCt = 0;
-  let wrongCt = 0;
-  let skipped = items.length;
-
-  items.forEach((_, i) => {
-    const a = answers[i];
-    if (!a) return;
-    skipped -= 1;
-    if (a.correct) correctCt++;
-    else wrongCt++;
-  });
-
-  skipped = items.length - correctCt - wrongCt;
-
-  const hasMisses = items.some((_, i) => answers[i] && !answers[i]?.correct);
-  const accuracyPct = items.length > 0 ? Math.round((correctCt / items.length) * 1000) / 10 : 0;
-
-  const typeRows = useMemo(() => computeAnsweredTypeBreakdown(items, answers), [items, answers]);
-
-  const [dailySnapshot, setDailySnapshot] = useState<DailyPersonalRow | null>(null);
-  useEffect(() => {
-    if (run.mode !== "daily") return;
-    recordDailyPersonalBest(run.dateKeyUtc, correctCt, items.length);
-    setDailySnapshot(getDailyPersonalBest(run.dateKeyUtc));
-  }, [run, correctCt, items.length]);
-
-  useEffect(() => {
-    if (run.mode !== "daily") return;
-    const u = new URL(window.location.href);
-    u.searchParams.set("d", run.dateKeyUtc);
-    u.searchParams.set("s", String(correctCt));
-    u.searchParams.set("t", String(items.length));
-    window.history.replaceState({}, "", u.toString());
-  }, [run, correctCt, items.length]);
-
-  const shareUrl =
-    run.mode === "daily"
-      ? buildDailyResultShareUrl({
-          dateKeyUtc: run.dateKeyUtc,
-          correct: correctCt,
-          total: items.length,
-        })
-      : SITE_CANONICAL;
-
-  const shareLine =
-    run.mode === "daily"
-      ? `${correctCt}/${items.length} on the Yada yada daily (${run.dateKeyUtc} UTC). Same deck: ${shareUrl}`
-      : `${SITE_CANONICAL} · ${quizUiStrings(run).resultsTitle}: ${correctCt}/${items.length} (${accuracyPct}% answered correctly)`;
-
-  const onShareScore = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Yada yada trivia",
-          text: shareLine,
-          url: shareUrl,
-        });
-      } catch (e) {
-        if ((e as Error)?.name !== "AbortError") {
-          onToast("Sharing was interrupted—score not sent.");
-        }
-      }
-      return;
-    }
-    try {
-      await navigator.clipboard.writeText(shareLine);
-      onToast("Score copied to clipboard.");
-    } catch {
-      onToast(`Copy manually: ${shareLine}`);
-    }
-  };
-
-  const onCopyShareLinkOnly = async () => {
-    try {
-      await navigator.clipboard.writeText(shareUrl);
-      onToast(run.mode === "daily" ? "Share link copied — paste it anywhere." : "Link copied.");
-    } catch {
-      onToast(`Copy manually: ${shareUrl}`);
-    }
-  };
-
-  return (
-    <div className="stack">
-      <div className="card">
-        <h2 className="episode-meta" style={{ margin: 0 }}>
-          {resultsTitle}
-        </h2>
-        <p className="results-score">{correctCt}&nbsp;<span style={{ opacity: 0.45 }}>/</span> {items.length}</p>
-        <p className="card-muted session-accuracy-meta">
-          Accuracy {accuracyPct}% on answered cards
-          {skipped ? ` (${skipped} not reached).` : "."}
-        </p>
-        <p className="card-muted">
-          {wrongCt ? `${wrongCt} missed. ` : null}
-          {skipped ? `${skipped} unanswered. ` : null}
-          {correctCt === items.length ? "Master of your domain." : "Serenity now—try again sometime."}
-        </p>
-
-        {run.mode === "daily" && dailySnapshot ? (
-          <p className="card-muted" role="status">
-            Personal best on this device for {run.dateKeyUtc} UTC: {dailySnapshot.correct}/{dailySnapshot.total}
-          </p>
-        ) : null}
-
-        <div className="row-between results-share-row">
-          <div className="results-share-actions">
-            <button type="button" className="btn btn-ghost-light" onClick={() => void onShareScore()}>
-              Share score
-            </button>
-            <button type="button" className="btn btn-ghost-light" onClick={() => void onCopyShareLinkOnly()}>
-              {run.mode === "daily" ? "Copy share link" : "Copy site link"}
-            </button>
-          </div>
-          {hasMisses ? (
-            <button type="button" className="btn btn-teal" onClick={onRetryMisses}>
-              Drill misses only ({wrongCt})
-            </button>
-          ) : (
-            <span className="card-muted" style={{ fontSize: "0.85rem" }}>
-              Clean sweep—no misses to drill.
-            </span>
-          )}
-        </div>
-
-        {typeRows.length > 0 ? (
-          <div className="session-breakdown" style={{ marginTop: "1.15rem" }}>
-            <h3 className="episode-meta" id="session-type-heading">
-              This run by archetype
-            </h3>
-            <div className="table-wrap" style={{ marginTop: "0.5rem" }}>
-              <table className="data-sheet" aria-labelledby="session-type-heading">
-                <thead>
-                  <tr>
-                    <th scope="col">Type</th>
-                    <th scope="col">Asked</th>
-                    <th scope="col">Right</th>
-                    <th scope="col">%</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {typeRows.slice(0, 12).map((row) => (
-                    <tr key={row.type}>
-                      <td>{row.label}</td>
-                      <td>{row.asked}</td>
-                      <td>{row.correct}</td>
-                      <td>{row.asked ? Math.round((row.correct / row.asked) * 100) : 0}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        ) : null}
-
-        {run.mode === "episode" && items[0] && (
-          <p style={{ marginBottom: "0.65rem", marginTop: "1rem", fontWeight: 600 }}>
-            Episode:{" "}
-            <a href={items[0].episode.primarySource} target="_blank" rel="noopener noreferrer">
-              {items[0].episode.title}
-              <NewTabAnnouncement />
-            </a>
-          </p>
-        )}
-
-        <div className="stack results-footer-actions">
-          <div className="row-between">
-            <button type="button" className="btn btn-ghost-light" onClick={onHome}>
-              Home
-            </button>
-            <button type="button" className="btn btn-teal" onClick={onReplay}>
-              {replayHint}
-            </button>
-          </div>
-          {enteredFromBrowse && (
-            <button type="button" className="btn btn-ghost-light btn-block" onClick={onBrowse}>
-              Back to catalog
-            </button>
-          )}
-        </div>
-
-        {hasMisses && (
-          <div style={{ marginTop: "1.25rem" }}>
-            <p className="episode-meta" id="review-misses-heading">
-              Review misses
-            </p>
-            <ul
-              className="card-muted"
-              style={{ paddingLeft: "1rem", margin: "0.5rem 0 0", fontWeight: 500 }}
-              aria-labelledby="review-misses-heading"
-            >
-              {items.map((item, i) => {
-                const rec = answers[i];
-                if (!rec || rec.correct) return null;
-                return (
-                  <li key={`${item.episode.seriesIndex}-${i}-${item.question.id}`}>
-                    → {item.question.question.slice(0, 120)}
-                    … <strong>Answer:</strong> {item.question.options[item.question.correctIndex]}{" "}
-                    <a
-                      href={item.episode.primarySource}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="miss-source-link"
-                    >
-                      transcript
-                      <NewTabAnnouncement />
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        )}
-      </div>
     </div>
   );
 }
