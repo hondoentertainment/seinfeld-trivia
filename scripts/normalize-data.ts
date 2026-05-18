@@ -20,6 +20,9 @@ async function main() {
     creditColonNormalized: 0,
     whoSpeakerJunkSwapped: 0,
     duplicateOptionCellsRepaired: 0,
+    speakerOptionNormalized: 0,
+    whoPromptRewritten: 0,
+    whoPromptReplaced: 0,
   };
   const merged: EpisodeBundle[] = [];
 
@@ -33,6 +36,9 @@ async function main() {
       total.creditColonNormalized += report.creditColonNormalized;
       total.whoSpeakerJunkSwapped += report.whoSpeakerJunkSwapped;
       total.duplicateOptionCellsRepaired += report.duplicateOptionCellsRepaired;
+      total.speakerOptionNormalized += report.speakerOptionNormalized;
+      total.whoPromptRewritten += report.whoPromptRewritten;
+      total.whoPromptReplaced += report.whoPromptReplaced;
       out.push(bundle);
     }
 

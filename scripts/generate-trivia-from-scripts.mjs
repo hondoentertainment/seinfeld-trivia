@@ -146,6 +146,18 @@ function isGarbageSpeakerLabel(speaker) {
   return false;
 }
 
+function isPlausibleSpeakerLabel(speaker) {
+  const s = normalizeSpeaker(speaker);
+  if (isGarbageSpeakerLabel(s)) return false;
+  if (s.length < 2 || s.length > 32) return false;
+  if (/^(i|you|we|he|she|they|it|let'?s|this|that|there|here|all|oh|uh|um)\b/iu.test(s)) return false;
+  if (/[?!,:;()[\]“”"]/.test(s)) return false;
+  if (!/^[A-Za-z][A-Za-z .'-]*$/u.test(s)) return false;
+  const words = s.split(/\s+/u);
+  if (words.length > 3) return false;
+  return words.every((word) => /^[A-Z][A-Za-z'.-]*$/u.test(word) || /^[A-Z]{2,}$/u.test(word));
+}
+
 /** Strip colon bleed leftover from screenplay lines + double-space segmentation */
 function cleanCreditExtract(raw) {
   if (!raw) return null;
@@ -170,7 +182,7 @@ function extractDialogue(text) {
     if (/^(INT|EXT|SCENE|CUT TO|FADE)/i.test(speaker)) continue;
     if (speaker.length < 2 || speaker.length > 36) continue;
     if (BAD_SPEAKERS.has(speaker.toUpperCase())) continue;
-    if (isGarbageSpeakerLabel(speaker)) continue;
+    if (!isPlausibleSpeakerLabel(speaker)) continue;
     if (/\b(and|&)\b/i.test(speaker)) continue;
     let line = m[2].trim();
     line = line.replace(/\[[^\]]*\]/g, "").replace(/\([^)]{80,}\)/g, "").trim();
@@ -274,14 +286,16 @@ function buildTranscriptWordQuestions(scriptText, rng, maxNeeded, minLen = 6) {
     "would",
   ]);
   const filler = [
-    "marzipan",
-    "obstreperous",
-    "perspicacious",
-    "defenestrate",
-    "soliloquy",
-    "kleptocracy",
-    "verisimilitude",
-    "wanderlust",
+    "apartment",
+    "restaurant",
+    "neighbor",
+    "telephone",
+    "baseball",
+    "doctor",
+    "coffee",
+    "parking",
+    "movie",
+    "office",
   ];
   const re = new RegExp(`\\b[a-z]{${minLen},15}\\b`, "g");
   const words = [
@@ -303,7 +317,7 @@ function buildTranscriptWordQuestions(scriptText, rng, maxNeeded, minLen = 6) {
       .sort(() => rng() - 0.5)
       .slice(0, 3);
     while (wrong.length < 3) {
-      wrong.push("quagmire");
+      wrong.push(filler.find((d) => d !== correct && !wrong.includes(d)) ?? "episode");
     }
     const opts = [correct, ...wrong.slice(0, 3)].sort(() => rng() - 0.5);
     const correctIndex = opts.findIndex((o) => o === correct);
@@ -356,18 +370,67 @@ function pickDistractorSpeakers(correct, pool, need, rng) {
   return out.slice(0, need);
 }
 
+function pickDistinctOptions(correct, pool, need, rng) {
+  const out = [];
+  const used = new Set([String(correct).toLowerCase()]);
+  const rest = pool.filter((p) => {
+    const key = String(p).toLowerCase();
+    return key !== String(correct).toLowerCase() && !used.has(key);
+  });
+  while (out.length < need && rest.length > 0) {
+    const idx = Math.floor(rng() * rest.length);
+    const pick = rest.splice(idx, 1)[0];
+    const key = String(pick).toLowerCase();
+    if (used.has(key)) continue;
+    used.add(key);
+    out.push(pick);
+  }
+  return out;
+}
+
+function nearbySeriesNumbers(seriesIndex) {
+  const candidates = [
+    seriesIndex - 2,
+    seriesIndex - 1,
+    seriesIndex + 1,
+    seriesIndex + 2,
+    seriesIndex + 5,
+    seriesIndex - 5,
+  ];
+  return candidates.filter((n) => n >= 1 && n <= 180).map(String);
+}
+
+function nearbyAirDates(ep, allEpisodes) {
+  return allEpisodes
+    .filter((other) => other.seriesIndex !== ep.seriesIndex && Math.abs(other.seriesIndex - ep.seriesIndex) <= 8)
+    .sort((a, b) => Math.abs(a.seriesIndex - ep.seriesIndex) - Math.abs(b.seriesIndex - ep.seriesIndex))
+    .map((other) => other.airDate);
+}
+
+function nearbyTitles(ep, allEpisodes) {
+  return allEpisodes
+    .filter((other) => other.seriesIndex !== ep.seriesIndex && (other.season === ep.season || Math.abs(other.seriesIndex - ep.seriesIndex) <= 8))
+    .sort((a, b) => {
+      const seasonA = a.season === ep.season ? 0 : 1;
+      const seasonB = b.season === ep.season ? 0 : 1;
+      return seasonA - seasonB || Math.abs(a.seriesIndex - ep.seriesIndex) - Math.abs(b.seriesIndex - ep.seriesIndex);
+    })
+    .map((other) => other.title);
+}
+
 /**
  * @param {any} ep
+ * @param {any[]} allEpisodes
  * @param {string} scriptText
  * @param {(n:number)=>number} rng
  */
-function buildQuestions(ep, scriptText, rng) {
+function buildQuestions(ep, allEpisodes, scriptText, rng) {
   const dialogue = extractDialogueCombined(scriptText);
   const scenes = extractScenes(scriptText);
   const credits = extractCredits(scriptText);
   const cast = extractCastPairs(scriptText);
   const speakerPool = [...new Set(dialogue.map((d) => d.speaker))].filter(
-    (s) => !isGarbageSpeakerLabel(s),
+    (s) => isPlausibleSpeakerLabel(s),
   );
 
   /** @type {any[]} */
@@ -427,13 +490,22 @@ function buildQuestions(ep, scriptText, rng) {
   }
 
   if (credits.writtenBy) {
-    const wrong = [
+    const creditPool = [
       "Larry Charles",
-      "Tom Cherones",
-      "Andy Ackerman",
       "David Steinberg",
-    ].filter((w) => w.toLowerCase() !== credits.writtenBy.toLowerCase());
-    const opts = [credits.writtenBy, ...wrong.slice(0, 3)].sort(() => rng() - 0.5);
+      "Peter Mehlman",
+      "Carol Leifer",
+      "Marjorie Gross",
+      "Spike Feresten",
+      "Jennifer Crittenden",
+      "Bruce Eric Kaplan",
+      "Gregg Kavet",
+      "Andy Robin",
+      "Alec Berg",
+      "Jeff Schaffer",
+    ];
+    const wrong = pickDistinctOptions(credits.writtenBy, creditPool, 3, rng);
+    const opts = [credits.writtenBy, ...wrong].sort(() => rng() - 0.5);
     const correctIndex = opts.findIndex(
       (o) => o.toLowerCase() === credits.writtenBy.toLowerCase()
     );
@@ -448,13 +520,17 @@ function buildQuestions(ep, scriptText, rng) {
   }
 
   if (credits.directedBy) {
-    const wrong = [
+    const directorPool = [
       "Tom Cherones",
       "Andy Ackerman",
-      "Jason Alexander",
       "David Steinberg",
-    ].filter((w) => w.toLowerCase() !== credits.directedBy.toLowerCase());
-    const opts = [credits.directedBy, ...wrong.slice(0, 3)].sort(() => rng() - 0.5);
+      "Jason Alexander",
+      "Joshua White",
+      "Art Wolff",
+      "Dwight Hemion",
+    ];
+    const wrong = pickDistinctOptions(credits.directedBy, directorPool, 3, rng);
+    const opts = [credits.directedBy, ...wrong].sort(() => rng() - 0.5);
     const correctIndex = opts.findIndex(
       (o) => o.toLowerCase() === credits.directedBy.toLowerCase()
     );
@@ -494,12 +570,7 @@ function buildQuestions(ep, scriptText, rng) {
 
   {
     const correct = String(ep.seriesIndex);
-    const raw = [
-      correct,
-      String(Math.max(1, ep.seriesIndex + 1)),
-      String(Math.max(1, ep.seriesIndex - 1)),
-      String(Math.min(180, ep.seriesIndex + 7)),
-    ];
+    const raw = [correct, ...nearbySeriesNumbers(ep.seriesIndex)];
     const opts = [...new Set(raw)].slice(0, 4);
     while (opts.length < 4) opts.push(String(Number(opts[opts.length - 1]) + 3));
     const shuffled = opts.sort(() => rng() - 0.5);
@@ -533,16 +604,7 @@ function buildQuestions(ep, scriptText, rng) {
 
   {
     const correct = ep.airDate;
-    const pool = [
-      correct,
-      "5/14/98",
-      "7/5/89",
-      "11/18/92",
-      "10/2/97",
-      "3/19/98",
-      "9/25/97",
-      "12/11/97",
-    ];
+    const pool = [correct, ...nearbyAirDates(ep, allEpisodes)];
     const uniq = [];
     const seen = new Set();
     for (const d of pool) {
@@ -596,14 +658,7 @@ function buildQuestions(ep, scriptText, rng) {
 
   // Title recognition
   {
-    const decoys = [
-      "The Bris",
-      "The Contest",
-      "The Soup Nazi",
-      "The Strike",
-    ]
-      .filter((t) => t !== ep.title)
-      .slice(0, 3);
+    const decoys = pickDistinctOptions(ep.title, nearbyTitles(ep, allEpisodes), 3, rng);
     const opts = [ep.title, ...decoys].sort(() => rng() - 0.5);
     const correctIndex = opts.findIndex((o) => o === ep.title);
     questions.push({
@@ -730,7 +785,7 @@ async function main() {
     const html = await fetchScript(ep.scriptUrl);
     const scriptText = htmlToText(html);
     const rng = mulberry32((ep.seriesIndex | 0) * 100003 + 977);
-    const questions = buildQuestions(ep, scriptText, rng);
+    const questions = buildQuestions(ep, pack.episodes, scriptText, rng);
     const bundle = {
       seriesIndex: ep.seriesIndex,
       season: ep.season,

@@ -36,8 +36,13 @@ export function validateQuestionStructure(q: TriviaQuestion): StructureIssue[] {
 export type HeuristicFlag =
   | "who_said_brackets_in_quote"
   | "who_said_nested_speaker_pattern"
+  | "who_said_stage_direction_quote"
   | "who_said_very_long_question"
   | "speaker_option_too_long"
+  | "speaker_option_not_name_like"
+  | "cast_option_not_name_like"
+  | "cast_role_not_name_like"
+  | "transcript_word_odd_filler"
   | "duplicate_answer_options"
   | "transcript_word_bogus_filler"
   | "weird_double_question_mark"
@@ -56,12 +61,15 @@ export function assessQuestionHeuristics(q: TriviaQuestion): HeuristicFlag[] {
   }
 
   const junkSpeakerOption = /^(originally aired|written by|directed by)$/iu;
+  const nameLikeSpeakerOption = /^[A-Z][A-Za-z'.-]*(?: [A-Z][A-Za-z'.-]*){0,2}$/u;
   if (q.type === "who_said") {
     for (const opt of q.options) {
-      if (junkSpeakerOption.test(String(opt).trim())) {
+      const speaker = String(opt).trim();
+      if (junkSpeakerOption.test(speaker)) {
         flags.push("metadata_boilerplate_speaker_option");
         break;
       }
+      if (!nameLikeSpeakerOption.test(speaker)) flags.push("speaker_option_not_name_like");
     }
   }
 
@@ -73,6 +81,9 @@ export function assessQuestionHeuristics(q: TriviaQuestion): HeuristicFlag[] {
     if (/\s[A-Z]{2,}:\s/.test(inner) || /\]\s*[A-Za-z]+\s*:/.test(inner)) {
       flags.push("who_said_nested_speaker_pattern");
     }
+    if (/^(sits|starts|walks|enters|exits|opens|closes|looks|turns|standing|sitting|gets|goes|comes|leaves|puts|takes|picks|continues|laughs|smiles|points|hands)\b/iu.test(inner)) {
+      flags.push("who_said_stage_direction_quote");
+    }
     if (text.length > 220) flags.push("who_said_very_long_question");
     for (const opt of q.options) {
       if (String(opt).length > 40) flags.push("speaker_option_too_long");
@@ -81,6 +92,27 @@ export function assessQuestionHeuristics(q: TriviaQuestion): HeuristicFlag[] {
 
   if (q.type === "transcript_word") {
     if (q.options.includes("quagmire")) flags.push("transcript_word_bogus_filler");
+    const odd = /^(marzipan|obstreperous|perspicacious|defenestrate|soliloquy|kleptocracy|verisimilitude|wanderlust)$/iu;
+    if (q.options.some((o) => odd.test(String(o).trim()))) flags.push("transcript_word_odd_filler");
+  }
+
+  if (q.type === "cast") {
+    const nameLike = /^[A-Z][A-Za-z'.-]*(?: [A-Z][A-Za-z'.-]*){0,3}$/u;
+    if (q.options.some((o) => !nameLike.test(String(o).trim()))) {
+      flags.push("cast_option_not_name_like");
+    }
+    const role = text.match(/who plays [“"](.+)[”"]\?/u)?.[1]?.trim() ?? "";
+    const roleWords = role.split(/\s+/u);
+    if (
+      !/^[A-Z][A-Za-z'.-]*(?: [A-Z][A-Za-z'.-]*){0,3}$/u.test(role) ||
+      role.length < 4 ||
+      /[.]/u.test(role) ||
+      /^[A-Z\s]+$/u.test(role) ||
+      /^(Hey|Hi|Hello|Yeah|Yes|No|Oh|Well|What|Why|How|When|Where)\b/u.test(role) ||
+      (roleWords.length === 1 && !/^(Man|Woman|Waiter|Waitress|Doctor|Nurse|Clerk|Guard|Cop|Officer|Owner|Manager|Cashier)$/u.test(role))
+    ) {
+      flags.push("cast_role_not_name_like");
+    }
   }
 
   const lowerOpts = q.options.map((o) => normalizeComparable(String(o)));

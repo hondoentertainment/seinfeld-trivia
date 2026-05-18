@@ -41,6 +41,26 @@ describe("sanitizeQuestion", () => {
     expect(assessQuestionHeuristics(cleaned)).not.toContain("metadata_boilerplate_speaker_option");
   });
 
+  it("replaces dialogue fragments in speaker choices with character names", () => {
+    const q: TriviaQuestion = {
+      id: 3,
+      type: "who_said",
+      question: 'Who says: “Really? What would you like to do”?',
+      options: ["JERRY", "I shoot you", "CLAIRE", "KRAMER"],
+      correctIndex: 0,
+      answer: "JERRY",
+    };
+    expect(assessQuestionHeuristics(q)).toContain("speaker_option_not_name_like");
+
+    const { question: cleaned, delta } = sanitizeQuestion(q);
+    expect(delta.whoSpeakerJunkSwapped).toBe(1);
+    expect(delta.speakerOptionNormalized).toBeGreaterThan(0);
+    expect(cleaned.options).toEqual(["Jerry", "George", "Claire", "Kramer"]);
+    expect(cleaned.answer).toBe("Jerry");
+    expect(cleaned.correctIndex).toBe(0);
+    expect(assessQuestionHeuristics(cleaned)).not.toContain("speaker_option_not_name_like");
+  });
+
   it("fills in fresh credit foils when the generator repeats the same name twice", () => {
     const q: TriviaQuestion = {
       id: 31,

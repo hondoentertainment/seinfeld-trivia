@@ -67,6 +67,13 @@ describe("trivia dataset (generated JSON)", () => {
     const report = evaluateDataset(episodes);
     expect(report.byHeuristicFlag.credit_line_leading_colon ?? 0).toBe(0);
     expect(report.byHeuristicFlag.metadata_boilerplate_speaker_option ?? 0).toBe(0);
+    expect(report.byHeuristicFlag.speaker_option_not_name_like ?? 0).toBe(0);
+    expect(report.byHeuristicFlag.who_said_nested_speaker_pattern ?? 0).toBe(0);
+    expect(report.byHeuristicFlag.who_said_stage_direction_quote ?? 0).toBe(0);
+    expect(report.byHeuristicFlag.cast_option_not_name_like ?? 0).toBe(0);
+    expect(report.byHeuristicFlag.cast_role_not_name_like ?? 0).toBe(0);
+    expect(report.byHeuristicFlag.transcript_word_odd_filler ?? 0).toBe(0);
+    expect(report.byHeuristicFlag.transcript_word_bogus_filler ?? 0).toBe(0);
     expect(report.byHeuristicFlag.duplicate_answer_options ?? 0).toBe(0);
   });
 
@@ -78,12 +85,11 @@ describe("trivia dataset (generated JSON)", () => {
     }
   });
 
-  it("records heuristic quality metrics (non-blocking baseline)", () => {
+  it("keeps heuristic quality flags at zero after normalization", () => {
     const report = evaluateDataset(episodes);
     expect(report.questionCount).toBe(4500);
-    expect(report.heuristicRate).toBeGreaterThan(0);
-    expect(report.heuristicRate).toBeLessThan(1);
-    expect(report.byHeuristicFlag).toBeDefined();
+    expect(report.heuristicRate).toBe(0);
+    expect(report.byHeuristicFlag).toEqual({});
   });
 });
 

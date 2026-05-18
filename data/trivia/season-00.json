@@ -14,155 +14,155 @@
         "question": "Who says: “Oh, I can be very persuasive. Do you know that I was almost...”?",
         "options": [
           "George",
-          "KRAMER",
-          "WAITRESS",
-          "CLAIRE"
+          "Kramer",
+          "Waitress",
+          "Claire"
         ],
         "correctIndex": 1,
-        "answer": "KRAMER"
+        "answer": "Kramer"
       },
       {
         "id": 2,
         "type": "who_said",
         "question": "Who says: “Really? What would you like to do”?",
         "options": [
-          "JERRY",
-          "I shoot you",
-          "CLAIRE",
-          "KRAMER"
+          "Jerry",
+          "George",
+          "Claire",
+          "Kramer"
         ],
         "correctIndex": 0,
-        "answer": "JERRY"
+        "answer": "Jerry"
       },
       {
         "id": 3,
         "type": "who_said",
         "question": "Who says: “Let me just wipe the sink.”?",
         "options": [
-          "JERRY",
-          "WAITRESS",
-          "KRAMER",
+          "Jerry",
+          "Waitress",
+          "Kramer",
           "George"
         ],
         "correctIndex": 0,
-        "answer": "JERRY"
+        "answer": "Jerry"
       },
       {
         "id": 4,
         "type": "who_said",
         "question": "Who says: “I can't believe you're here.”?",
         "options": [
-          "WAITRESS",
-          "CLAIRE",
+          "Waitress",
+          "Claire",
           "Kramer",
-          "JERRY"
+          "Jerry"
         ],
         "correctIndex": 3,
-        "answer": "JERRY"
+        "answer": "Jerry"
       },
       {
         "id": 5,
         "type": "who_said",
         "question": "Who says: “Yeah, we could do that...why not, why not.”?",
         "options": [
-          "JERRY",
-          "WAITRESS",
-          "KRAMER",
-          "LAURA"
+          "Jerry",
+          "Waitress",
+          "Kramer",
+          "Laura"
         ],
         "correctIndex": 0,
-        "answer": "JERRY"
+        "answer": "Jerry"
       },
       {
         "id": 6,
         "type": "who_said",
         "question": "Who says: “This is the signal. Thank you, mister Signal,”?",
         "options": [
-          "I shoot you",
+          "Elaine",
           "George",
-          "WAITRESS",
-          "JERRY"
+          "Waitress",
+          "Jerry"
         ],
         "correctIndex": 3,
-        "answer": "JERRY"
+        "answer": "Jerry"
       },
       {
         "id": 7,
         "type": "who_said",
         "question": "Who says: “All right, she said she couldn't find a decent hotel- room...”?",
         "options": [
-          "CLAIRE",
-          "Let's face it",
-          "I shoot you",
-          "JERRY"
+          "Claire",
+          "George",
+          "Elaine",
+          "Jerry"
         ],
         "correctIndex": 3,
-        "answer": "JERRY"
+        "answer": "Jerry"
       },
       {
         "id": 8,
         "type": "who_said",
         "question": "Who says: “You can't be serious. This is New York city: there must”?",
         "options": [
-          "KRAMER",
-          "JERRY",
-          "I shoot you",
-          "GEORGE"
+          "Kramer",
+          "Jerry",
+          "Elaine",
+          "George"
         ],
         "correctIndex": 3,
-        "answer": "GEORGE"
+        "answer": "George"
       },
       {
         "id": 9,
         "type": "who_said",
         "question": "Who says: “This is how you operate”?",
         "options": [
-          "JERRY",
-          "LAURA",
-          "KRAMER",
-          "GEORGE"
+          "Jerry",
+          "Laura",
+          "Kramer",
+          "George"
         ],
         "correctIndex": 0,
-        "answer": "JERRY"
+        "answer": "Jerry"
       },
       {
         "id": 10,
         "type": "who_said",
         "question": "Who says: “A decent hotel-room...”?",
         "options": [
-          "JERRY",
-          "GEORGE",
-          "Let's face it",
-          "WAITRESS"
+          "Jerry",
+          "George",
+          "Elaine",
+          "Waitress"
         ],
         "correctIndex": 1,
-        "answer": "GEORGE"
+        "answer": "George"
       },
       {
         "id": 11,
         "type": "who_said",
         "question": "Who says: “The dating world is not a fun world...it's a pressure world,”?",
         "options": [
-          "JERRY",
-          "LAURA",
-          "GEORGE",
-          "WAITRESS"
+          "Jerry",
+          "Laura",
+          "George",
+          "Waitress"
         ],
         "correctIndex": 0,
-        "answer": "JERRY"
+        "answer": "Jerry"
       },
       {
         "id": 12,
-        "type": "who_said",
-        "question": "Who says: “sits down next to him and starts turning over the pages of a magazine. Suddenly he spots an article he likes…”?",
+        "type": "title",
+        "question": "Which episode title matches this SeinfeldScripts installment?",
         "options": [
-          "Jerry",
-          "Kramer",
-          "LAURA",
-          "George"
+          "The Contest",
+          "The Soup Nazi",
+          "The Marine Biologist",
+          "Good News Bad News"
         ],
-        "correctIndex": 1,
-        "answer": "Kramer"
+        "correctIndex": 3,
+        "answer": "Good News Bad News"
       },
       {
         "id": 13,
@@ -170,25 +170,25 @@
         "question": "Who says: “Look at that: they're done! It's”?",
         "options": [
           "Kramer",
-          "GEORGE",
-          "I shoot you",
-          "WAITRESS"
+          "George",
+          "Jerry",
+          "Waitress"
         ],
         "correctIndex": 1,
-        "answer": "GEORGE"
+        "answer": "George"
       },
       {
         "id": 14,
         "type": "who_said",
         "question": "Who says: “...No, it's, it's just my neighbour...uhm...yeah, I got”?",
         "options": [
-          "JERRY",
-          "KRAMER",
-          "I shoot you",
-          "CLAIRE"
+          "Jerry",
+          "Kramer",
+          "George",
+          "Claire"
         ],
         "correctIndex": 0,
-        "answer": "JERRY"
+        "answer": "Jerry"
       },
       {
         "id": 15,
@@ -270,42 +270,42 @@
       },
       {
         "id": 21,
-        "type": "cast",
-        "question": "In the cast list, who plays “they do is subtle.”?",
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
         "options": [
-          "this whole thing, we're all out now, no one is home.",
-          "men are not subtle, we are obvious. Women know",
-          "the dryer is their only chance to escape and they",
-          "[suddenly a woman approaches Jerry from behind and puts her"
+          "1",
+          "2",
+          "8",
+          "12"
         ],
-        "correctIndex": 1,
-        "answer": "men are not subtle, we are obvious. Women know"
+        "correctIndex": 0,
+        "answer": "1"
       },
       {
         "id": 22,
-        "type": "cast",
-        "question": "In the cast list, who plays “These are the best ideas we've had so far”?",
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
         "options": [
-          "men are not subtle, we are obvious. Women know",
-          "[suddenly a woman approaches Jerry from behind and puts her",
-          "this whole thing, we're all out now, no one is home.",
-          "The car-horn-honk, is"
+          "1",
+          "2",
+          "8",
+          "12"
         ],
-        "correctIndex": 3,
-        "answer": "The car-horn-honk, is"
+        "correctIndex": 0,
+        "answer": "1"
       },
       {
         "id": 23,
-        "type": "cast",
-        "question": "In the cast list, who plays “eyes.”?",
+        "type": "meta_series",
+        "question": "On the SeinfeldScripts master episode list, which series episode number is this installment?",
         "options": [
-          "The car-horn-honk, is",
-          "[suddenly a woman approaches Jerry from behind and puts her",
-          "So they're showing me on television the detergent",
-          "Is this a violent image to anybody?"
+          "1",
+          "2",
+          "8",
+          "12"
         ],
-        "correctIndex": 1,
-        "answer": "[suddenly a woman approaches Jerry from behind and puts her"
+        "correctIndex": 0,
+        "answer": "1"
       },
       {
         "id": 24,

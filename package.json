@@ -13,7 +13,8 @@
     "icons": "node scripts/generate-pwa-icons.mjs",
     "build-episodes": "node scripts/build-episode-index.mjs",
     "generate-trivia": "node scripts/generate-trivia-from-scripts.mjs",
-    "normalize-data": "tsx scripts/normalize-data.ts"
+    "normalize-data": "tsx scripts/normalize-data.ts",
+    "sample-quality": "tsx scripts/sample-quality.ts"
   },
   "dependencies": {
     "react": "^19.2.3",
