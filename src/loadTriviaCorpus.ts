@@ -1,4 +1,5 @@
 import type { EpisodeBundle } from "./types";
+import { withSupplementalTrivia } from "./supplementalTrivia";
 
 let cache: EpisodeBundle[] | null = null;
 
@@ -6,7 +7,7 @@ let cache: EpisodeBundle[] | null = null;
 export async function loadEpisodes(): Promise<EpisodeBundle[]> {
   if (cache) return cache;
   const mod = await import("../data/trivia/all-episodes.json");
-  cache = mod.default as EpisodeBundle[];
+  cache = withSupplementalTrivia(mod.default as EpisodeBundle[]);
   return cache;
 }
 

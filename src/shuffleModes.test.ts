@@ -7,6 +7,7 @@ import {
   marathonForTypes,
   orderedFullCorpusRun,
 } from "./shuffle";
+import { SUPPLEMENTAL_EPISODE, withSupplementalTrivia } from "./supplementalTrivia";
 
 function miniEp(
   seriesIndex: number,
@@ -79,5 +80,12 @@ describe("buildFullQuizPool", () => {
   it("sizes to every prompt in the corpus", () => {
     const eps = [miniEp(1, 1, ["a", "b"]), miniEp(2, 1, ["c"])];
     expect(buildFullQuizPool(eps)).toHaveLength(3);
+  });
+
+  it("can include supplemental internet-sourced trivia with attribution", () => {
+    const eps = withSupplementalTrivia([miniEp(1, 1, ["who_said"])]);
+    const pool = buildFullQuizPool(eps);
+    expect(pool).toHaveLength(1 + SUPPLEMENTAL_EPISODE.questions.length);
+    expect(pool.some((item) => item.question.sourceKind === "internet")).toBe(true);
   });
 });

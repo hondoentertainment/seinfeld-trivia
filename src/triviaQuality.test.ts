@@ -45,7 +45,7 @@ describe("validateQuestionStructure", () => {
 });
 
 describe("trivia dataset (generated JSON)", () => {
-  it("has 180 episodes and 4500 questions total", () => {
+  it("has 180 script episodes and 4500 script-derived questions total", () => {
     expect(episodes.length).toBe(180);
     const n = episodes.reduce((a, ep) => a + ep.questions.length, 0);
     expect(n).toBe(4500);

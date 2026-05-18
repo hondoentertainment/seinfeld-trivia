@@ -5,6 +5,9 @@ export type TriviaQuestion = {
   options: string[];
   correctIndex: number;
   answer: string;
+  sourceLabel?: string;
+  sourceUrl?: string;
+  sourceKind?: "script" | "internet";
 };
 
 export type EpisodeBundle = {

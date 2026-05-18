@@ -38,6 +38,7 @@ type QuizPhase = {
 
 function seasonTitle(s: number) {
   if (s === 0) return "Pilot";
+  if (s === 10) return "Internet extras";
   return `Season ${s}`;
 }
 
@@ -885,11 +886,13 @@ export function App() {
             <div className="quiz-meta-tools">
               <a
                 className="source-chip btn btn-ghost-light"
-                href={currentItem.episode.primarySource}
+                href={currentItem.question.sourceUrl ?? currentItem.episode.primarySource}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Episode transcript
+                {currentItem.question.sourceKind === "internet"
+                  ? (currentItem.question.sourceLabel ?? "Internet source")
+                  : "Episode transcript"}
                 <NewTabAnnouncement />
               </a>
               <button

@@ -1,0 +1,133 @@
+import type { EpisodeBundle, TriviaQuestion } from "./types";
+
+const INTERNET_SOURCE = {
+  sourceKind: "internet" as const,
+  sourceLabel: "Wikipedia: Seinfeld",
+  sourceUrl: "https://en.wikipedia.org/wiki/Seinfeld",
+};
+
+const SUPPLEMENTAL_QUESTIONS: TriviaQuestion[] = [
+  {
+    id: 1,
+    type: "internet_series",
+    question: "Which network originally aired Seinfeld in the United States?",
+    options: ["NBC", "ABC", "CBS", "Fox"],
+    correctIndex: 0,
+    answer: "NBC",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 2,
+    type: "internet_series",
+    question: "Seinfeld was primarily set in which New York City borough?",
+    options: ["Manhattan", "Brooklyn", "Queens", "The Bronx"],
+    correctIndex: 0,
+    answer: "Manhattan",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 3,
+    type: "internet_series",
+    question: "Which comedian co-created Seinfeld with Larry David?",
+    options: ["Jerry Seinfeld", "Garry Shandling", "David Letterman", "Paul Reiser"],
+    correctIndex: 0,
+    answer: "Jerry Seinfeld",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 4,
+    type: "internet_series",
+    question: "What is the name of Jerry's neighbor played by Michael Richards?",
+    options: ["Cosmo Kramer", "Newman", "George Costanza", "David Puddy"],
+    correctIndex: 0,
+    answer: "Cosmo Kramer",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 5,
+    type: "internet_series",
+    question: "Which character works for J. Peterman in later seasons?",
+    options: ["Elaine Benes", "Susan Ross", "Helen Seinfeld", "Estelle Costanza"],
+    correctIndex: 0,
+    answer: "Elaine Benes",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 6,
+    type: "internet_series",
+    question: "Which recurring character is Jerry's postal-worker rival?",
+    options: ["Newman", "Kenny Bania", "Uncle Leo", "Mr. Pitt"],
+    correctIndex: 0,
+    answer: "Newman",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 7,
+    type: "internet_series",
+    question: "Which real Manhattan diner inspired the exterior of Monk's Cafe?",
+    options: ["Tom's Restaurant", "Katz's Delicatessen", "The Original Soup Kitchen", "Veselka"],
+    correctIndex: 0,
+    answer: "Tom's Restaurant",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 8,
+    type: "internet_series",
+    question: "Which phrase is strongly associated with George Costanza's father Frank?",
+    options: ["Serenity now", "No soup for you", "Hello, Newman", "Yada yada"],
+    correctIndex: 0,
+    answer: "Serenity now",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 9,
+    type: "internet_series",
+    question: "Which Seinfeld episode popularized the phrase “No soup for you”?",
+    options: ["The Soup Nazi", "The Contest", "The Puffy Shirt", "The Junior Mint"],
+    correctIndex: 0,
+    answer: "The Soup Nazi",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 10,
+    type: "internet_series",
+    question: "Which episode centers on a contest among the main characters?",
+    options: ["The Contest", "The Deal", "The Betrayal", "The Switch"],
+    correctIndex: 0,
+    answer: "The Contest",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 11,
+    type: "internet_series",
+    question: "Which actor plays George Costanza?",
+    options: ["Jason Alexander", "Michael Richards", "Wayne Knight", "John O'Hurley"],
+    correctIndex: 0,
+    answer: "Jason Alexander",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 12,
+    type: "internet_series",
+    question: "Which actor plays Elaine Benes?",
+    options: ["Julia Louis-Dreyfus", "Heidi Swedberg", "Estelle Harris", "Liz Sheridan"],
+    correctIndex: 0,
+    answer: "Julia Louis-Dreyfus",
+    ...INTERNET_SOURCE,
+  },
+];
+
+export const SUPPLEMENTAL_EPISODE: EpisodeBundle = {
+  seriesIndex: 1000,
+  season: 10,
+  title: "Internet-sourced Seinfeld trivia",
+  airDate: "Supplemental",
+  primarySource: INTERNET_SOURCE.sourceUrl,
+  indexSource: INTERNET_SOURCE.sourceUrl,
+  generatedAt: "curated",
+  questions: SUPPLEMENTAL_QUESTIONS,
+};
+
+export function withSupplementalTrivia(episodes: EpisodeBundle[]): EpisodeBundle[] {
+  return [...episodes, SUPPLEMENTAL_EPISODE];
+}

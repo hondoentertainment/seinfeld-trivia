@@ -7,9 +7,10 @@ export function buildQuestionReportBody(item: QuizItem): string {
     `Type: ${item.question.type}`,
     `Prompt: ${item.question.question}`,
     `Script URL: ${item.episode.primarySource}`,
+    item.question.sourceUrl ? `Question source: ${item.question.sourceLabel ?? item.question.sourceKind ?? "source"} — ${item.question.sourceUrl}` : null,
     "",
     "What looks wrong?",
-  ].join("\n");
+  ].filter(Boolean).join("\n");
 }
 
 export function githubNewIssueUrl(title: string, body: string): string | null {
