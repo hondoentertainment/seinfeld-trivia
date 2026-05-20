@@ -5,6 +5,8 @@ interface ImportMetaEnv {
   readonly VITE_SITE_CANONICAL?: string;
   /** e.g. owner/repo — enables "Report" GitHub new-issue deep links */
   readonly VITE_FEEDBACK_GITHUB_REPO?: string;
+  /** Enables mailto fallback for QA reports when GitHub repo is unset */
+  readonly VITE_FEEDBACK_EMAIL?: string;
 }
 
 interface ImportMeta {

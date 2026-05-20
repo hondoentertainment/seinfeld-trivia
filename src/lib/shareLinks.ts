@@ -9,6 +9,16 @@ export type DailySharePayload = {
 };
 
 /** Build a URL that opens the site with a daily score baked into the query string (shareable). */
+/** Social preview image for a daily score (Vercel OG route). */
+export function buildDailyOgImageUrl(payload: DailySharePayload): string {
+  const u = new URL(SITE_CANONICAL);
+  u.pathname = "/api/og";
+  u.searchParams.set("d", payload.dateKeyUtc);
+  u.searchParams.set("s", String(payload.correct));
+  u.searchParams.set("t", String(payload.total));
+  return u.toString();
+}
+
 export function buildDailyResultShareUrl(payload: DailySharePayload): string {
   const u = new URL(SITE_CANONICAL);
   u.pathname = u.pathname.replace(/\/?$/, "/");
@@ -34,18 +44,4 @@ export function parseDailyShareSearch(search: string): DailySharePayload | null 
   return { dateKeyUtc: d, correct, total };
 }
 
-/** Strip launch/marketing/share params after navigation to home so bookmarks stay clean. */
-export function stripLaunchQueryParams(href = window.location.href): void {
-  const u = new URL(href);
-  const keys = ["d", "s", "t", "screen", "utm_source", "utm_campaign", "utm_medium"] as const;
-  let touched = false;
-  for (const k of keys) {
-    if (u.searchParams.has(k)) {
-      u.searchParams.delete(k);
-      touched = true;
-    }
-  }
-  if (!touched) return;
-  const next = `${u.pathname}${u.search}${u.hash}`;
-  window.history.replaceState({}, "", next || "/");
-}
+export { stripLaunchQueryParams } from "./launchQuery";

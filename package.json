@@ -14,9 +14,11 @@
     "build-episodes": "node scripts/build-episode-index.mjs",
     "generate-trivia": "node scripts/generate-trivia-from-scripts.mjs",
     "normalize-data": "tsx scripts/normalize-data.ts",
+    "generate-seo": "node scripts/generate-seo-landings.mjs",
     "sample-quality": "tsx scripts/sample-quality.ts"
   },
   "dependencies": {
+    "@vercel/og": "^0.8.6",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },

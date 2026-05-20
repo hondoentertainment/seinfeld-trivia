@@ -2,7 +2,7 @@ import type { CorpusBreakdown } from "./corpusStats";
 
 export const CORPUS_SUMMARY = {
   episodeCount: 181,
-  questionCount: 4512,
+  questionCount: 4515,
   bySeason: [
     { seasonIndex: 0, episodes: 1, questions: 25 },
     { seasonIndex: 1, episodes: 4, questions: 100 },
@@ -14,11 +14,12 @@ export const CORPUS_SUMMARY = {
     { seasonIndex: 7, episodes: 24, questions: 600 },
     { seasonIndex: 8, episodes: 22, questions: 550 },
     { seasonIndex: 9, episodes: 24, questions: 600 },
-    { seasonIndex: 10, episodes: 1, questions: 12 },
+    { seasonIndex: 10, episodes: 1, questions: 15 },
   ],
   byType: [
     { type: "who_said", count: 3274 },
     { type: "internet_series", count: 12 },
+    { type: "running_gag", count: 3 },
     { type: "cast", count: 354 },
     { type: "meta_series", count: 180 },
     { type: "meta_season", count: 180 },

@@ -35,7 +35,7 @@ export const CATEGORY_GROUPS: readonly CategoryGroup[] = [
     id: "lore",
     label: "Metatext chronology",
     subtitle: "Airdates & series framing pulled from headings",
-    types: ["meta_series", "meta_series_alt", "meta_season", "meta_airdate", "internet_series"],
+    types: ["meta_series", "meta_series_alt", "meta_season", "meta_airdate", "internet_series", "running_gag"],
   },
 ] as const;
 
@@ -52,6 +52,7 @@ const TYPE_PRETTY: Record<string, string> = {
   meta_series_alt: "Series meta (alt)",
   title: "Episode title cues",
   internet_series: "Internet-sourced trivia",
+  running_gag: "Running gags & catchphrases",
 };
 
 export function readableTypeName(raw: string): string {

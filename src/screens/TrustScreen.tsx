@@ -54,6 +54,13 @@ export function TrustScreen(props: { onHome: () => void; onAbout: () => void }) 
           <a href={`https://github.com/${REPO}`} target="_blank" rel="noopener noreferrer">
             github.com/{REPO}
           </a>
+          {" "}
+          · see <a href={`https://github.com/${REPO}/blob/main/CHANGELOG.md`}>CHANGELOG</a> and{" "}
+          <a href={`https://github.com/${REPO}/releases`}>releases</a> for what shipped recently.
+        </p>
+        <p className="card-muted">
+          Report bad prompts with the in-quiz button or{" "}
+          <a href={`https://github.com/${REPO}/issues/new/choose`}>open a GitHub issue</a>.
         </p>
 
         <h3 className="episode-meta" style={{ marginTop: "1.25rem" }}>

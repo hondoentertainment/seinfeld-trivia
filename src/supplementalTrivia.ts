@@ -115,6 +115,33 @@ const SUPPLEMENTAL_QUESTIONS: TriviaQuestion[] = [
     answer: "Julia Louis-Dreyfus",
     ...INTERNET_SOURCE,
   },
+  {
+    id: 13,
+    type: "running_gag",
+    question: "Which phrase does George's father Frank shout during his relaxation regimen?",
+    options: ["Serenity now", "Yada yada yada", "Not that there's anything wrong with that", "These pretzels are making me thirsty"],
+    correctIndex: 0,
+    answer: "Serenity now",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 14,
+    type: "running_gag",
+    question: "Which soup vendor's catchphrase is “No soup for you!”?",
+    options: ["The Soup Nazi", "Poppie", "The Maestro", "Babu Bhatt"],
+    correctIndex: 0,
+    answer: "The Soup Nazi",
+    ...INTERNET_SOURCE,
+  },
+  {
+    id: 15,
+    type: "running_gag",
+    question: "Newman and Jerry often greet each other with which hostile line?",
+    options: ["Hello, Newman", "Serenity now", "Master of your domain", "Bosco"],
+    correctIndex: 0,
+    answer: "Hello, Newman",
+    ...INTERNET_SOURCE,
+  },
 ];
 
 export const SUPPLEMENTAL_EPISODE: EpisodeBundle = {

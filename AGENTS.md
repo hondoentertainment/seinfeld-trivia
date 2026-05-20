@@ -24,6 +24,8 @@ This repository is a Vite + React SPA with a bundled JSON trivia corpus (`data/t
 
 - Static SEO landings in `public/*.html` redirect into the SPA with `?screen=` where needed.
 - Share URLs use `?d=&s=&t=` (see `shareLinks.ts`). Changing param names is a breaking change for shared links.
+- Deep links: `?episode=N` (series index), `?season=N` (0–10), `?screen=about|trust|browse|stats`.
+- Regenerate SEO landings: `npm run generate-seo`.
 
 ## 5. Performance & PWA (`vite.config.ts`, service worker)
 

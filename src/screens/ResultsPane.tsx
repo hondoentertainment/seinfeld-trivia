@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
+import { getDailyStreakSnapshot, recordDailyStreakCompletion } from "../lib/dailyStreak";
 import {
   getDailyPersonalBest,
   recordDailyPersonalBest,
   type DailyPersonalRow,
 } from "../lib/localDailyBest";
 import { computeAnsweredTypeBreakdown } from "../lib/resultsBreakdown";
+import { applyDailyShareMeta } from "../lib/shareMeta";
 import { buildDailyResultShareUrl } from "../lib/shareLinks";
+import { formatDailyShareLine, formatGenericShareLine } from "../lib/shareText";
 import { quizUiStrings } from "../quizLabels";
 import { SITE_CANONICAL } from "../siteConfig";
 import type { QuizItem, QuizRunConfig } from "../types";
@@ -23,6 +26,7 @@ export type ResultsPaneProps = {
   onReplay: () => void;
   onRetryMisses: () => void;
   onToast: (message: string) => void;
+  onDailyStreakUpdated?: () => void;
 };
 
 export default function ResultsPane({
@@ -37,6 +41,7 @@ export default function ResultsPane({
   onReplay,
   onRetryMisses,
   onToast,
+  onDailyStreakUpdated,
 }: ResultsPaneProps) {
   let correctCt = 0;
   let wrongCt = 0;
@@ -58,11 +63,21 @@ export default function ResultsPane({
   const typeRows = useMemo(() => computeAnsweredTypeBreakdown(items, answers), [items, answers]);
 
   const [dailySnapshot, setDailySnapshot] = useState<DailyPersonalRow | null>(null);
+  const [streakAfter, setStreakAfter] = useState<{ current: number; best: number } | null>(null);
+
   useEffect(() => {
     if (run.mode !== "daily") return;
     recordDailyPersonalBest(run.dateKeyUtc, correctCt, items.length);
     setDailySnapshot(getDailyPersonalBest(run.dateKeyUtc));
-  }, [run, correctCt, items.length]);
+    recordDailyStreakCompletion(run.dateKeyUtc);
+    setStreakAfter(getDailyStreakSnapshot());
+    onDailyStreakUpdated?.();
+    applyDailyShareMeta({
+      dateKeyUtc: run.dateKeyUtc,
+      correct: correctCt,
+      total: items.length,
+    });
+  }, [run, correctCt, items.length, onDailyStreakUpdated]);
 
   useEffect(() => {
     if (run.mode !== "daily") return;
@@ -82,10 +97,14 @@ export default function ResultsPane({
         })
       : SITE_CANONICAL;
 
-  const shareLine =
+  const dailyPayload =
     run.mode === "daily"
-      ? `${correctCt}/${items.length} on the Yada yada daily (${run.dateKeyUtc} UTC). Same deck: ${shareUrl}`
-      : `${SITE_CANONICAL} · ${quizUiStrings(run).resultsTitle}: ${correctCt}/${items.length} (${accuracyPct}% answered correctly)`;
+      ? { dateKeyUtc: run.dateKeyUtc, correct: correctCt, total: items.length }
+      : null;
+
+  const shareLine = dailyPayload
+    ? formatDailyShareLine(dailyPayload)
+    : formatGenericShareLine(quizUiStrings(run).resultsTitle, correctCt, items.length, accuracyPct);
 
   const onShareScore = async () => {
     if (navigator.share) {
@@ -144,8 +163,19 @@ export default function ResultsPane({
           </p>
         ) : null}
 
+        {run.mode === "daily" && streakAfter && streakAfter.current > 0 ? (
+          <p className="card-muted daily-streak-line" role="status">
+            UTC streak: <strong>{streakAfter.current}</strong> day{streakAfter.current === 1 ? "" : "s"} · best {streakAfter.best}
+          </p>
+        ) : null}
+
         <div className="row-between results-share-row">
           <div className="results-share-actions">
+            {run.mode === "daily" ? (
+              <button type="button" className="btn btn-teal" onClick={() => void onCopyShareLinkOnly()}>
+                Challenge a friend
+              </button>
+            ) : null}
             <button type="button" className="btn btn-ghost-light" onClick={() => void onShareScore()}>
               Share score
             </button>

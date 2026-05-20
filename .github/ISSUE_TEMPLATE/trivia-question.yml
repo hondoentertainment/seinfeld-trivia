@@ -1,0 +1,27 @@
+name: Trivia question report
+description: Flag a wrong or confusing multiple-choice prompt
+title: "[Trivia QA] "
+labels: ["trivia-qa"]
+body:
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt text
+      description: Paste the question as shown in the app
+    validations:
+      required: true
+  - type: input
+    id: episode
+    attributes:
+      label: Episode (title or series #)
+  - type: textarea
+    id: issue
+    attributes:
+      label: What looks wrong?
+      description: Wrong answer, ambiguous wording, bad distractors, etc.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Transcript or source URL (if you have it)

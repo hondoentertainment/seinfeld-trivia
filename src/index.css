@@ -869,6 +869,35 @@ kbd.key-hint {
   background: rgba(201, 162, 39, 0.08);
 }
 
+.streak-risk-line {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.pwa-install-bar {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(31, 111, 120, 0.25);
+  border: 1px solid rgba(31, 111, 120, 0.45);
+}
+
+.pwa-install-text {
+  margin: 0 0 0.5rem;
+  font-size: 0.88rem;
+}
+
+.pwa-install-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.display-name-card .browse-search-field {
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
 .miss-source-link {
   font-weight: 600;
   white-space: nowrap;

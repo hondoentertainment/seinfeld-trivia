@@ -68,6 +68,104 @@ const BAD_SPEAKERS = new Set([
   "NOT",
 ]);
 
+/** @type {Array<{ id: string; match: RegExp; question: string; options: string[]; answer: string }>} */
+const RUNNING_GAGS = [
+  {
+    id: "serenity_now",
+    match: /\bserenity now\b/i,
+    question: "Which phrase does George's father Frank shout during his relaxation regimen?",
+    options: [
+      "Serenity now",
+      "Yada yada yada",
+      "Not that there's anything wrong with that",
+      "These pretzels are making me thirsty",
+    ],
+    answer: "Serenity now",
+  },
+  {
+    id: "no_soup",
+    match: /\bno soup for you\b/i,
+    question: "Which soup vendor's catchphrase is “No soup for you!”?",
+    options: ["The Soup Nazi", "Poppie", "The Maestro", "Babu Bhatt"],
+    answer: "The Soup Nazi",
+  },
+  {
+    id: "hello_newman",
+    match: /\bhello,?\s+newman\b/i,
+    question: "Newman and Jerry often greet each other with which hostile line?",
+    options: ["Hello, Newman", "Serenity now", "Master of your domain", "Bosco"],
+    answer: "Hello, Newman",
+  },
+  {
+    id: "yada_yada",
+    match: /\byada yada yada\b/i,
+    question: "Which running phrase does Elaine use to skip over boring story details?",
+    options: [
+      "Yada yada yada",
+      "Not that there's anything wrong with that",
+      "Get out!",
+      "Bosco",
+    ],
+    answer: "Yada yada yada",
+  },
+  {
+    id: "nothing_wrong",
+    match: /not that there's anything wrong with that/i,
+    question: "Which disclaimer became a recurring Seinfeld catchphrase?",
+    options: [
+      "Not that there's anything wrong with that",
+      "Serenity now",
+      "These pretzels are making me thirsty",
+      "Festivus for the rest of us",
+    ],
+    answer: "Not that there's anything wrong with that",
+  },
+  {
+    id: "pretzels_thirsty",
+    match: /these pretzels are making me thirsty/i,
+    question: "Which Kramer line about snack food became a fan-favorite catchphrase?",
+    options: [
+      "These pretzels are making me thirsty",
+      "Master of your domain",
+      "Hello, Newman",
+      "No soup for you!",
+    ],
+    answer: "These pretzels are making me thirsty",
+  },
+  {
+    id: "master_domain",
+    match: /master of (?:my|your|his|her|their) domain/i,
+    question: "In “The Contest,” what phrase describes someone who stays celibate?",
+    options: [
+      "Master of your domain",
+      "Serenity now",
+      "Yada yada yada",
+      "Not that there's anything wrong with that",
+    ],
+    answer: "Master of your domain",
+  },
+  {
+    id: "festivus",
+    match: /festivus for the rest of us/i,
+    question: "Which Frank Costanza holiday slogan replaces Christmas in his household?",
+    options: [
+      "Festivus for the rest of us",
+      "Serenity now",
+      "No soup for you!",
+      "Bosco",
+    ],
+    answer: "Festivus for the rest of us",
+  },
+];
+
+/** @param {string} scriptText */
+function findRunningGagInScript(scriptText) {
+  for (const gag of RUNNING_GAGS) {
+    if (gag.match.test(scriptText)) return gag;
+  }
+  return null;
+}
+
 /** @param {string} text */
 function extractDialogueAlternate(text) {
   const names = [
@@ -565,6 +663,20 @@ function buildQuestions(ep, allEpisodes, scriptText, rng) {
       options: opts,
       correctIndex,
       answer: actor,
+    });
+  }
+
+  const runningGag = findRunningGagInScript(scriptText);
+  if (runningGag) {
+    const opts = runningGag.options.slice().sort(() => rng() - 0.5);
+    const correctIndex = opts.findIndex((o) => o === runningGag.answer);
+    questions.push({
+      id: qid++,
+      type: "running_gag",
+      question: runningGag.question,
+      options: opts,
+      correctIndex,
+      answer: runningGag.answer,
     });
   }
 

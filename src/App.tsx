@@ -6,7 +6,14 @@ import { CATEGORY_GROUPS, readableTypeName } from "./lib/categories";
 import { buildCorpusBreakdown, countQuestionsForTypes } from "./lib/corpusStats";
 import { CORPUS_SUMMARY } from "./lib/corpusSummary";
 import { buildQuestionReportBody, githubNewIssueUrl, mailtoFeedbackUrl } from "./lib/questionFeedback";
-import { parseDailyShareSearch, stripLaunchQueryParams, type DailySharePayload } from "./lib/shareLinks";
+import { DisplayNameCard } from "./components/DisplayNameCard";
+import { PwaInstallPrompt } from "./components/PwaInstallPrompt";
+import { getDailyStreakSnapshot, isStreakAtRiskToday } from "./lib/dailyStreak";
+import { consumeEpisodeOrSeasonLaunch } from "./lib/launchRouter";
+import { parseLaunchIntent, stripLaunchQueryParams } from "./lib/launchQuery";
+import { prefetchTriviaCorpus } from "./lib/prefetchCorpus";
+import { parseDailyShareSearch, type DailySharePayload } from "./lib/shareLinks";
+import { applyDailyShareMeta, resetShareMeta } from "./lib/shareMeta";
 import { loadEpisodes } from "./loadTriviaCorpus";
 import { marathonStyleUi, quizUiStrings } from "./quizLabels";
 import { readQuestionsReviewed, writeQuestionsReviewed } from "./lib/questionsReviewedStorage";
@@ -187,6 +194,8 @@ export function App() {
   const [isCorpusLoading, setIsCorpusLoading] = useState(false);
   const [corpusLoadError, setCorpusLoadError] = useState<string | null>(null);
   const [sharedDailyScore, setSharedDailyScore] = useState<DailySharePayload | null>(null);
+  const [dailyStreak, setDailyStreak] = useState(() => getDailyStreakSnapshot());
+  const launchConsumedRef = useRef(false);
 
   const ensureEpisodes = useCallback(async () => {
     if (episodes) return episodes;
@@ -213,12 +222,44 @@ export function App() {
   }, [screen.name, ensureEpisodes]);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
+    prefetchTriviaCorpus();
+    const schedule =
+      typeof requestIdleCallback === "function"
+        ? requestIdleCallback
+        : (cb: () => void) => window.setTimeout(cb, 1200);
+    const cancel =
+      typeof cancelIdleCallback === "function"
+        ? cancelIdleCallback
+        : (id: number) => window.clearTimeout(id);
+    const idleId = schedule(() => prefetchTriviaCorpus());
+    return () => cancel(idleId as number);
+  }, []);
+
+  useEffect(() => {
     const parsed = parseDailyShareSearch(window.location.search);
-    if (parsed) setSharedDailyScore(parsed);
-    const navScreen = params.get("screen");
-    if (navScreen === "about") setScreen({ name: "about" });
-    else if (navScreen === "trust") setScreen({ name: "trust" });
+    if (parsed) {
+      setSharedDailyScore(parsed);
+      applyDailyShareMeta(parsed);
+    } else {
+      resetShareMeta();
+    }
+    const intent = parseLaunchIntent(window.location.search);
+    if (intent?.kind === "screen") {
+      switch (intent.screen) {
+        case "about":
+          setScreen({ name: "about" });
+          break;
+        case "trust":
+          setScreen({ name: "trust" });
+          break;
+        case "browse":
+          setScreen({ name: "browse" });
+          break;
+        case "stats":
+          setScreen({ name: "stats" });
+          break;
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -275,6 +316,8 @@ export function App() {
     setQuiz(null);
     setSharedDailyScore(null);
     stripLaunchQueryParams();
+    resetShareMeta();
+    setDailyStreak(getDailyStreakSnapshot());
     setScreen({ name: "home" });
   }, []);
 
@@ -418,6 +461,25 @@ export function App() {
     const count = Math.max(1, Math.min(request, cap));
     startQuiz(marathonForSeason(archive, season, count, Math.random), { mode: "season", season, count }, false);
   };
+
+  useEffect(() => {
+    if (launchConsumedRef.current) return;
+    const intent = parseLaunchIntent(window.location.search);
+    if (!intent || intent.kind === "screen") return;
+    launchConsumedRef.current = true;
+    void consumeEpisodeOrSeasonLaunch(window.location.search, {
+      ensureEpisodes,
+      startQuiz,
+      setScreen,
+      setNotice,
+    }).then((handled) => {
+      if (!handled) launchConsumedRef.current = false;
+    });
+  }, [ensureEpisodes, startQuiz]);
+
+  const refreshDailyStreak = useCallback(() => {
+    setDailyStreak(getDailyStreakSnapshot());
+  }, []);
 
   const startCategoryMix = async (
     cat: (typeof CATEGORY_GROUPS)[number],
@@ -604,6 +666,7 @@ export function App() {
   return (
     <div className="app-shell">
       <PwaUpdateBar />
+      <PwaInstallPrompt />
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
@@ -753,12 +816,28 @@ export function App() {
             </div>
           </div>
 
+          <DisplayNameCard />
+
           <div className="card">
             <h2 className="card-heading">Daily hive-mind puzzle</h2>
             <p className="card-muted" style={{ marginTop: "0.35rem" }}>
               UTC date <code className="inline-code">{utcCalendarKey()}</code> locks everyone into the exact same {DAILY_COUNT}-prompt slate.
               Bragging rights unlocked.
             </p>
+            {dailyStreak && dailyStreak.current > 0 ? (
+              <p className="card-muted daily-streak-line" role="status">
+                Streak: <strong>{dailyStreak.current}</strong> UTC day{dailyStreak.current === 1 ? "" : "s"} · best {dailyStreak.best}
+              </p>
+            ) : dailyStreak && dailyStreak.best > 0 ? (
+              <p className="card-muted daily-streak-line" role="status">
+                Play today to extend your streak · personal best {dailyStreak.best} UTC day{dailyStreak.best === 1 ? "" : "s"}
+              </p>
+            ) : null}
+            {isStreakAtRiskToday() ? (
+              <p className="card-muted streak-risk-line" role="status">
+                Your UTC streak resets at midnight — finish today&apos;s daily before the clock rolls over.
+              </p>
+            ) : null}
             <button type="button" className="btn btn-teal btn-block" onClick={() => void startDaily()} disabled={isCorpusLoading}>
               {isCorpusLoading ? "Loading archive…" : `Play today's seeded challenge (${DAILY_COUNT} questions)`}
             </button>
@@ -1132,6 +1211,7 @@ export function App() {
               );
             }}
             onToast={setNotice}
+            onDailyStreakUpdated={refreshDailyStreak}
           />
         </Suspense>
       )}
